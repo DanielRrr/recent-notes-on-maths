@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}Frobenius-related concepts}{1}{section.1}%
+\contentsline {section}{\numberline {2}Dialogue Categories and Chiralities}{14}{section.2}%
+\contentsline {section}{\numberline {3}Categorical Bimodules}{16}{section.3}%
+\contentsline {section}{\numberline {4}Frobenius Pseudomonoids}{16}{section.4}%
+\contentsline {section}{\numberline {5}Frobenius Amphimonoids}{20}{section.5}%
+\contentsline {section}{\numberline {6}Ribbon Tensorial Logic: basic remarks}{25}{section.6}%
+\contentsline {section}{\numberline {7}On Balanced Dialogue Categories and Ribbon Tensorial Logic}{31}{section.7}%
+\contentsline {section}{\numberline {8}The Sequent Calculus and its commuting conversions}{33}{section.8}%
