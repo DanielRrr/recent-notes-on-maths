@@ -6,3 +6,5 @@
 \contentsline {section}{\numberline {6}Ribbon Tensorial Logic: basic remarks}{25}{section.6}%
 \contentsline {section}{\numberline {7}On Balanced Dialogue Categories and Ribbon Tensorial Logic}{31}{section.7}%
 \contentsline {section}{\numberline {8}The Sequent Calculus and its commuting conversions}{33}{section.8}%
+\contentsline {section}{\numberline {9}Focusing Theorem}{36}{section.9}%
+\contentsline {section}{\numberline {10}Proof-as-Tangle theorem}{38}{section.10}%

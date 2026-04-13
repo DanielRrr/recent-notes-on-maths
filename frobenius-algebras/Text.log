@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Homebrew) (preloaded format=pdflatex 2026.3.4)  8 APR 2026 12:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Homebrew) (preloaded format=pdflatex 2026.3.4)  13 APR 2026 16:18
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1169,22 +1169,22 @@ Package xypdf Info: Line width: 0.39998pt on input line 97.
 {/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/map/pdftex/updmap
 /pdftex.map}{/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/enc/d
 vips/cm-super/cm-super-ts1.enc}]
-<mult.png, id=64, 335.2525pt x 341.275pt>
+<mult.png, id=73, 335.2525pt x 341.275pt>
 File: mult.png Graphic file (type png)
 <use mult.png>
 Package pdftex.def Info: mult.png  used on input line 138.
 (pdftex.def)             Requested size: 83.81291pt x 85.31853pt.
-<comult.png, id=66, 359.3425pt x 375.4025pt>
+<comult.png, id=75, 359.3425pt x 375.4025pt>
 File: comult.png Graphic file (type png)
 <use comult.png>
 Package pdftex.def Info: comult.png  used on input line 145.
 (pdftex.def)             Requested size: 89.8354pt x 93.85039pt.
-<unit-counit.png, id=67, 464.73625pt x 206.7725pt>
+<unit-counit.png, id=76, 464.73625pt x 206.7725pt>
 File: unit-counit.png Graphic file (type png)
 <use unit-counit.png>
 Package pdftex.def Info: unit-counit.png  used on input line 150.
 (pdftex.def)             Requested size: 116.18378pt x 51.693pt.
-<frobenius-axiom.png, id=68, 1135.24126pt x 400.49625pt>
+<frobenius-axiom.png, id=77, 1135.24126pt x 400.49625pt>
 File: frobenius-axiom.png Graphic file (type png)
 <use frobenius-axiom.png>
 Package pdftex.def Info: frobenius-axiom.png  used on input line 155.
@@ -1200,7 +1200,7 @@ Overfull \hbox (7.55519pt too wide) in paragraph at lines 158--159
 its monoid (comonoid)
  []
 
-<blue-red-1.png, id=78, 958.58125pt x 332.24126pt>
+<blue-red-1.png, id=88, 958.58125pt x 332.24126pt>
 File: blue-red-1.png Graphic file (type png)
 <use blue-red-1.png>
 Package pdftex.def Info: blue-red-1.png  used on input line 177.
@@ -1211,7 +1211,7 @@ Overfull \hbox (38.4257pt too wide) in paragraph at lines 177--178
  []
 
 [3 <./frobenius-axiom.png> <./blue-red-1.png>]
-<blue-red-2.png, id=87, 945.5325pt x 350.30875pt>
+<blue-red-2.png, id=97, 945.5325pt x 350.30875pt>
 File: blue-red-2.png Graphic file (type png)
 <use blue-red-2.png>
 Package pdftex.def Info: blue-red-2.png  used on input line 188.
@@ -1221,7 +1221,7 @@ Overfull \hbox (33.2063pt too wide) in paragraph at lines 188--189
  [] 
  []
 
-<blue-red-3.png, id=88, 964.60374pt x 344.28625pt>
+<blue-red-3.png, id=98, 964.60374pt x 344.28625pt>
 File: blue-red-3.png Graphic file (type png)
 <use blue-red-3.png>
 Package pdftex.def Info: blue-red-3.png  used on input line 199.
@@ -1232,7 +1232,7 @@ Overfull \hbox (40.83466pt too wide) in paragraph at lines 199--200
  []
 
 [4 <./blue-red-2.png> <./blue-red-3.png>]
-<blue-red-4.png, id=95, 799.98875pt x 261.97874pt>
+<blue-red-4.png, id=105, 799.98875pt x 261.97874pt>
 File: blue-red-4.png Graphic file (type png)
 <use blue-red-4.png>
 Package pdftex.def Info: blue-red-4.png  used on input line 214.
@@ -1242,7 +1242,7 @@ Overfull \hbox (54.9934pt too wide) in paragraph at lines 214--215
  [] 
  []
 
-<blue-red-5.png, id=96, 1036.87375pt x 432.61626pt>
+<blue-red-5.png, id=106, 1036.87375pt x 432.61626pt>
 File: blue-red-5.png Graphic file (type png)
 <use blue-red-5.png>
 Package pdftex.def Info: blue-red-5.png  used on input line 229.
@@ -1252,7 +1252,7 @@ Overfull \hbox (17.91124pt too wide) in paragraph at lines 229--230
  [] 
  []
 
-<blue-red-6.png, id=97, 901.3675pt x 380.42125pt>
+<blue-red-6.png, id=107, 901.3675pt x 380.42125pt>
 File: blue-red-6.png Graphic file (type png)
 <use blue-red-6.png>
 Package pdftex.def Info: blue-red-6.png  used on input line 234.
@@ -1263,12 +1263,12 @@ Overfull \hbox (60.61162pt too wide) in paragraph at lines 234--235
  []
 
 [5 <./blue-red-4.png> <./blue-red-5.png>]
-<blue-red-7.png, id=105, 825.0825pt x 558.085pt>
+<blue-red-7.png, id=115, 825.0825pt x 558.085pt>
 File: blue-red-7.png Graphic file (type png)
 <use blue-red-7.png>
 Package pdftex.def Info: blue-red-7.png  used on input line 240.
 (pdftex.def)             Requested size: 206.27011pt x 139.5209pt.
-<blue-red-8.png, id=106, 1000.73875pt x 290.08376pt>
+<blue-red-8.png, id=116, 1000.73875pt x 290.08376pt>
 File: blue-red-8.png Graphic file (type png)
 <use blue-red-8.png>
 Package pdftex.def Info: blue-red-8.png  used on input line 259.
@@ -1285,12 +1285,12 @@ L/cmm/m/it/10 B; d; u\OT1/cmr/m/n/10 )$ from the monoid struc-ture $(\OML/cmm/m
 /it/10 A; m; e\OT1/cmr/m/n/10 )$
  []
 
-<blue-red-9.png, id=114, 397.485pt x 430.60875pt>
+<blue-red-9.png, id=124, 397.485pt x 430.60875pt>
 File: blue-red-9.png Graphic file (type png)
 <use blue-red-9.png>
 Package pdftex.def Info: blue-red-9.png  used on input line 271.
 (pdftex.def)             Requested size: 139.12183pt x 150.7153pt.
-<blue-red-10.png, id=115, 835.12pt x 312.16624pt>
+<blue-red-10.png, id=125, 835.12pt x 312.16624pt>
 File: blue-red-10.png Graphic file (type png)
 <use blue-red-10.png>
 Package pdftex.def Info: blue-red-10.png  used on input line 280.
@@ -1305,78 +1305,78 @@ Overfull \hbox (8.12976pt too wide) detected at line 301
 []
  []
 
-<braid-and-twist.png, id=124, 670.505pt x 372.39125pt>
+<braid-and-twist.png, id=134, 670.505pt x 372.39125pt>
 File: braid-and-twist.png Graphic file (type png)
 <use braid-and-twist.png>
 Package pdftex.def Info: braid-and-twist.png  used on input line 320.
 (pdftex.def)             Requested size: 187.74011pt x 104.26883pt.
 [8 <./blue-red-10.png>]
-<helical-frobenius.png, id=133, 793.96625pt x 415.5525pt>
+<helical-frobenius.png, id=143, 793.96625pt x 415.5525pt>
 File: helical-frobenius.png Graphic file (type png)
 <use helical-frobenius.png>
 Package pdftex.def Info: helical-frobenius.png  used on input line 329.
 (pdftex.def)             Requested size: 222.30904pt x 116.3539pt.
-<blue-red-11.png, id=134, 929.4725pt x 402.50375pt>
+<blue-red-11.png, id=144, 929.4725pt x 402.50375pt>
 File: blue-red-11.png Graphic file (type png)
 <use blue-red-11.png>
 Package pdftex.def Info: blue-red-11.png  used on input line 336.
 (pdftex.def)             Requested size: 306.72687pt x 132.82664pt.
-<blue-red-12.png, id=135, 838.13126pt x 345.29pt>
+<blue-red-12.png, id=145, 838.13126pt x 345.29pt>
 File: blue-red-12.png Graphic file (type png)
 <use blue-red-12.png>
 Package pdftex.def Info: blue-red-12.png  used on input line 342.
 (pdftex.def)             Requested size: 301.72702pt x 124.30429pt.
  [9 <./braid-and-twist.png> <./helical-frobenius.png> <./blue-red-11.png>]
-<blue-red-13.png, id=145, 945.5325pt x 465.74pt>
+<blue-red-13.png, id=155, 945.5325pt x 465.74pt>
 File: blue-red-13.png Graphic file (type png)
 <use blue-red-13.png>
 Package pdftex.def Info: blue-red-13.png  used on input line 347.
 (pdftex.def)             Requested size: 312.02669pt x 153.69467pt.
-<blue-red-14.png, id=146, 317.185pt x 198.7425pt>
+<blue-red-14.png, id=156, 317.185pt x 198.7425pt>
 File: blue-red-14.png Graphic file (type png)
 <use blue-red-14.png>
 Package pdftex.def Info: blue-red-14.png  used on input line 353.
 (pdftex.def)             Requested size: 104.67136pt x 65.58522pt.
  [10 <./blue-red-12.png> <./blue-red-13.png> <./blue-red-14.png>]
-<ribbon.png, id=155, 510.90875pt x 317.185pt>
+<ribbon.png, id=165, 510.90875pt x 317.185pt>
 File: ribbon.png Graphic file (type png)
 <use ribbon.png>
 Package pdftex.def Info: ribbon.png  used on input line 374.
 (pdftex.def)             Requested size: 153.2738pt x 95.15622pt.
-<ribbon-2.png, id=156, 572.1375pt x 342.27875pt>
+<ribbon-2.png, id=166, 572.1375pt x 342.27875pt>
 File: ribbon-2.png Graphic file (type png)
 <use ribbon-2.png>
 Package pdftex.def Info: ribbon-2.png  used on input line 381.
 (pdftex.def)             Requested size: 171.64256pt x 102.6844pt.
-<blue-red-15.png, id=157, 577.15625pt x 282.05376pt>
+<blue-red-15.png, id=167, 577.15625pt x 282.05376pt>
 File: blue-red-15.png Graphic file (type png)
 <use blue-red-15.png>
 Package pdftex.def Info: blue-red-15.png  used on input line 386.
 (pdftex.def)             Requested size: 173.14821pt x 84.61678pt.
  [11 <./ribbon.png> <./ribbon-2.png> <./blue-red-15.png>]
-<blue-red-16.png, id=166, 487.8225pt x 283.0575pt>
+<blue-red-16.png, id=176, 487.8225pt x 283.0575pt>
 File: blue-red-16.png Graphic file (type png)
 <use blue-red-16.png>
 Package pdftex.def Info: blue-red-16.png  used on input line 417.
 (pdftex.def)             Requested size: 170.74043pt x 99.0716pt.
-<blue-red-17.png, id=167, 491.8375pt x 555.07375pt>
+<blue-red-17.png, id=177, 491.8375pt x 555.07375pt>
 File: blue-red-17.png Graphic file (type png)
 <use blue-red-17.png>
 Package pdftex.def Info: blue-red-17.png  used on input line 429.
 (pdftex.def)             Requested size: 206.57033pt x 233.12938pt.
  [12 <./blue-red-16.png>]
-<blue-red-18.png, id=173, 672.5125pt x 541.02126pt>
+<blue-red-18.png, id=183, 672.5125pt x 541.02126pt>
 File: blue-red-18.png Graphic file (type png)
 <use blue-red-18.png>
 Package pdftex.def Info: blue-red-18.png  used on input line 434.
 (pdftex.def)             Requested size: 248.82573pt x 200.17473pt.
-<blue-red-19.png, id=174, 682.55pt x 292.09125pt>
+<blue-red-19.png, id=184, 682.55pt x 292.09125pt>
 File: blue-red-19.png Graphic file (type png)
 <use blue-red-19.png>
 Package pdftex.def Info: blue-red-19.png  used on input line 444.
 (pdftex.def)             Requested size: 204.76657pt x 87.62804pt.
  [13 <./blue-red-17.png> <./blue-red-18.png>]
-<wheel.png, id=183, 542.025pt x 316.18124pt>
+<wheel.png, id=193, 542.025pt x 316.18124pt>
 File: wheel.png Graphic file (type png)
 <use wheel.png>
 Package pdftex.def Info: wheel.png  used on input line 481.
@@ -1413,13 +1413,13 @@ OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a; \OMS/cmsy/m/n/10 ? \U/cmllr/m/n/10 ^^O \OML
  []
 
 [15]
-<blue-red-20.png, id=199, 642.4pt x 284.06125pt>
+<blue-red-20.png, id=209, 642.4pt x 284.06125pt>
 File: blue-red-20.png Graphic file (type png)
 <use blue-red-20.png>
 Package pdftex.def Info: blue-red-20.png  used on input line 588.
 (pdftex.def)             Requested size: 256.95544pt x 113.62247pt.
  [16]
-<blue-red-21.png, id=205, 1262.7175pt x 306.14375pt>
+<blue-red-21.png, id=215, 1262.7175pt x 306.14375pt>
 File: blue-red-21.png Graphic file (type png)
 <use blue-red-21.png>
 Package pdftex.def Info: blue-red-21.png  used on input line 592.
@@ -1429,7 +1429,7 @@ Overfull \hbox (109.57796pt too wide) in paragraph at lines 592--593
  [] 
  []
 
-<blue-red-22.png, id=206, 1097.09875pt x 295.1025pt>
+<blue-red-22.png, id=216, 1097.09875pt x 295.1025pt>
 File: blue-red-22.png Graphic file (type png)
 <use blue-red-22.png>
 Package pdftex.def Info: blue-red-22.png  used on input line 597.
@@ -1439,13 +1439,13 @@ Overfull \hbox (93.83173pt too wide) in paragraph at lines 597--598
  [] 
  []
 
-<frobenius-form-1.png, id=207, 649.42625pt x 356.33125pt>
+<frobenius-form-1.png, id=217, 649.42625pt x 356.33125pt>
 File: frobenius-form-1.png Graphic file (type png)
 <use frobenius-form-1.png>
 Package pdftex.def Info: frobenius-form-1.png  used on input line 606.
 (pdftex.def)             Requested size: 194.82938pt x 106.90019pt.
 [17 <./blue-red-20.png> <./blue-red-21.png> <./blue-red-22.png>]
-<frobenius-form-2.png, id=216, 1057.9525pt x 630.355pt>
+<frobenius-form-2.png, id=227, 1057.9525pt x 630.355pt>
 File: frobenius-form-2.png Graphic file (type png)
 <use frobenius-form-2.png>
 Package pdftex.def Info: frobenius-form-2.png  used on input line 611.
@@ -1456,7 +1456,7 @@ Overfull \hbox (78.17351pt too wide) in paragraph at lines 611--612
  []
 
 [18 <./frobenius-form-1.png> <./frobenius-form-2.png>]
-<blue-red-23.png, id=224, 935.495pt x 306.14375pt>
+<blue-red-23.png, id=234, 935.495pt x 306.14375pt>
 File: blue-red-23.png Graphic file (type png)
 <use blue-red-23.png>
 Package pdftex.def Info: blue-red-23.png  used on input line 631.
@@ -1466,7 +1466,7 @@ Overfull \hbox (75.96886pt too wide) in paragraph at lines 631--632
  [] 
  []
 
-<blue-red-24.png, id=225, 962.59625pt x 615.29875pt>
+<blue-red-24.png, id=235, 962.59625pt x 615.29875pt>
 File: blue-red-24.png Graphic file (type png)
 <use blue-red-24.png>
 Package pdftex.def Info: blue-red-24.png  used on input line 635.
@@ -1477,12 +1477,12 @@ Overfull \hbox (88.1643pt too wide) in paragraph at lines 635--636
  []
 
 [19 <./blue-red-23.png> <./blue-red-24.png>]
-<helical-frobenius-pseudo.png, id=235, 714.67pt x 429.605pt>
+<helical-frobenius-pseudo.png, id=245, 714.67pt x 429.605pt>
 File: helical-frobenius-pseudo.png Graphic file (type png)
 <use helical-frobenius-pseudo.png>
 Package pdftex.def Info: helical-frobenius-pseudo.png  used on input line 646.
 (pdftex.def)             Requested size: 250.13824pt x 150.364pt.
-<blue-red-25.png, id=236, 1152.305pt x 496.85625pt>
+<blue-red-25.png, id=246, 1152.305pt x 496.85625pt>
 File: blue-red-25.png Graphic file (type png)
 <use blue-red-25.png>
 Package pdftex.def Info: blue-red-25.png  used on input line 676.
@@ -1498,7 +1498,7 @@ Overfull \hbox (13.25272pt too wide) in paragraph at lines 678--680
 /m/n/10 A\OML/cmm/m/it/10 ; []; true\OT1/cmr/m/n/10 )$ and a pseu-domonoid
  []
 
-<blue-red-26.png, id=244, 1250.6725pt x 389.455pt>
+<blue-red-26.png, id=254, 1250.6725pt x 389.455pt>
 File: blue-red-26.png Graphic file (type png)
 <use blue-red-26.png>
 Package pdftex.def Info: blue-red-26.png  used on input line 684.
@@ -1508,13 +1508,13 @@ Overfull \hbox (30.20465pt too wide) in paragraph at lines 684--685
  [] 
  []
 
-<blue-red-27.png, id=245, 1135.24126pt x 406.51875pt>
+<blue-red-27.png, id=255, 1135.24126pt x 406.51875pt>
 File: blue-red-27.png Graphic file (type png)
 <use blue-red-27.png>
 Package pdftex.def Info: blue-red-27.png  used on input line 688.
 (pdftex.def)             Requested size: 340.575pt x 121.95656pt.
 [21 <./blue-red-25.png> <./blue-red-26.png> <./blue-red-27.png>]
-<blue-red-28.png, id=254, 949.5475pt x 383.4325pt>
+<blue-red-28.png, id=264, 949.5475pt x 383.4325pt>
 File: blue-red-28.png Graphic file (type png)
 <use blue-red-28.png>
 Package pdftex.def Info: blue-red-28.png  used on input line 702.
@@ -1531,7 +1531,7 @@ Overfull \hbox (2.96696pt too wide) in paragraph at lines 728--731
 0 -side is a Frobe-nius pseu-domonoid
  []
 
-<blue-red-29.png, id=255, 944.52875pt x 374.39874pt>
+<blue-red-29.png, id=265, 944.52875pt x 374.39874pt>
 File: blue-red-29.png Graphic file (type png)
 <use blue-red-29.png>
 Package pdftex.def Info: blue-red-29.png  used on input line 732.
@@ -1553,7 +1553,7 @@ msy/m/n/10 B\OML/cmm/m/it/10 ; L; R\OT1/cmr/m/n/10 )$ be a Frobe-nius am-phi-mo
 noid in a bal-anced monoidal
  []
 
-<blue-red-30.png, id=263, 933.4875pt x 314.17375pt>
+<blue-red-30.png, id=273, 933.4875pt x 314.17375pt>
 File: blue-red-30.png Graphic file (type png)
 <use blue-red-30.png>
 Package pdftex.def Info: blue-red-30.png  used on input line 751.
@@ -1563,18 +1563,18 @@ Overfull \hbox (9.72894pt too wide) in paragraph at lines 751--752
  [] 
  []
 
-<blue-red-31.png, id=264, 792.9625pt x 436.63126pt>
+<blue-red-31.png, id=274, 792.9625pt x 436.63126pt>
 File: blue-red-31.png Graphic file (type png)
 <use blue-red-31.png>
 Package pdftex.def Info: blue-red-31.png  used on input line 758.
 (pdftex.def)             Requested size: 301.32887pt x 165.9216pt.
 [23 <./blue-red-30.png> <./blue-red-31.png>]
-<blue-red-32.png, id=271, 850.17625pt x 380.42125pt>
+<blue-red-32.png, id=281, 850.17625pt x 380.42125pt>
 File: blue-red-32.png Graphic file (type png)
 <use blue-red-32.png>
 Package pdftex.def Info: blue-red-32.png  used on input line 775.
 (pdftex.def)             Requested size: 323.07033pt x 144.56157pt.
-<blue-red-33.png, id=272, 1062.97125pt x 382.42876pt>
+<blue-red-33.png, id=282, 1062.97125pt x 382.42876pt>
 File: blue-red-33.png Graphic file (type png)
 <use blue-red-33.png>
 Package pdftex.def Info: blue-red-33.png  used on input line 784.
@@ -1585,18 +1585,18 @@ Overfull \hbox (27.04552pt too wide) in paragraph at lines 784--785
  []
 
 [24 <./blue-red-32.png> <./blue-red-33.png>]
-<cut-axiom.png, id=282, 690.58pt x 607.26875pt>
+<cut-axiom.png, id=292, 690.58pt x 607.26875pt>
 File: cut-axiom.png Graphic file (type png)
 <use cut-axiom.png>
 Package pdftex.def Info: cut-axiom.png  used on input line 813.
 (pdftex.def)             Requested size: 241.70662pt x 212.54724pt.
-<smol-example.png, id=283, 317.185pt x 423.5825pt>
+<smol-example.png, id=293, 317.185pt x 423.5825pt>
 File: smol-example.png Graphic file (type png)
 <use smol-example.png>
 Package pdftex.def Info: smol-example.png  used on input line 822.
 (pdftex.def)             Requested size: 111.0164pt x 148.25609pt.
  [25 <./cut-axiom.png>]
-<cut-axiom-1.png, id=291, 1064.97874pt x 386.44376pt>
+<cut-axiom-1.png, id=301, 1064.97874pt x 386.44376pt>
 File: cut-axiom-1.png Graphic file (type png)
 <use cut-axiom-1.png>
 Package pdftex.def Info: cut-axiom-1.png  used on input line 847.
@@ -1614,7 +1614,7 @@ MS/cmsy/m/n/10 ! \OML/cmm/m/it/10  \OMS/cmsy/m/n/10
 \OT1/cmr/m/n/10 )$
  []
 
-<alpha-morphism.png, id=297, 315.1775pt x 269.005pt>
+<alpha-morphism.png, id=307, 315.1775pt x 269.005pt>
 File: alpha-morphism.png Graphic file (type png)
 <use alpha-morphism.png>
 Package pdftex.def Info: alpha-morphism.png  used on input line 886.
@@ -1634,24 +1634,24 @@ Overfull \hbox (3.86185pt too wide) in paragraph at lines 944--947
 de-for-ma-tion, where
  []
 
-<ribbon-morphism.png, id=309, 520.94624pt x 568.1225pt>
+<ribbon-morphism.png, id=319, 520.94624pt x 568.1225pt>
 File: ribbon-morphism.png Graphic file (type png)
 <use ribbon-morphism.png>
 Package pdftex.def Info: ribbon-morphism.png  used on input line 950.
 (pdftex.def)             Requested size: 130.23624pt x 142.03027pt.
-<trefoils.png, id=310, 700.6175pt x 278.03876pt>
+<trefoils.png, id=320, 700.6175pt x 278.03876pt>
 File: trefoils.png Graphic file (type png)
 <use trefoils.png>
 Package pdftex.def Info: trefoils.png  used on input line 969.
 (pdftex.def)             Requested size: 196.17155pt x 77.85031pt.
 [29 <./ribbon-morphism.png> <./trefoils.png>] [30]
-<twisted-ribbons.png, id=321, 462.72874pt x 425.59pt>
+<twisted-ribbons.png, id=331, 462.72874pt x 425.59pt>
 File: twisted-ribbons.png Graphic file (type png)
 <use twisted-ribbons.png>
 Package pdftex.def Info: twisted-ribbons.png  used on input line 1059.
 (pdftex.def)             Requested size: 115.6819pt x 106.39723pt.
  [31]
-<twisted-ribbons-2.png, id=331, 448.67625pt x 656.4525pt>
+<twisted-ribbons-2.png, id=341, 448.67625pt x 656.4525pt>
 File: twisted-ribbons-2.png Graphic file (type png)
 <use twisted-ribbons-2.png>
 Package pdftex.def Info: twisted-ribbons-2.png  used on input line 1063.
@@ -1672,8 +1672,8 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1287 \end{prooftree}
-                      ] [35] (./Text.bbl) [36]
-runsystem(latexminted cleantemp  --timestamp 20260408125509 9DFFBF69FFBA8BC38BC
+                      ] [35] [36] [37] [38] [39] (./Text.bbl) [40]
+runsystem(latexminted cleantemp  --timestamp 20260413161802 9DFFBF69FFBA8BC38BC
 4E01ABF4B1675)...executed.
 
  (./Text.aux)
@@ -1682,13 +1682,13 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `Text.out' has not changed.
-(rerunfilecheck)             Checksum: B637D112AC1D21DC57C345ECD14632EE;1776.
+(rerunfilecheck)             Checksum: 49E4A633E4127D0145EA7CA4E89DFFB3;2065.
  ) 
 Here is how much of TeX's memory you used:
- 31296 strings out of 467525
- 632229 string characters out of 5408440
- 1176054 words of memory out of 5000000
- 59598 multiletter control sequences out of 15000+600000
+ 31316 strings out of 467525
+ 632442 string characters out of 5408440
+ 1177058 words of memory out of 5000000
+ 59602 multiletter control sequences out of 15000+600000
  639520 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,25n,104p,3235b,1105s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1716,10 +1716,10 @@ e/20260301/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></op
 t/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fon
 ts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Text.pdf (36 pages, 2395010 bytes).
+Output written on Text.pdf (40 pages, 2404764 bytes).
 PDF statistics:
- 459 PDF objects out of 1000 (max. 8388607)
- 274 compressed objects within 3 object streams
- 78 named destinations out of 1000 (max. 500000)
- 342 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 502 PDF objects out of 1000 (max. 8388607)
+ 312 compressed objects within 4 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 358 words of extra memory for PDF output out of 10000 (max. 10000000)
 
