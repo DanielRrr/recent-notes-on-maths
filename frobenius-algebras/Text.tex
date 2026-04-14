@@ -1653,6 +1653,103 @@ that can be rewritten into the proof:
 and therefore $\pi_1$ and $\pi_2$ are equal.
 \end{proof}
 
+Consider the following sequence
+\[
+A_1, \ldots, A_n \vdash B
+\]
+produced by the derivation trees $\pi_1$ and $\pi_2$ in the tensor formula $B = B_1 \otimes B_2$,
+and all the hypotheses are either negated or atomic. One may suppose that the last rule of $\pi_1$ introduces a tensor on the right.
+$\pi_1$ factors as follows:
+\begin{prooftree}
+  \AxiomC{$\pi_{11}$}
+  \noLine
+  \UnaryInfC{$\:\:$}
+  \noLine
+  \UnaryInfC{$\dots$}
+  \noLine
+  \UnaryInfC{$\:\:$}
+  \UnaryInfC{$A_1, \ldots, A_k \vdash B_1$}
+  \AxiomC{$\pi_{12}$}
+  \noLine
+  \UnaryInfC{$\:\:$}
+  \noLine
+  \UnaryInfC{$\dots$}
+  \noLine
+  \UnaryInfC{$\:\:$}
+  \UnaryInfC{$A_{k+1}, \ldots, A_n \vdash B_2$}
+  \RightLabel{$\otimes_R$}
+  \BinaryInfC{$A_1, \ldots, A_k, A_{k+1}, \ldots, A_n \vdash B_1 \otimes B_2$}
+\end{prooftree}
+The fact that tangles $[\pi_1]$ and $[\pi_2]$ are equal modulo deformations implies $\pi_2$ splits similarly into $\pi_{21}$ and $\pi_{22}$.
+Besides, $[\pi_{11}]$ and $[\pi_{21}]$ are equal modulo transformations as well as $[\pi_{12}]$ and $[\pi_{22}]$. Thus, $\pi_{11}$ and $\pi_{21}$
+are equal modulo commuting conversions as well as $\pi_{12}$ and $\pi_{22}$. Therefore, $\pi_1$ and $\pi_2$ are equal modulo commuting conversions.
+
+The proof-as-tangle theorem provides a coherence theorem for balanced monoidal categories, such as the category ${\bf Mod}(H)$ of finite 
+and infinite dimensional $H$-modules associated to a ribbon Hopf algebra $H$. For example, if one needs to establish that the following diagram commutes in every balanced dialogue category
+\[
+\begin{tikzcd}
+  \bot \multimapinv (\bot \multimapinv A) \ar[rrrr, "\bot \multimapinv \operatorname{turn}_A"] &&&& \bot \multimapinv (A \multimap \bot) \\
+  (\bot \multimapinv A) \multimap \bot \ar[u, "\operatorname{turn}_{\bot \multimapinv A}"] && A \ar[rr, "\eta_A"'] \ar[ll, "\eta'_A"] && \bot \multimapinv (A \multimap \bot) \ar[u, "\theta_{\bot} \multimapinv (A \multimap \bot)"']
+\end{tikzcd}
+\]
+where $\eta_A$ and $\eta'_A$ are units of the corresponding double negation monads and $\operatorname{turn}$ is the canonical isomorphism between two negations.
+Commutativity of the above diagram, in turn, means the following derivation trees $\pi_1$ and $\pi_2$ are equal modulo commuting conversions:
+\begin{prooftree}
+  \AxiomC{$A \vdash A$}
+  \RightLabel{$\multimap_L$}
+  \UnaryInfC{$A, A \multimap \bot \vdash \bot$}
+  \RightLabel{[\bf torsion]}
+  \UnaryInfC{$A, A \multimap \bot \vdash \bot$}
+  \RightLabel{$\multimapinv_R$}
+  \UnaryInfC{$A \vdash \bot \multimapinv (A \multimap \bot)$}
+\end{prooftree}
+\begin{prooftree}
+  \AxiomC{$A \vdash A$}
+  \RightLabel{$\multimapinv_L$}
+  \UnaryInfC{$\bot \multimapinv A, A \vdash \bot$}
+  \RightLabel{$\multimap_R$}
+  \UnaryInfC{$A \vdash (\bot \multimapinv A) \multimap \bot$}
+  \AxiomC{$A \vdash A$}
+  \RightLabel{$\multimap_L$}
+  \UnaryInfC{$A, A \multimap \bot \vdash \bot$}
+  \RightLabel{$[\sigma \circ \theta_1]$}
+  \UnaryInfC{$A \multimap \bot, A \vdash \bot$}
+  \RightLabel{$\multimapinv_R$}
+  \UnaryInfC{$A \multimap \bot \vdash \bot \multimapinv A$}
+  \RightLabel{$\multimap_L$}
+  \UnaryInfC{$A \multimap \bot, (\bot \multimapinv A) \multimap \bot \vdash \bot$}
+  \RightLabel{$[\sigma \circ \theta_1]$}
+  \UnaryInfC{$(\bot \multimapinv A) \multimap \bot, A \multimap \bot \vdash \bot$}
+  \RightLabel{$\multimapinv_R$}
+  \UnaryInfC{$(\bot \multimapinv A) \multimap \bot \vdash \bot \multimapinv (A \multimap \bot)$}
+  \RightLabel{\bf cut}
+  \BinaryInfC{$A \vdash \bot \multimapinv (A \multimap \bot)$}
+\end{prooftree}
+where ${\bf torsion} = \theta\langle 2 \rangle$ of ${\bf G}_2$ twists the two hypotheses of the proof, or twists the conclusion $\bot$
+with an angle $2\pi$. One can construct the ribbon tangles $[\pi_1]$ and $[\pi_2]$ associated to $\pi_1$ and $\pi_2$ by structural induction,
+so a proof $\pi$ of a sequent $A_1, \ldots, A_n \vdash B$ as a form $[\pi]$ on the object $[A_1] \otimes \ldots \otimes [A_n] \otimes [B]^*$
+in the category ${\bf ribbon}(\mathcal{X} \sqcup {\bf 1})$. A \emph{form} on an object $A$ in a ribbon category $\mathcal{C}$
+is a morphism from $A$ to the tensorial unit $I$. If we use the notation $\hbar = \bot$ for the tensorial pole object of
+${\bf ribbon}(\mathcal{X} \sqcup {\bf 1})$ and $h = \bot^*$ for its dual, so we can describe $[\pi_1]$ and $[\pi_2]$
+as a sequence of local transformations performed on norms. So $[\pi_1]$ looks like this
+\begin{prooftree}
+  \AxiomC{$A, A^*$}
+  \RightLabel{$\multimap_L$}
+  \UnaryInfC{$A, A^* \otimes \hbar, h$}
+  \RightLabel{[\bf torsion]}
+  \UnaryInfC{$A, A^* \otimes \hbar, h$}
+  \RightLabel{$\multimapinv_R$}
+  \UnaryInfC{$A, A^* \otimes \hbar \otimes h$}
+\end{prooftree}
+with the following topological tangle:
+  \begin{center}
+  \includegraphics[scale=0.3]{tangle-1.png}
+  \end{center}
+Whereas $[\pi_2]$ looks like this
+  \begin{center}
+  \includegraphics[scale=0.35]{tangle-2.png}
+  \end{center}
+
 \bibliographystyle{alpha}
 \bibliography{Text}
 

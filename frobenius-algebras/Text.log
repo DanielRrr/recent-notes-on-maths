@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Homebrew) (preloaded format=pdflatex 2026.3.4)  13 APR 2026 16:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Homebrew) (preloaded format=pdflatex 2026.3.4)  14 APR 2026 14:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1672,8 +1672,20 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1287 \end{prooftree}
-                      ] [35] [36] [37] [38] [39] (./Text.bbl) [40]
-runsystem(latexminted cleantemp  --timestamp 20260413161802 9DFFBF69FFBA8BC38BC
+                      ] [35] [36] [37] [38] [39] [40]
+<tangle-1.png, id=399, 308.15125pt x 330.23375pt>
+File: tangle-1.png Graphic file (type png)
+<use tangle-1.png>
+Package pdftex.def Info: tangle-1.png  used on input line 1746.
+(pdftex.def)             Requested size: 92.44608pt x 99.07088pt.
+<tangle-2.png, id=400, 679.53876pt x 562.1pt>
+File: tangle-2.png Graphic file (type png)
+<use tangle-2.png>
+Package pdftex.def Info: tangle-2.png  used on input line 1750.
+(pdftex.def)             Requested size: 237.84213pt x 196.73795pt.
+ [41 <./tangle-1.png>]
+(./Text.bbl) [42 <./tangle-2.png>]
+runsystem(latexminted cleantemp  --timestamp 20260414142053 9DFFBF69FFBA8BC38BC
 4E01ABF4B1675)...executed.
 
  (./Text.aux)
@@ -1685,10 +1697,10 @@ Package rerunfilecheck Info: File `Text.out' has not changed.
 (rerunfilecheck)             Checksum: 49E4A633E4127D0145EA7CA4E89DFFB3;2065.
  ) 
 Here is how much of TeX's memory you used:
- 31316 strings out of 467525
- 632442 string characters out of 5408440
- 1177058 words of memory out of 5000000
- 59602 multiletter control sequences out of 15000+600000
+ 31383 strings out of 467525
+ 634039 string characters out of 5408440
+ 1178149 words of memory out of 5000000
+ 59667 multiletter control sequences out of 15000+600000
  639520 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,25n,104p,3235b,1105s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1697,29 +1709,33 @@ sfonts/cm/cmbx10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmbx12.pfb></opt/homebrew/Cellar/texlive/20260301/
 share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></opt/homebrew/Cellar
 /texlive/20260301/share/texmf-dist/fonts/type1/public/cmll/cmllr10.pfb></opt/ho
-mebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi5.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/homebrew/Cellar/texlive/20
-260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew
-/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.
+mebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/cmll/cmllr5.
 pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr17.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr5.pfb></opt/homebrew/Cellar/texlive/20260301/s
-hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/homebrew/Cellar/t
-exlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></op
+cmll/cmllr7.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20260301/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></opt/homebrew/Cellar/texl
+ive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/ho
+mebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/homebrew/Cellar/texlive/202
+60301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></opt/homebrew/C
+ellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
+></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy5.pfb></opt/homebrew/Cellar/texlive/20260301/sh
+are/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></opt/homebrew/Cellar/t
+exlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></op
 t/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy5.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy7.pfb></opt/homebrew/Cellar/texlive/20260301/share/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/homebrew/Cellar/texliv
-e/20260301/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></op
-t/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msbm10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fon
-ts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Text.pdf (40 pages, 2404764 bytes).
+/symbols/msam10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fon
+ts/type1/public/amsfonts/symbols/msam7.pfb></opt/homebrew/Cellar/texlive/202603
+01/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/homebr
+ew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/cm-super/sfrm100
+0.pfb>
+Output written on Text.pdf (42 pages, 2540708 bytes).
 PDF statistics:
- 502 PDF objects out of 1000 (max. 8388607)
- 312 compressed objects within 4 object streams
- 94 named destinations out of 1000 (max. 500000)
- 358 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 529 PDF objects out of 1000 (max. 8388607)
+ 327 compressed objects within 4 object streams
+ 96 named destinations out of 1000 (max. 500000)
+ 368 words of extra memory for PDF output out of 10000 (max. 10000000)
 
