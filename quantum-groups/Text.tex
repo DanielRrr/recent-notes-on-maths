@@ -2188,6 +2188,106 @@ An \emph{$A$-point} of a Hopf algebra $H$ is an algebra morphism $f : H \to A$.
   $\nu(x_{ij}) = t \operatorname{det}_q (X_{ji})$ and $\nu(t) = \operatorname{det}_q (X)$.
 \end{example}
 
+\subsection{Exercise}
+
+\begin{exercise}
+  Assume that the base ring $R$ is a field. An ideal in an algebra $A$ is a submodule $I$ such that 
+  $\mu(I \otimes A + A \otimes I) \subseteq I$. Then $A/I$ becomes an algebra. A \emph{coideal} of a coalgebra $C$
+  is a submodule $I$ such that $\delta(I) \subseteq I \otimes C + C \otimes I$ and $\varepsilon(I) \subseteq 0$.
+  Show the following:
+  \begin{enumerate}
+    \item If $I$ is a coideal of a coalgebra $C$, describe a coalgebra structure on $C/I$ for which 
+    $\rho : C \to C / I$ becomes a coalgebra morphism. If $C$ is a bialgebra and $I$ is an ideal, show that $C/I$
+    is a bialgebra. What condition on $I$ ensures that $C/I$ has an antipode if $C$ has?
+    \item Check that the polynomial $R$-algebra $B = R\langle x, y, z \rangle$ on three non-commuting indeterminates
+    is a bialgebra with:
+    \begin{itemize}
+      \item $\delta(x) = x \otimes x$,
+      \item $\delta(y) = y \otimes y$,
+      \item $\delta(z) = 1 \otimes z + z \otimes x$,
+      \item $\varepsilon(x) = \varepsilon(y) = 1$,
+      \item $\varepsilon(z) = 0$.
+    \end{itemize}
+    \item Verify that the ideal $(xy - 1, yx - 1)$ is a coideal in $B$. Let $H$ denote the quotient algebra further.
+    \item Show that $H$ is a Hopf algebra with antipode $\nu$ given by (modulo the ideal $(xy - 1, yx - 1)$):
+    \begin{itemize}
+      \item $\nu(x) = y$,
+      \item $\nu(y) = x$, 
+      \item $\nu(z) = - zy$.
+    \end{itemize}
+    Show also that $\nu^{2n}(z) = x^n z y^n$ and $\nu^{2n + 1}(x) = -x^n z y^{n + 1}$. Therefore, this $\nu$
+    has infinite order.
+    \item Show that the ideals $I_n = (x^n z y^n - z)$ and $J_n = (x^n - 1)$ are Hopf algebras in H. Show that the antipodes
+    of both $H/I_n$ and $H/J_n$ have order $2n$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{proof}
+  $ $
+
+  \begin{enumerate}
+    \item Let $I$ be a coideal of $C$, so $I$ is a submodule satisfying
+    $\delta(I) \subseteq I \otimes C + C \otimes I$. The composite:
+    \[
+    C \xrightarrow{\delta} C \otimes C \rightarrow{\rho \otimes \rho} C/I \otimes C/I
+    \]
+    maps $I$ to 0 since:
+    \begin{align*}
+    (\rho \otimes \rho)\delta(I) \subseteq (\rho \otimes \rho)(I \otimes C + C \otimes I) &=  \\
+    \rho(I) \otimes \rho(C) +  \rho(C) \otimes \rho(I) &= \\ 
+    0 \otimes \rho(C) +  \rho(C) \otimes 0 = 0
+    \end{align*}
+    Thus there is a unique module morphism $\delta : C/I \to C/I \otimes C/I$ such that:
+    \[
+    \begin{tikzcd}
+    C \ar[rr, "\rho"] \ar[dd, "\delta"'] && C/I \ar[dd, "\delta"]\\
+    \\
+    C \otimes C \ar[rr, "\rho \otimes \rho"'] && C/I \otimes C/I
+    \end{tikzcd}
+    \]
+    Similarly, $\varepsilon(I) = 0$ implies that there is a unique $\varepsilon : C/I \to R$ such that:
+    \[
+    \begin{tikzcd}
+      C \ar[rr, "\varepsilon"] \ar[dr, "\rho"'] && R \\
+      & C/I \ar[ur, "\varepsilon"']
+    \end{tikzcd}
+    \]
+    All those facts about $\delta$ and $\varepsilon$ will mean that $\rho : C \to C/I$ is a coalgebra morphism if
+    one ensures that $C/I$ is a coalgebra. To show that $\delta : C/I \to C/I \otimes C/I$ is coassociative, one needs to
+    take the coassociativity diagram for $C/I$ and precompose it with $\rho : C \to C/I$:
+    \[
+    \begin{tikzcd}
+      C \ar[rr, "\rho"] \ar[dd, "\delta"] && C/I \ar[dd, "\delta"] \\
+      \\
+      C \otimes C \ar[dd, shift left, "\delta \otimes 1"] \ar[dd, shift right, "1 \otimes \delta"'] \ar[rr, "\rho \otimes \rho"] && C/I \otimes C/I \ar[dd, shift left, "\delta \otimes 1"] \ar[dd, shift right, "1 \otimes \delta"'] \\
+      \\
+      C \otimes C \otimes C  \ar[rr, "\rho \otimes \rho \otimes \rho"'] && C/I \otimes C/I \otimes C/I
+    \end{tikzcd}
+    \]
+    And this commutes by coassociativity of $C$. But $\rho$ is also surjective, so the coassociativity diagram for $C/I$
+    (the bottom one) also commutes. Similarly, we take the unitality diagram for $C/I$ and conclude its commutativity from the following one:
+    \[
+    \begin{tikzcd}
+      C \ar[dd, "\delta"'] \ar[dddd, bend right=50, "1"'] \ar[rr, "\rho"] && C/I \ar[dddd, bend left=50, "1"] \ar[dd, "\delta"] \\
+      \\
+      C \otimes C \ar[dd, shift left, "\varepsilon \otimes 1"] \ar[rr, "\rho \otimes \rho"] \ar[dd, shift right, "1 \otimes \varepsilon"']  && C/I \otimes C/I \ar[dd, shift left, "\varepsilon \otimes 1"] \ar[dd, shift right, "1 \otimes \varepsilon"'] \\
+      \\
+      C \ar[rr, "\rho"] && C/I\\
+    \end{tikzcd}
+    \]
+    Therefore $\varepsilon : C/I \to R$ is a counit and $C/I$ is a bialgebra. The rest is to check the bialgebra conditions, the most complicated one is
+    the condition that $\delta$ commutes with multiplication:
+    \[
+    \begin{tikzcd}
+      C/I \otimes C/I  \ar[rrrr, "\mu"] \ar[dd, "\delta \otimes \delta"'] &&&& C/I \ar[dd, "\delta"] \\
+      \\
+      C/I \otimes C/I \otimes C/I \otimes C/I \ar[rr, "1 \otimes \sigma \otimes 1"] && C/I \otimes C/I \otimes C/I \otimes C/I \ar[rr, "\mu \otimes \mu"'] && C/I \otimes C/I
+    \end{tikzcd}
+    \]
+    To show that, one precomposes the above diagram with $\rho \otimes \rho : C \otimes C \to C/I \otimes C/I$ and use the corresponding condition on $C$ and the fact that $\rho \otimes \rho$ is surjective.
+  \end{enumerate}
+\end{proof}
+
 \section{Representation of Quantum Groups}
 
 Note that if $f : E \to A$ is a ring morphism, then each (left) $A$-module $M$ becomes a (left) $E$-module via the following action
