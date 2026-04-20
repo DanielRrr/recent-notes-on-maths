@@ -2285,6 +2285,36 @@ An \emph{$A$-point} of a Hopf algebra $H$ is an algebra morphism $f : H \to A$.
     \end{tikzcd}
     \]
     To show that, one precomposes the above diagram with $\rho \otimes \rho : C \otimes C \to C/I \otimes C/I$ and use the corresponding condition on $C$ and the fact that $\rho \otimes \rho$ is surjective.
+    \item Put $R$-algebra $B = R\langle x, y, z \rangle$, then their equations define algebra morphisms
+    $\delta : B \to B \otimes B$ and $\varepsilon : B \to R$ since $B$ is free an algebra. Let us check that those
+    morphisms make $B$ a bialgebra. The coassociativity is showed the following way for $x$ and similarly for $y$:
+    \begin{align*}
+      (\delta \otimes 1) \delta(x) &= (\delta \otimes 1)(x \otimes x) \\
+      &= x \otimes x \otimes x \\
+      &= (1 \otimes \delta)(x \otimes x) = (1 \otimes \delta) \delta(x)
+    \end{align*}
+    The coassociativity for $z$:
+    \begin{align*}
+      (\delta \otimes 1) \delta(x) &= (\delta \otimes 1) (1 \otimes z + z \otimes x) \\
+      &= 1 \otimes 1 \otimes z + (1 \otimes z + z \otimes x) \otimes x \\
+      &= 1 \otimes (1 \otimes z + z \otimes x) + z \otimes x \otimes x \\
+      &= (1 \otimes \delta)(1 \otimes z + z \otimes x) = (1 \otimes \delta)\delta(z)
+    \end{align*}
+    The counit conditions for $x$ (and similarly for $y$) and for $z$:
+    \begin{align*}
+      (\varepsilon \otimes 1) \delta(x) &= (\varepsilon \otimes 1) (x \otimes x) = \varepsilon(x)(x) = x \\
+      &= (1 \otimes \varepsilon)(x \otimes x) = (1 \otimes \varepsilon) \delta(x).
+    \end{align*}
+    \begin{align*}
+      (\varepsilon \otimes 1) \delta(z) &= (\varepsilon \otimes 1)(1 \otimes z + z \otimes x) = z + 0x = z \\
+      &= 0 + z = (\varepsilon \otimes 1)(1 \otimes z + z \otimes x)  = (\varepsilon \otimes 1) \delta(z)
+    \end{align*}
+    \item One has
+    \begin{align*}
+      \delta(xy - 1)(x \otimes x)(y \otimes y) - 1 \otimes 1 &= xy \otimes xy - 1 \otimes 1 \\
+      =& (xy - 1) \otimes xy + 1 \otimes xy - 1 \otimes 1 \\
+      =& (xy - 1) \otimes xy + 1 \otimes (xy - 1) \subseteq I \otimes B + B \otimes I.
+    \end{align*}
   \end{enumerate}
 \end{proof}
 

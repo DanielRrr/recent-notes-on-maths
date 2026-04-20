@@ -189,6 +189,32 @@ is not commutative, but only symmetric, so it is commutative only up to isomorph
 where $\gamma$ is the symmetry of ${\bf Sym}(\mathcal{C}) \otimes {\bf Sym}(\mathcal{C})$, which is a distributor in ${\bf Dist}$
 as well.
 
+The necessity to weaken the commutativity condition to an isomorphism is similar to the phenomenon of the Seely
+isomorphism in linear logic:
+\[
+\bang (A \& B) \cong \bang A \otimes \bang B
+\]
+One can interpret this equation of linear logic as a distributor with the concatenation functor:
+\[
+\operatorname{concat}_{A,B} : {\bf Sym}(A) \times {\bf Sym}(B) \to {\bf Sym}(A + B) 
+\]
+that takes sequences $u = a_1 \ldots a_p$ and $v = b_1 \ldots b_q$ of objects from $A$ and $B$ respectively concatenates them
+into the sequence of objects from $A + B$:
+\[
+\operatorname{concat}_{A,B}(u,v) = a_1 \ldots a_p \cdot b_1 \ldots b_q
+\]
+The distributor interpreting the Seely isomorphism
+\[
+{\bf Sym}(A \& B) \not\to {\bf Sym}(A \otimes B)
+\]
+is defined as the right adjoint of the concatenation functor where $A \& B$ stands for $A + B$
+for the disjoint union of $A$ and $B$. Besides, $\operatorname{concat}_{A,B}$ is equivalence of categories injective
+on objects, but it is not an isomorphism. Thus we replace here the Seely isomorphism with the Seely equivalence.
+
+\section{On Models of Differential Linear Logic}
+
+A good introduction to differential linear logic is \cite{ehrhard2018introduction}.
+
 \bibliographystyle{alpha}
 \bibliography{Text}
 
