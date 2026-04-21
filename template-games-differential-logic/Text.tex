@@ -213,7 +213,73 @@ on objects, but it is not an isomorphism. Thus we replace here the Seely isomorp
 
 \section{On Models of Differential Linear Logic}
 
-A good introduction to differential linear logic is \cite{ehrhard2018introduction}.
+A good introduction to differential linear logic is \cite{ehrhard2018introduction}. If we interpret the
+exponential modality as $A \mapsto {\bf Sym}(A)$, then one can see that the model of distributors is also a model
+of differential linear logic since the exponential modality ${\bf Sym}(A)$ comes with the monoid structure in
+${\bf Dist}$:
+\begin{itemize}
+  \item $m_A = L_{\otimes_A} : {\bf Sym}(A) \otimes {\bf Sym}(A) \not\to {\bf Sym}(A)$,
+  \item $u_A = L_{I_A} : \mathds{1} \not\to {\bf Sym}(A)$.
+\end{itemize}
+whose multiplication and unit are the left adjoint distributors associated to the monoid structure of ${\bf Sym}(A)$ in ${\bf Cat}$.
+Note that the monoid $({\bf Sym}(A), m_A, u_A)$ and the comonoid $({\bf Sym}(A), d_A, e_A)$ are the left and right adjoint ``avatars'' of the 
+monoid structure $({\bf Sym}(A), \otimes_A, I_A)$ in ${\bf Cat}$. The monoid and the comonoid structures on ${\bf Sym}(A)$ define a bialgebra, but the bialgebra
+structure is only up to an invertible natural transformation:
+\[
+\begin{tikzcd}
+  && |[alias=symA]| {\bf Sym}(A) \ar[drr, "d_A"] \\
+{\bf Sym}(A)^{\otimes 2} \ar[dr, "d_A \otimes d_A"'] \ar[urr, "m_A"] &&&& {\bf Sym}(A)^{\otimes 2} \\
+& {\bf Sym}(A)^{\otimes 4} \ar[rr, "(1324)"', ""{name=1324}] && {\bf Sym}(A)^{\otimes 4} \ar[ur, "m_A \otimes m_A"']
+\arrow[from=symA,to=1324,Rightarrow,"\sim"]
+\end{tikzcd}
+\]
+The explanation is that the disjoint sum $A + B$ of small categories $A$ and $B$ coincide with their cartesian sum $A \oplus B$
+and their cartesian product $A \& B$. Therefore, every object $A$ is equipped with a monoid and a comonoid structure:
+\begin{itemize}
+  \item $\nabla_A : A \oplus A \not\to A$,
+  \item $\nabla^{0}_A : 0 \not\to A$,
+  \item $\Delta_A : A \not\to A \oplus A$,
+  \item $\Delta^{0}_A :  A \not\to 0$.
+\end{itemize}
+defined as the left and right adjoint distributors to the canonical functors $A + A \to A$ and $0 \to A$,
+where $0$ is the initial category in ${\bf Cat}$. The multiplication $\nabla_A$ and the comultiplication $\Delta_A$ are equipped with a bialgebra
+structure in ${\bf Dist}$, up to an invertible natural transformation:
+\[
+\begin{tikzcd}
+  && |[alias=A]| A \ar[drr, "\Delta_A"] \\
+A^{\oplus 2} \ar[dr, "\Delta_A \oplus \Delta_A"'] \ar[urr, "\nabla_A"] &&&& A^{\oplus 2} \\
+& A^{\oplus 4} \ar[rr, "(1324)"', ""{name=1324}] && A^{\oplus 4} \ar[ur, "\nabla_A \oplus \nabla_A"']
+\arrow[from=A, to=1324, Rightarrow, "\sim"]
+\end{tikzcd}
+\]
+
+The exponential modality $A \mapsto {\bf Sym}(A)$ along the family of Seely equivalences
+\[
+{\bf Sym}(A^{\oplus n}) \not\to ({\bf Sym}(A))^{\otimes n}
+\]
+defines a lax and oplax symmetric monoidal bifunctor
+\[
+{\bf Sym} : ({\bf Dist}, \oplus, 0) \to ({\bf Dist}, \otimes, \mathds{1})
+\]
+
+The differential in DiLL is interpreted the following way in the category of distributors. One starts with a family of functors
+\[
+\eta_A : A \to {\bf Sym}(A)
+\]
+defining the unit of the monad $A \mapsto {\bf Sym}(A)$. One can postcompose the functor with $\otimes_A$ to obtain the functor:
+\[
+\operatorname{append}_A : (a, v) \mapsto a \cdot v \in {\bf Sym}(A) : A \times {\bf Sym}(A) \to {\bf Sym}(A)
+\]
+The differential is interpreted in ${\bf Dist}$ as the left adjoint distributor
+\[
+\partial_A : A \otimes {\bf Sym}(A) \not\to {\bf Sym}(A)
+\]
+associated to the $\operatorname{append}_A$, whereas the dereliction and the codereliction morphisms:
+\begin{itemize}
+  \item $\operatorname{der}_A : {\bf Sym}(A) \not\to A$,
+  \item $\operatorname{coder}_A : A \not\to {\bf Sym}(A)$
+\end{itemize}
+are associated to $\eta_A$.
 
 \bibliographystyle{alpha}
 \bibliography{Text}

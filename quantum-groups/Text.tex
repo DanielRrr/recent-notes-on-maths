@@ -2315,6 +2315,24 @@ An \emph{$A$-point} of a Hopf algebra $H$ is an algebra morphism $f : H \to A$.
       =& (xy - 1) \otimes xy + 1 \otimes xy - 1 \otimes 1 \\
       =& (xy - 1) \otimes xy + 1 \otimes (xy - 1) \subseteq I \otimes B + B \otimes I.
     \end{align*}
+    \item We must check that the following is satisfied:
+    \[
+    \begin{tikzcd}
+      H \ar[r, "\delta"] \ar[drr, "\varepsilon"'] & H \otimes H \ar[rr, shift left, "\nu \otimes 1"] \ar[rr, shift right, "1 \otimes \nu"']  && H \otimes H \ar[r, "\mu"] & H \\
+      && R \ar[urr, "\eta"']
+    \end{tikzcd}
+    \]
+    Let us check this condition for $x$ (the calculation for $y$ is the same) and $z$:
+    \begin{align*}
+      \mu (\nu \otimes 1) \delta(x) &= \mu (\nu \otimes 1) (x \otimes x) = \mu (y \otimes x) = y x \equiv 1 \\
+      &= \nu (\varepsilon (x)) \equiv xy = \mu(x \otimes y) = \mu (1 \otimes \nu)(x \otimes x) = \mu (1 \otimes \nu) \delta(x)
+    \end{align*}
+    \begin{align*}
+      \mu (\nu \otimes 1) \delta(z) &= \mu (\nu \otimes 1) (1 \otimes z + z \otimes x) = \mu (1 \otimes z + (- zy) \otimes x) \\
+      &= z - zyx \equiv 0 = \eta \varepsilon(z) = 0 \\
+      &= -zy + zy = \mu (1 \otimes (-zy) + z \otimes y) \\
+      &= \mu (1 \otimes \nu) (1 \otimes z + z \otimes x) =  \mu (1 \otimes \nu) \delta(z)
+    \end{align*}
   \end{enumerate}
 \end{proof}
 
