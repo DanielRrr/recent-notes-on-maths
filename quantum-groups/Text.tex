@@ -2229,7 +2229,7 @@ An \emph{$A$-point} of a Hopf algebra $H$ is an algebra morphism $f : H \to A$.
     \item Let $I$ be a coideal of $C$, so $I$ is a submodule satisfying
     $\delta(I) \subseteq I \otimes C + C \otimes I$. The composite:
     \[
-    C \xrightarrow{\delta} C \otimes C \rightarrow{\rho \otimes \rho} C/I \otimes C/I
+    C \xrightarrow{\delta} C \otimes C \xrightarrow{\rho \otimes \rho} C/I \otimes C/I
     \]
     maps $I$ to 0 since:
     \begin{align*}
@@ -2333,6 +2333,62 @@ An \emph{$A$-point} of a Hopf algebra $H$ is an algebra morphism $f : H \to A$.
       &= -zy + zy = \mu (1 \otimes (-zy) + z \otimes y) \\
       &= \mu (1 \otimes \nu) (1 \otimes z + z \otimes x) =  \mu (1 \otimes \nu) \delta(z)
     \end{align*}
+    Thus $H$ is a Hopf algebra. We know that $\nu$ reverses both multiplication and comultiplication.
+
+    Let us show that $\nu^{2n}(z) = x^n z y^n$ and $\nu^{2n + 1}(z) = -x^n z y^{n + 1}$ for each $n < \omega$. The statement is trivial for $n = 0$.
+    Let $n = k + 1$ and assume that $\nu^{2k}(z) = x^k z y^k$ and $\nu^{2k + 1}(z) = -x^k z y^{k + 1}$. We need 
+    $\nu^{2k+2}(z) = x^{k+1} z y^{k+1}$ and $\nu^{2(k+1) + 1}(z) = -x^{k+1} z y^{k + 2}$.
+    First of all, observe that:
+    \[
+    \nu^{2k+1}(z) = -x^k z y^{k+1} = -x^k z y y^{k} = x^k (-zy) y^k = \nu(y)^k \nu(z) \nu(x)^k
+    \]
+    Thus:
+    \begin{align*}
+      \nu^{2(k+1)}(z) &=  - \nu(y)^{n + 1}\nu(z) \nu(x)^n \\
+      & -x^{n+1} (-zy)y^n = x^{n + 1} z y^{n+1}
+    \end{align*}
+    Similarly:
+    \begin{align*}
+    \nu^{2k + 3}(z) &= \nu^{2(k + 1)+1}(z) \\ 
+    &= -x^{k + 1} z y^{k+2} = -x^{k+1} z y y^{k+2} \\ 
+    &= x^{k+1} (-zy) y^{k+1} = \nu(y)^{k+1} \nu(z) \nu(x)^{k+1}
+    \end{align*}
+    Therefore:
+    \begin{align*}
+      \nu^{2(k+1) + 1}(z) &= \nu(y)^{k+1} \nu(z) \nu(x)^{k+1} \\
+      &= \nu(x)^{k+1} (-zy) \nu(y)^{k+1} = - \nu(x)^{k+1} z \nu(y)^{k+2}
+    \end{align*}
+    \item Consider the ideals $I_n = (x^n z y^n - z)$ and $J_n = (x^n - 1)$. Let us evaluate $\nu$, $\delta$ and $\varepsilon$.
+    First of all:
+    \[
+    \varepsilon(x^n z y^n - z) = \varepsilon(z (x^n y^n - 1)) = \varepsilon(z) \varepsilon(x^n y^n - 1) = 0
+    \]
+    Further,
+    \begin{align*}
+      \delta(x^n z y^n - z) &= (x^n \otimes x^n)(1 \otimes z + z \otimes x)(y^n \otimes y^n) - 1 \otimes z - z \otimes x \\
+      &= (x^n \otimes z + x^n z \otimes x^{n + 1})(y^n \otimes y^n) - 1 \otimes z - z \otimes x \\
+      &= x^n y^n \otimes z y^n + x^n z y^n \otimes x^{n + 1} y^n - 1 \otimes z - z \otimes x \\
+      &= 1 \otimes x^n z y^n + x^n z y^n \otimes x - 1 \otimes z - z \otimes x \\
+      &= 1 \otimes (x^n z y^n - z) + (x^n z y^n - z) \otimes x \in I_n \otimes H + H \otimes I_n.
+    \end{align*}
+    And also:
+    \begin{align*}
+      \nu (x^n z y^n - z) &= \nu(x^n z y^n) - \nu(z) \\
+      &= x^n (-zy) y^n + zy = -x^n z y^{n+1} + zy = (x^n z y^n - z)(-y) \in I_n
+    \end{align*}
+
+    Consider $J_n = (x^n - 1)$ similarly:
+    \[
+    \varepsilon(x^n - 1) = 0
+    \]
+    Then further:
+    \[
+    \delta(x^n - 1) = x^n \otimes x^n - 1 \otimes 1 = (x^n - 1) \otimes x^n + 1 \otimes (x^n - 1) \in J_n \otimes H + H \otimes J_n
+    \]
+    And finally:
+    \[
+    \nu(x^n - 1) = y^n - 1 \equiv -y^n(x^n - 1) \: {\bf mod} \: J_n.
+    \]
   \end{enumerate}
 \end{proof}
 
