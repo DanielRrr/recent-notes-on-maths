@@ -126,7 +126,7 @@ map $f : X \to Y$. This fact is known as \emph{Gelfand duality}.
 
 \vspace{\baselineskip}
 
-A variety is a space of solutions to polynomials in several variables. Consider
+A \emph{variety} is a space of solutions to polynomials in several variables. Consider
 the variety given by a polynomial $x^2 + 2y^3 = z^4$ over ${\bf k}$.
 We pass to the ${\bf k}$-algebra:
 \[
@@ -149,7 +149,7 @@ a ${\bf k}$-algebra morphism $A \to B$ corresponds to a map of varieties in the 
 
 \vspace{\baselineskip}
 
-A topological group is a group in the category of topological spaces and continuous maps.
+A \emph{topological group} is a group in the category of topological spaces and continuous maps.
 A Lie group is a group in the category of smooth manifolds and smooth maps.
 
 We will be studying groups in the category $({\bf CommAlg}_{\bf k})^{op}$
@@ -243,12 +243,12 @@ The monomials $a^{m_1} b^{m_2} c^{m_3} d^{m_4}$ form a basis for the algebra as 
     \[ \operatorname{det}_q\begin{pmatrix} a & b\\ c & d \end{pmatrix} = ad - q^{-1} b c \]
     commutes with each of $a, b,c,d$ and the following holds
     \[
-    \operatorname{det}_q \left( \begin{pmatrix} a & b\\ c & d \end{pmatrix} \begin{pmatrix} a' & b' \\ c' & d' \end{pmatrix} \right) = \operatorname{det}_q \left( \begin{pmatrix} a & b\\ c & d \end{pmatrix} \right) \times \operatorname{det}_q \left( \begin{pmatrix} a' & b' \\ c' & d' \end{pmatrix} \right).
+    \operatorname{det}_q \left( \begin{pmatrix} a & b\\ c & d \end{pmatrix} \begin{pmatrix} a' & b' \\ c' & d' \end{pmatrix} \right) = \operatorname{det}_q \begin{pmatrix} a & b\\ c & d \end{pmatrix} \times \operatorname{det}_q \begin{pmatrix} a' & b' \\ c' & d' \end{pmatrix}.
     \]
-    \item If $\operatorname{det}_q \left( \begin{pmatrix} a & b\\ c & d \end{pmatrix} \right)$ is invertible in $A$, then the following is an $A$-point
+    \item If $\operatorname{det}_q \begin{pmatrix} a & b\\ c & d \end{pmatrix}$ is invertible in $A$, then the following is an $A$-point
     of $M_{q^{-1}}(2)$:
     \[
-    \left( \begin{pmatrix} a & b\\ c & d \end{pmatrix} \right)^{-1} = \left( \operatorname{det}_q \left( \begin{pmatrix} a & b\\ c & d \end{pmatrix} \right) \right)^{-1} \left( \begin{pmatrix} d & -qb \\ -q^{-1}c & a \end{pmatrix} \right).
+    \begin{pmatrix} a & b\\ c & d \end{pmatrix}^{-1} = \left( \operatorname{det}_q \begin{pmatrix} a & b\\ c & d \end{pmatrix} \right)^{-1} \begin{pmatrix} d & -qb \\ -q^{-1}c & a \end{pmatrix}.
     \]
   \end{enumerate}
 \end{theorem}
@@ -276,7 +276,7 @@ An $A$-point of $B$ is called \emph{generic} when the algebra morphism $B \to A$
   \begin{pmatrix} x'' \\ y'' \end{pmatrix} = \begin{pmatrix} a & c \\ b & d \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix},
   \begin{pmatrix} \xi' \\ \eta' \end{pmatrix} = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} \xi \\ \eta \end{pmatrix}
   \]
-  If $q^2 = - 1$, then the following are equivalent:
+  If $q^2 \neq - 1$, then the following are equivalent:
   \begin{enumerate}
     \item $(x', y')$ and $(x'', y'')$ are points of $\mathbb{A}^{2|0}_q$;
     \item $(x', y')$ is a point of $\mathbb{A}^{2|0}_q$ and $(\xi', \eta')$
@@ -734,7 +734,7 @@ the isomorphisms are determined by the evaluation morphisms:
 
 \section{Cauchy modules}
 
-A module $M : R \not\to S$ induces a module $M* = \operatorname{Hom}_R(M, R) : S \not\to R$ called
+A module $M : R \not\to S$ induces a module $M^* = \operatorname{Hom}_R(M, R) : S \not\to R$ called
 the \emph{left dual} of $M$. There is a canonical module morphism:
 \[
 \rho^M_L : M^* \otimes_R L \to \operatorname{Hom}_R(M, R)
@@ -1001,8 +1001,8 @@ along with module morphisms $\mu : A \otimes_R A \to A$ and $\eta : R \to A$ suc
 the following principles are satisfied (associativity and idenity):
 \[
 \begin{tikzcd}
- A \otimes_R A \otimes_R A \ar[rr, shift left=1.5ex, "\mu \otimes 1_A"] \ar[rr, shift right=1.5ex, "1_A \otimes \mu"'] && A \otimes_R A \ar[rr, "\mu"] && A \\
- A \ar[rr, shift left=1.5ex, "\eta \otimes 1_A"] \ar[rrrr, bend right=30, "1_A"] \ar[rr, shift right=1.5ex, "1_A \otimes \eta"'] && A \otimes_R A \ar[rr, "\mu"] && A 
+ A \otimes_R A \otimes_R A \ar[rr, shift left=1.15ex, "\mu \otimes 1_A"] \ar[rr, shift right=1.15ex, "1_A \otimes \mu"'] && A \otimes_R A \ar[rr, "\mu"] && A \\
+ A \ar[rr, shift left=1.15ex, "\eta \otimes 1_A"] \ar[rrrr, bend right=30, "1_A"] \ar[rr, shift right=1.15ex, "1_A \otimes \eta"'] && A \otimes_R A \ar[rr, "\mu"] && A 
 \end{tikzcd}
 \]
 $A$ is also a ring with $a b = \mu(a \otimes b)$ and $1 = \eta(1)$.
@@ -2532,7 +2532,7 @@ If $C$ is an $R$-bialgebra, but necessarily Cauchy, then a coaction on the tenso
 \] 
 The empty tensor product $R$ has the coaction $\eta : R \to C \otimes_R R$.
 
-\begin{prop}
+\begin{prop}~\label{repres:exer}
   Each Cauchy $R$-module $M$ lifts to an $R$-coalgebra $M \otimes_R M^*$ with counit $e : M \otimes_R M^* \to R$ and comultiplication:
   \[
   1 \otimes d \otimes 1 : M \otimes_R M^* \to M \otimes_R M^* \otimes_R M \otimes_R M^*.
@@ -2560,7 +2560,7 @@ basis for $R^{n*}$, so $e^*_i(e_j) = \delta_{ij}$ (Kronecker delta). A coaction 
 \]
 $\hat{\delta}$ is determined by its values on the basis of elements $e_i \otimes e^*_j$ of $R^n \otimes_R R^{n*}$:
 \[
-\hat{\delta}(e_i \otimes^*_j) = x_{ij} \in C.
+\hat{\delta}(e_i \otimes e^*_j) = x_{ij} \in C.
 \]
 
 $C$-comodule structures on $R^n$ are in bijection with multiplicative matrices in $C$, i.e., matrices $\vec{\bf x} = (x_{ij})$ in $C$
@@ -2620,6 +2620,70 @@ the usual tensor product of matrices.
     Thus that the right composition with $\hat{\delta}_k$ preserves convolution. $1_H$ and $\nu$ are convolution inverses, so are
     $1_H \circ \hat{\delta}_k$ are $\nu \circ \hat{\delta}_k$, that is, so are $\hat{\delta}_k$ and $\hat{\delta}_{k + 1}$.
   \end{enumerate}
+\end{proof}
+
+\subsection{Exercises}
+
+\begin{exercise}
+  Give a direct proof of Proposition~\ref{repres:exer}.
+\end{exercise}
+
+\begin{proof}
+  Let $M$ be a Cauchy module. Here are the coassociativity and counit digrams showing $E$ to be a coalgebra:
+  \begin{center}
+  \begin{tikzcd}
+    M \otimes M^* \ar[rr, "1 \otimes d \otimes 1"] && M \otimes M^* \otimes M \otimes M^* \ar[rr, shift left, "1 \otimes 1 \otimes 1 \otimes d \otimes 1"] \ar[rr, shift right, "1 \otimes d \otimes 1 \otimes 1 \otimes 1"'] && M \otimes M^* \otimes M \otimes M^* \otimes M \otimes M^*
+  \end{tikzcd}
+  \begin{tikzcd}
+    M \otimes M^* \ar[rr, "1 \otimes d \otimes 1"] && M \otimes M^* \otimes M \otimes M^* \ar[rr, shift left, "e \otimes 1 \otimes 1"] \ar[rr, shift right, "1 \otimes 1 \otimes e"'] && M \otimes M^*
+  \end{tikzcd}
+  \end{center}
+  They follow from functoriality of $\otimes$ and the fundamental theorem of Morita theory.
+
+  The mapping $\delta \mapsto \hat{\delta}$ establishes a bijection between $R$-linear functions $\delta : M \to C \otimes M$
+  and $R$-linear functions $\omega : M \otimes_R M^* \to C$. The inverse assignment $\omega \mapsto \omega^{\lor}$ is given by:
+  \[
+  \omega^{\lor} = (M \xrightarrow{1 \otimes d} M \otimes M^* \otimes M \xrightarrow{\omega \otimes 1} C \otimes M)
+  \]
+  And those assignments are mutually inverse by the fundamental theorem of Morita theory.
+
+  The rest is to show that coaction axioms on $\delta$ translate to coalgebra morphisms on $\omega$. The coaction axiom:
+  \[
+  \begin{tikzcd}
+    M \ar[rr, "\delta"] && C \otimes M \ar[rr, shift left, "\underline{\delta} \otimes 1"] \ar[rr, shift right, "1 \otimes \delta"'] && C \otimes C \otimes M
+  \end{tikzcd}
+  \]
+  which is equivalent to
+  \[
+  \begin{tikzcd}
+    M \otimes M^* \ar[rr, "\delta \otimes 1"] && C \otimes M \otimes M^* \ar[rr, shift left, "\underline{\delta} \otimes 1 \otimes 1"] \ar[rr, shift right, "1 \otimes \delta \otimes 1"'] && C \otimes C \otimes M \otimes M^* \ar[rr, "1 \otimes 1 \otimes e"] && C \otimes C
+  \end{tikzcd}
+  \]
+  using:
+  \[
+  \begin{tikzcd}
+    M \otimes M^* \ar[rr, "\delta \otimes 1"] \ar[ddrr, "\hat{\delta}"'] && C \otimes M \otimes M^* \ar[dd, "1 \otimes e"] \ar[rr, "\underline{\delta} \otimes 1 \otimes 1"] && C \otimes C \otimes M \otimes M^* \ar[dd, "1 \otimes 1 \otimes e"]\\
+    \\
+    && C \ar[rr, "\underline{\delta}"'] && C \otimes C
+  \end{tikzcd}
+  \]
+  and
+  \[
+  \begin{tikzcd}
+    M \otimes M^* \ar[dd, "\delta \otimes 1"'] \ar[rrrr, "1 \otimes d \otimes 1"] &&&& M \otimes M^* \otimes M \otimes M^* \ar[dd, "\hat{\delta} \otimes 1"] \ar[dll, "\delta \otimes 1 \otimes 1"'] \\
+    && C \otimes M \otimes M^* \otimes M \otimes M^* \ar[drr, "1 \otimes e \otimes 1 \otimes 1"] \\
+    C \otimes M \otimes M^* \ar[rrrr, equal] \ar[urr, "1 \otimes 1 \otimes \delta \otimes 1"] &&&& C \otimes M \otimes M^*
+  \end{tikzcd}
+  \]
+  And therefore we have:
+  \[
+  \begin{tikzcd}
+    M \otimes M^* \ar[dd, "1 \otimes d \otimes 1"'] \ar[rr, "\hat{\delta}"] && C \ar[dd, "\underline{\delta}"]  \\
+    \\
+    M \otimes M^* \otimes M \otimes M^* \ar[r, "\hat{\delta} \otimes 1"'] & C \otimes M \otimes M^* \ar[r, "1 \otimes \hat{\delta}"'] & C \otimes C 
+  \end{tikzcd}
+\]
+which is a coalgebra morphism axiom on $\hat{\delta}$.
 \end{proof}
 
 \section{Monoidal Categories}

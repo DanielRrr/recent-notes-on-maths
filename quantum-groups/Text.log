@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Homebrew) (preloaded format=pdflatex 2026.3.4)  22 APR 2026 15:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Homebrew) (preloaded format=pdflatex 2026.3.4)  23 APR 2026 16:03
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1223,75 +1223,90 @@ Overfull \hbox (49.72076pt too wide) detected at line 2610
  []
 
 
-Overfull \hbox (8.12976pt too wide) detected at line 2638
-[]
- []
-
-[49]
-Overfull \hbox (8.12976pt too wide) detected at line 2645
-[]
- []
-
-<braid1.png, id=448, 662.475pt x 451.6875pt>
-File: braid1.png Graphic file (type png)
-<use braid1.png>
-Package pdftex.def Info: braid1.png  used on input line 2661.
-(pdftex.def)             Requested size: 132.49265pt x 90.33589pt.
-<braid2.png, id=450, 918.43124pt x 480.79625pt>
-File: braid2.png Graphic file (type png)
-<use braid2.png>
-Package pdftex.def Info: braid2.png  used on input line 2671.
-(pdftex.def)             Requested size: 183.68298pt x 96.15753pt.
-[50 <./braid1.png>]
-<braid3.png, id=457, 849.1725pt x 521.95pt>
-File: braid3.png Graphic file (type png)
-<use braid3.png>
-Package pdftex.def Info: braid3.png  used on input line 2675.
-(pdftex.def)             Requested size: 169.83148pt x 104.38814pt.
-<braid4.png, id=458, 1230.5975pt x 266.9975pt>
-File: braid4.png Graphic file (type png)
-<use braid4.png>
-Package pdftex.def Info: braid4.png  used on input line 2679.
-(pdftex.def)             Requested size: 369.1821pt x 80.09985pt.
-
-Overfull \hbox (24.1821pt too wide) in paragraph at lines 2679--2680
+Overfull \hbox (43.91562pt too wide) in paragraph at lines 2636--2640
  [] 
  []
 
-<braid5.png, id=459, 1025.8325pt x 476.78125pt>
-File: braid5.png Graphic file (type png)
-<use braid5.png>
-Package pdftex.def Info: braid5.png  used on input line 2684.
-(pdftex.def)             Requested size: 307.75212pt x 143.03548pt.
-[51 <./braid2.png> <./braid3.png> <./braid4.png> <./braid5.png>] [52] [53]
-Overfull \hbox (50.87274pt too wide) detected at line 2802
+[49]
+Overfull \hbox (36.85318pt too wide) detected at line 2661
 []
  []
 
-<braid6.png, id=478, 468.75125pt x 400.49625pt>
+
+Overfull \hbox (33.46005pt too wide) detected at line 2677
+[]
+ []
+
+[50]
+Overfull \hbox (8.12976pt too wide) detected at line 2702
+[]
+ []
+
+
+Overfull \hbox (8.12976pt too wide) detected at line 2709
+[]
+ []
+
+<braid1.png, id=458, 662.475pt x 451.6875pt>
+File: braid1.png Graphic file (type png)
+<use braid1.png>
+Package pdftex.def Info: braid1.png  used on input line 2725.
+(pdftex.def)             Requested size: 132.49265pt x 90.33589pt.
+<braid2.png, id=460, 918.43124pt x 480.79625pt>
+File: braid2.png Graphic file (type png)
+<use braid2.png>
+Package pdftex.def Info: braid2.png  used on input line 2735.
+(pdftex.def)             Requested size: 183.68298pt x 96.15753pt.
+[51 <./braid1.png>]
+<braid3.png, id=467, 849.1725pt x 521.95pt>
+File: braid3.png Graphic file (type png)
+<use braid3.png>
+Package pdftex.def Info: braid3.png  used on input line 2739.
+(pdftex.def)             Requested size: 169.83148pt x 104.38814pt.
+<braid4.png, id=468, 1230.5975pt x 266.9975pt>
+File: braid4.png Graphic file (type png)
+<use braid4.png>
+Package pdftex.def Info: braid4.png  used on input line 2743.
+(pdftex.def)             Requested size: 369.1821pt x 80.09985pt.
+
+Overfull \hbox (24.1821pt too wide) in paragraph at lines 2743--2744
+ [] 
+ []
+
+<braid5.png, id=469, 1025.8325pt x 476.78125pt>
+File: braid5.png Graphic file (type png)
+<use braid5.png>
+Package pdftex.def Info: braid5.png  used on input line 2748.
+(pdftex.def)             Requested size: 307.75212pt x 143.03548pt.
+[52 <./braid2.png> <./braid3.png> <./braid4.png>] [53 <./braid5.png>] [54]
+Overfull \hbox (50.87274pt too wide) detected at line 2866
+[]
+ []
+
+<braid6.png, id=488, 468.75125pt x 400.49625pt>
 File: braid6.png Graphic file (type png)
 <use braid6.png>
-Package pdftex.def Info: braid6.png  used on input line 2820.
+Package pdftex.def Info: braid6.png  used on input line 2884.
 (pdftex.def)             Requested size: 117.18752pt x 100.12381pt.
-[54]
-<ribbons1.png, id=484, 816.04875pt x 517.935pt>
+[55]
+<ribbons1.png, id=494, 816.04875pt x 517.935pt>
 File: ribbons1.png Graphic file (type png)
 <use ribbons1.png>
-Package pdftex.def Info: ribbons1.png  used on input line 2828.
+Package pdftex.def Info: ribbons1.png  used on input line 2892.
 (pdftex.def)             Requested size: 163.20685pt x 103.58516pt.
-<ribbons2.png, id=485, 655.44875pt x 283.0575pt>
+<ribbons2.png, id=495, 655.44875pt x 283.0575pt>
 File: ribbons2.png Graphic file (type png)
 <use ribbons2.png>
-Package pdftex.def Info: ribbons2.png  used on input line 2838.
+Package pdftex.def Info: ribbons2.png  used on input line 2902.
 (pdftex.def)             Requested size: 229.41049pt x 99.0716pt.
-<ribbons3.png, id=486, 568.1225pt x 331.2375pt>
+ [56 <./braid6.png> <./ribbons1.png> <./ribbons2.png>]
+<ribbons3.png, id=505, 568.1225pt x 331.2375pt>
 File: ribbons3.png Graphic file (type png)
 <use ribbons3.png>
-Package pdftex.def Info: ribbons3.png  used on input line 2846.
+Package pdftex.def Info: ribbons3.png  used on input line 2910.
 (pdftex.def)             Requested size: 170.43805pt x 99.37201pt.
- [55 <./braid6.png> <./ribbons1.png> <./ribbons2.png>] [56 <./ribbons3.png>] [5
-7]
-Overfull \hbox (4.05542pt too wide) detected at line 2967
+ [57 <./ribbons3.png>] [58]
+Overfull \hbox (4.05542pt too wide) detected at line 3031
 \OMS/cmsy/m/n/10 V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 C; \OT1/cmr/m/n/10 [\OML/cm
 m/m/it/10 A \OMS/cmsy/m/n/10 
  \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 B; J\OT1/cmr/m/n/10 ][]\OML/cmm/m/it/10 ; J\
@@ -1307,83 +1322,83 @@ ML/cmm/m/it/10 C \OMS/cmsy/m/n/10
  \OML/cmm/m/it/10 A; B\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :
  []
 
-[58] [59]
-<tangle1.png, id=519, 913.4125pt x 443.6575pt>
+[59] [60]
+<tangle1.png, id=529, 913.4125pt x 443.6575pt>
 File: tangle1.png Graphic file (type png)
 <use tangle1.png>
-Package pdftex.def Info: tangle1.png  used on input line 3085.
+Package pdftex.def Info: tangle1.png  used on input line 3149.
 (pdftex.def)             Requested size: 274.02586pt x 133.09827pt.
- [60 <./tangle1.png>]
-<tangle2.png, id=528, 730.73pt x 365.365pt>
+ [61 <./tangle1.png>]
+<tangle2.png, id=539, 730.73pt x 365.365pt>
 File: tangle2.png Graphic file (type png)
 <use tangle2.png>
-Package pdftex.def Info: tangle2.png  used on input line 3092.
+Package pdftex.def Info: tangle2.png  used on input line 3156.
 (pdftex.def)             Requested size: 292.28682pt x 146.1434pt.
-<tangle3.png, id=529, 763.85374pt x 342.27875pt>
+<tangle3.png, id=540, 763.85374pt x 342.27875pt>
 File: tangle3.png Graphic file (type png)
 <use tangle3.png>
-Package pdftex.def Info: tangle3.png  used on input line 3097.
+Package pdftex.def Info: tangle3.png  used on input line 3161.
 (pdftex.def)             Requested size: 305.53607pt x 136.90906pt.
 
-Overfull \hbox (33.18964pt too wide) detected at line 3111
+Overfull \hbox (33.18964pt too wide) detected at line 3175
 []
  []
 
-[61 <./tangle2.png> <./tangle3.png>] [62]
-<yb1.png, id=542, 551.05875pt x 313.17pt>
+[62 <./tangle2.png> <./tangle3.png>] [63]
+<yb1.png, id=553, 551.05875pt x 313.17pt>
 File: yb1.png Graphic file (type png)
 <use yb1.png>
-Package pdftex.def Info: yb1.png  used on input line 3176.
+Package pdftex.def Info: yb1.png  used on input line 3240.
 (pdftex.def)             Requested size: 165.3189pt x 93.95172pt.
-<yb2.png, id=543, 726.715pt x 348.30125pt>
+<yb2.png, id=554, 726.715pt x 348.30125pt>
 File: yb2.png Graphic file (type png)
 <use yb2.png>
-Package pdftex.def Info: yb2.png  used on input line 3180.
+Package pdftex.def Info: yb2.png  used on input line 3244.
 (pdftex.def)             Requested size: 218.01617pt x 104.49118pt.
- [63 <./yb1.png> <./yb2.png>]
-<yb3.png, id=553, 1211.52625pt x 338.26375pt>
+ [64 <./yb1.png> <./yb2.png>]
+<yb3.png, id=563, 1211.52625pt x 338.26375pt>
 File: yb3.png Graphic file (type png)
 <use yb3.png>
-Package pdftex.def Info: yb3.png  used on input line 3203.
+Package pdftex.def Info: yb3.png  used on input line 3267.
 (pdftex.def)             Requested size: 363.46068pt x 101.4799pt.
 
-Overfull \hbox (18.46068pt too wide) in paragraph at lines 3203--3204
+Overfull \hbox (18.46068pt too wide) in paragraph at lines 3267--3268
  [] 
  []
 
 
-Overfull \hbox (7.72292pt too wide) in paragraph at lines 3221--3222
+Overfull \hbox (7.72292pt too wide) in paragraph at lines 3285--3286
 \OT1/cmr/m/n/10 Besides, monoidal func-tors take bal-anced YB-operators to bal-
 anced YB-operators. 
  []
 
 
-Overfull \hbox (48.80481pt too wide) detected at line 3228
+Overfull \hbox (48.80481pt too wide) detected at line 3292
 []
  []
 
 
-Overfull \hbox (67.19373pt too wide) detected at line 3234
+Overfull \hbox (67.19373pt too wide) detected at line 3298
 []
  []
 
-[64 <./yb3.png>]
-Overfull \hbox (67.19373pt too wide) detected at line 3240
+[65 <./yb3.png>]
+Overfull \hbox (67.19373pt too wide) detected at line 3304
 []
  []
 
 
-Overfull \hbox (106.52698pt too wide) detected at line 3260
+Overfull \hbox (106.52698pt too wide) detected at line 3324
 []
  []
 
-[65]
-Overfull \hbox (70.25589pt too wide) detected at line 3299
+[66]
+Overfull \hbox (70.25589pt too wide) detected at line 3363
 []
  []
 
-[66] [67]
-runsystem(latexminted cleantemp  --timestamp 20260422155103 9DFFBF69FFBA8BC38BC
+[67] [68]
+runsystem(latexminted cleantemp  --timestamp 20260423160329 9DFFBF69FFBA8BC38BC
 4E01ABF4B1675)...executed.
 
  (./Text.aux)
@@ -1392,13 +1407,13 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `Text.out' has not changed.
-(rerunfilecheck)             Checksum: 2473F35EBA37E177CC33F0B17640FAEE;2614.
+(rerunfilecheck)             Checksum: 07CACF9054CB28DFBE14CF9D735ADD69;2717.
  ) 
 Here is how much of TeX's memory you used:
- 35531 strings out of 467525
- 739339 string characters out of 5408440
- 1254704 words of memory out of 5000000
- 63677 multiletter control sequences out of 15000+600000
+ 35838 strings out of 467525
+ 747488 string characters out of 5408440
+ 1259961 words of memory out of 5000000
+ 63981 multiletter control sequences out of 15000+600000
  643917 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,20n,104p,3235b,1181s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1438,10 +1453,10 @@ mbols/msbm10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msbm7.pfb></opt/homebrew/Cellar/texlive/20260301/
 share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></opt/homebrew/Cellar
 /texlive/20260301/share/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on Text.pdf (67 pages, 984250 bytes).
+Output written on Text.pdf (68 pages, 989988 bytes).
 PDF statistics:
- 757 PDF objects out of 1000 (max. 8388607)
- 594 compressed objects within 6 object streams
- 241 named destinations out of 1000 (max. 500000)
- 224 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 768 PDF objects out of 1000 (max. 8388607)
+ 603 compressed objects within 7 object streams
+ 244 named destinations out of 1000 (max. 500000)
+ 232 words of extra memory for PDF output out of 10000 (max. 10000000)
 
