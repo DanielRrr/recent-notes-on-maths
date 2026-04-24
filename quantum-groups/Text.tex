@@ -93,6 +93,7 @@
 \begin{document}
 
 \maketitle
+\tableofcontents
 
 \section{Duality between geometry and algebra}
 
@@ -2745,7 +2746,7 @@ A \emph{symmetry} for a tensor category is a braiding satisfying the extra condi
 \end{example}
 Therefore $\mathcal{B}$ is a strict monoidal category. A braiding $c_{m,n} : m + n \to n + m$ is given by crossing the first $m$ strings over the remaining $n$:
   \begin{center}
-  \includegraphics[scale=0.3]{braid5.png}
+  \includegraphics[scale=0.25]{braid5.png}
   \end{center}
 
 \begin{example}
@@ -2942,7 +2943,50 @@ Twist elements $\tau$ for $A$ are in bijection with twists $\theta$ for the brai
 Naturality of $\theta_M : M \to M$ means it has the form of $\theta_M(m) = \tau m$ for some $\tau \in A$. To make $\theta_M$ an $A$-module morphism,
 $\tau$ should be central, i.e. $\tau \cdot a = a \cdot \tau$ for all $a \in A$.
 
-A \emph{balanced algebra} is a braided algebra with a twist.
+A \emph{balanced algebra} is a braided bialgebra with a twist.
+
+\subsection{Exercises}
+
+\begin{exercise} Let $\mathcal{V}$ be a braided monoidal category, then:
+  \begin{enumerate}
+    \item $c_{A,I} = c_{I, A} = 1_A$ and the following diagram commutes for any $A, B, C \in \mathcal{V}$ (modulo associativity):
+    \[
+    \begin{tikzcd}
+      & A \otimes C \otimes B \ar[rr, "c_{A,C} \otimes 1_B"] && C \otimes A \otimes B \ar[dr, "1_C \otimes c_{A,B}"]\\
+      A \otimes B \otimes C \ar[dr, "c_{A, B} \otimes 1_C"'] \ar[ur, "1_A \otimes c_{B,C}"] &&&& C \otimes B \otimes A \\
+      & B \otimes A \otimes C \ar[rr, "1_B \otimes c_{A,C}"'] && B \otimes C \otimes A \ar[ur, "c_{B, C} \otimes 1_A"']
+    \end{tikzcd}
+    \]
+    \item For a braided bialgebra $A$ and $\mathcal{V} = {\bf Mod}_R(A)$, interpret the properties of $c$ from the previous item in terms of the braiding
+    element $\gamma \in A \otimes_R A$.
+    \item Draw a diagram of braids, expressing the hexagonal diagram of the first item in the braid category $\mathcal{B}$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{proof}
+  $ $
+
+  \begin{enumerate}
+    \item One has $c_{A,I} = c_{A,I} \circ c_{A,I}$ from the below triangle:
+    \[
+    \begin{tikzcd}
+      A \cong A \otimes I \otimes I \ar[r, "c_{A, I \otimes I}"] \ar[d, "c_{A,I} \otimes 1_I"'] & I \otimes I \otimes A \cong A \\
+      A \cong I \otimes A \otimes I \ar[ur, "1_I \otimes c_{A,I}"']
+    \end{tikzcd}
+    \]
+    $c_{A,I}$ is invertible, so $c_{A,I} = 1_A$, and the proof for $c_{I,A}$ is similar. The second condition is proved by dividing the goal diagram
+    to the commutative subdiagrams:
+      \[
+    \begin{tikzcd}
+      & A \otimes C \otimes B \ar[rr, "c_{A,C} \otimes 1_B"] && C \otimes A \otimes B \ar[dr, "1_C \otimes c_{A,B}"]\\
+      A \otimes B \otimes C \ar[dr, "c_{A, B} \otimes 1_C"'] \ar[urrr, "c_{A \otimes B, C}"'] \ar[ur, "1_A \otimes c_{B,C}"] &&&& C \otimes B \otimes A \\
+      & B \otimes A \otimes C \ar[rr, "1_B \otimes c_{A,C}"'] \ar[urrr, "c_{B \otimes A, C}"] && B \otimes C \otimes A \ar[ur, "c_{B, C} \otimes 1_A"']
+    \end{tikzcd}
+    \]
+    \item
+    \item 
+  \end{enumerate}
+\end{proof}
 
 \section{Internal homs and duals}
 

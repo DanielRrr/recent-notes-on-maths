@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Homebrew) (preloaded format=pdflatex 2026.3.4)  23 APR 2026 16:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Homebrew) (preloaded format=pdflatex 2026.3.4)  24 APR 2026 15:38
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1077,25 +1077,29 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 9
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/stmaryrd/Ustm
 ry.fd)
 Package xypdf Info: Line width: 0.39998pt on input line 93.
+ (./Text.toc)
+\tf@toc=\write8
+\openout8 = `Text.toc'.
+
  [1
 
 {/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/map/pdftex/updmap
-/pdftex.map}] [2] [3] [4{/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist
-/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (27.90869pt too wide) in paragraph at lines 320--340
+/pdftex.map}] [2] [3] [4]
+Overfull \hbox (27.90869pt too wide) in paragraph at lines 321--341
 []\OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 B$ \OT1/cmr/m/n/10 be the free $\OT1/cm
 r/bx/n/10 k$\OT1/cmr/m/n/10 -algebra con-tain-ing the in-de-ter-mi-nates $\OML/
 cmm/m/it/10 a; b; c; d; a[]; b[]; c[]; d[]; x; y$
  []
 
 
-Overfull \hbox (24.60359pt too wide) in paragraph at lines 320--340
+Overfull \hbox (24.60359pt too wide) in paragraph at lines 321--341
 [] [] []$ \OT1/cmr/m/n/10 are $\OML/cmm/m/it/10 B$\OT1/cmr/m/n/10 -points of $\
 U/msb/m/n/10 A[]$\OT1/cmr/m/n/10 . By The-o-rem []2.2[], $[] []$
  []
 
-[5] [6] [7]
-Overfull \hbox (17.15607pt too wide) in paragraph at lines 513--514
+[5{/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/enc/dvips/cm-su
+per/cm-super-ts1.enc}] [6] [7] [8]
+Overfull \hbox (17.15607pt too wide) in paragraph at lines 514--515
 []$\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m[]; [] ; m[] \OT1/cmr/m
 /n/10 + \OML/cmm/m/it/10 m[]; [] ; m[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 f\OT
 1/cmr/m/n/10 (\OML/cmm/m/it/10 m[]; [] ; m[]; [] ; m[]\OT1/cmr/m/n/10 ) + \OML/
@@ -1103,13 +1107,13 @@ cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m[]; [] ; m[]; [] ; m[]\OT1/cmr/
 m/n/10 )$, 
  []
 
-[8]
-Overfull \hbox (30.87842pt too wide) detected at line 562
+[9]
+Overfull \hbox (30.87842pt too wide) detected at line 563
 []
  []
 
-[9] [10] [11] [12] [13]
-Overfull \hbox (23.81638pt too wide) detected at line 849
+[10] [11] [12] [13] [14]
+Overfull \hbox (23.81638pt too wide) detected at line 850
 \OML/cmm/m/it/10 s\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/
 m/it/10 m\OT1/cmr/m/n/10 )) = [] \OML/cmm/m/it/10 e\OT1/cmr/m/n/10 (\OML/cmm/m/
 it/10 m \OMS/cmsy/m/n/10 
@@ -1123,18 +1127,18 @@ m/m/it/10 e\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m \OMS/cmsy/m/n/10
 OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m\OT1/cmr/m/n/10 )
  []
 
-[14] [15] [16]
-Overfull \hbox (22.24284pt too wide) detected at line 993
+[15] [16] [17]
+Overfull \hbox (22.24284pt too wide) detected at line 994
 []
  []
 
-[17] [18] [19] [20]
-Overfull \hbox (32.38329pt too wide) detected at line 1193
+[18] [19] [20] [21]
+Overfull \hbox (32.38329pt too wide) detected at line 1194
 []
  []
 
-[21] [22]
-Overfull \hbox (45.99394pt too wide) detected at line 1313
+[22] [23]
+Overfull \hbox (45.99394pt too wide) detected at line 1314
 \OML/cmm/m/it/10 ev[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g \OMS/cmsy/m/n/10 ^^N \
 OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m \OMS/cmsy/m/n/10 
  \OML/cmm/m/it/10 ^^V\OT1/cmr/m/n/10 )) = \OML/cmm/m/it/10 ev[]\OT1/cmr/m/n/10 
@@ -1147,166 +1151,175 @@ OT1/cmr/m/n/10 (\OML/cmm/m/it/10 m \OMS/cmsy/m/n/10
  \OML/cmm/m/it/10 ^^V\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :
  []
 
-[23] [24]
+[24] [25]
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 1
-433.
+434.
 
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/doublestroke/
 Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-) [25] [26] [27] [28]
-Overfull \hbox (8.61345pt too wide) detected at line 1656
-[]
- []
-
-[29]
-Overfull \hbox (10.01718pt too wide) detected at line 1737
-[]
- []
-
-
-Overfull \hbox (10.20953pt too wide) detected at line 1747
+) [26] [27] [28] [29]
+Overfull \hbox (8.61345pt too wide) detected at line 1657
 []
  []
 
 [30]
-Overfull \hbox (94.57535pt too wide) detected at line 1757
+Overfull \hbox (10.01718pt too wide) detected at line 1738
 []
  []
 
-[31] [32] [33] [34] [35]
-Overfull \hbox (29.5782pt too wide) detected at line 1996
+
+Overfull \hbox (10.20953pt too wide) detected at line 1748
 []
  []
 
-[36] [37] [38] [39]
-Overfull \hbox (10.38356pt too wide) in paragraph at lines 2202--2204
+[31]
+Overfull \hbox (94.57535pt too wide) detected at line 1758
+[]
+ []
+
+[32] [33] [34] [35] [36]
+Overfull \hbox (29.5782pt too wide) detected at line 1997
+[]
+ []
+
+[37] [38] [39] [40]
+Overfull \hbox (10.38356pt too wide) in paragraph at lines 2203--2205
 []\OT1/cmr/m/n/10 Check that the poly-no-mial $\OML/cmm/m/it/10 R$\OT1/cmr/m/n/
 10 -algebra $\OML/cmm/m/it/10 B \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 R\OMS/cmsy/m
 /n/10 h\OML/cmm/m/it/10 x; y; z\OMS/cmsy/m/n/10 i$ \OT1/cmr/m/n/10 on three non
 -commuting
  []
 
-[40] [41]
-Overfull \hbox (65.04071pt too wide) detected at line 2286
-[]
- []
-
-[42]
-Overfull \hbox (21.10674pt too wide) detected at line 2317
-[]
- []
-
-
-Overfull \hbox (4.02364pt too wide) detected at line 2329
+[41] [42]
+Overfull \hbox (65.04071pt too wide) detected at line 2287
 []
  []
 
 [43]
-Overfull \hbox (10.31847pt too wide) detected at line 2378
+Overfull \hbox (21.10674pt too wide) detected at line 2318
+[]
+ []
+
+
+Overfull \hbox (4.02364pt too wide) detected at line 2330
 []
  []
 
 [44]
-Overfull \hbox (119.65076pt too wide) detected at line 2429
+Overfull \hbox (10.31847pt too wide) detected at line 2379
 []
  []
 
-[45] [46]
-Overfull \hbox (121.46313pt too wide) detected at line 2532
+[45]
+Overfull \hbox (119.65076pt too wide) detected at line 2430
 []
  []
 
-[47] [48]
-Overfull \hbox (49.72076pt too wide) detected at line 2610
+[46] [47]
+Overfull \hbox (121.46313pt too wide) detected at line 2533
+[]
+ []
+
+[48] [49]
+Overfull \hbox (49.72076pt too wide) detected at line 2611
 []
  []
 
 
-Overfull \hbox (43.91562pt too wide) in paragraph at lines 2636--2640
+Overfull \hbox (43.91562pt too wide) in paragraph at lines 2637--2641
  [] 
- []
-
-[49]
-Overfull \hbox (36.85318pt too wide) detected at line 2661
-[]
- []
-
-
-Overfull \hbox (33.46005pt too wide) detected at line 2677
-[]
  []
 
 [50]
-Overfull \hbox (8.12976pt too wide) detected at line 2702
+Overfull \hbox (36.85318pt too wide) detected at line 2662
 []
  []
 
 
-Overfull \hbox (8.12976pt too wide) detected at line 2709
+Overfull \hbox (33.46005pt too wide) detected at line 2678
 []
  []
 
-<braid1.png, id=458, 662.475pt x 451.6875pt>
+[51]
+Overfull \hbox (8.12976pt too wide) detected at line 2703
+[]
+ []
+
+
+Overfull \hbox (8.12976pt too wide) detected at line 2710
+[]
+ []
+
+<braid1.png, id=486, 662.475pt x 451.6875pt>
 File: braid1.png Graphic file (type png)
 <use braid1.png>
-Package pdftex.def Info: braid1.png  used on input line 2725.
+Package pdftex.def Info: braid1.png  used on input line 2726.
 (pdftex.def)             Requested size: 132.49265pt x 90.33589pt.
-<braid2.png, id=460, 918.43124pt x 480.79625pt>
+<braid2.png, id=488, 918.43124pt x 480.79625pt>
 File: braid2.png Graphic file (type png)
 <use braid2.png>
-Package pdftex.def Info: braid2.png  used on input line 2735.
+Package pdftex.def Info: braid2.png  used on input line 2736.
 (pdftex.def)             Requested size: 183.68298pt x 96.15753pt.
-[51 <./braid1.png>]
-<braid3.png, id=467, 849.1725pt x 521.95pt>
+[52 <./braid1.png>]
+<braid3.png, id=495, 849.1725pt x 521.95pt>
 File: braid3.png Graphic file (type png)
 <use braid3.png>
-Package pdftex.def Info: braid3.png  used on input line 2739.
+Package pdftex.def Info: braid3.png  used on input line 2740.
 (pdftex.def)             Requested size: 169.83148pt x 104.38814pt.
-<braid4.png, id=468, 1230.5975pt x 266.9975pt>
+<braid4.png, id=496, 1230.5975pt x 266.9975pt>
 File: braid4.png Graphic file (type png)
 <use braid4.png>
-Package pdftex.def Info: braid4.png  used on input line 2743.
+Package pdftex.def Info: braid4.png  used on input line 2744.
 (pdftex.def)             Requested size: 369.1821pt x 80.09985pt.
 
-Overfull \hbox (24.1821pt too wide) in paragraph at lines 2743--2744
+Overfull \hbox (24.1821pt too wide) in paragraph at lines 2744--2745
  [] 
  []
 
-<braid5.png, id=469, 1025.8325pt x 476.78125pt>
+<braid5.png, id=497, 1025.8325pt x 476.78125pt>
 File: braid5.png Graphic file (type png)
 <use braid5.png>
-Package pdftex.def Info: braid5.png  used on input line 2748.
-(pdftex.def)             Requested size: 307.75212pt x 143.03548pt.
-[52 <./braid2.png> <./braid3.png> <./braid4.png>] [53 <./braid5.png>] [54]
-Overfull \hbox (50.87274pt too wide) detected at line 2866
+Package pdftex.def Info: braid5.png  used on input line 2749.
+(pdftex.def)             Requested size: 256.4575pt x 119.195pt.
+[53 <./braid2.png> <./braid3.png> <./braid4.png> <./braid5.png>] [54] [55]
+Overfull \hbox (50.87274pt too wide) detected at line 2867
 []
  []
 
-<braid6.png, id=488, 468.75125pt x 400.49625pt>
+<braid6.png, id=517, 468.75125pt x 400.49625pt>
 File: braid6.png Graphic file (type png)
 <use braid6.png>
-Package pdftex.def Info: braid6.png  used on input line 2884.
+Package pdftex.def Info: braid6.png  used on input line 2885.
 (pdftex.def)             Requested size: 117.18752pt x 100.12381pt.
-[55]
-<ribbons1.png, id=494, 816.04875pt x 517.935pt>
+[56]
+<ribbons1.png, id=523, 816.04875pt x 517.935pt>
 File: ribbons1.png Graphic file (type png)
 <use ribbons1.png>
-Package pdftex.def Info: ribbons1.png  used on input line 2892.
+Package pdftex.def Info: ribbons1.png  used on input line 2893.
 (pdftex.def)             Requested size: 163.20685pt x 103.58516pt.
-<ribbons2.png, id=495, 655.44875pt x 283.0575pt>
+<ribbons2.png, id=524, 655.44875pt x 283.0575pt>
 File: ribbons2.png Graphic file (type png)
 <use ribbons2.png>
-Package pdftex.def Info: ribbons2.png  used on input line 2902.
+Package pdftex.def Info: ribbons2.png  used on input line 2903.
 (pdftex.def)             Requested size: 229.41049pt x 99.0716pt.
- [56 <./braid6.png> <./ribbons1.png> <./ribbons2.png>]
-<ribbons3.png, id=505, 568.1225pt x 331.2375pt>
+<ribbons3.png, id=525, 568.1225pt x 331.2375pt>
 File: ribbons3.png Graphic file (type png)
 <use ribbons3.png>
-Package pdftex.def Info: ribbons3.png  used on input line 2910.
+Package pdftex.def Info: ribbons3.png  used on input line 2911.
 (pdftex.def)             Requested size: 170.43805pt x 99.37201pt.
- [57 <./ribbons3.png>] [58]
-Overfull \hbox (4.05542pt too wide) detected at line 3031
+ [57 <./braid6.png> <./ribbons1.png> <./ribbons2.png>]
+Overfull \hbox (2.01859pt too wide) detected at line 2959
+[]
+ []
+
+[58 <./ribbons3.png>]
+Overfull \hbox (2.01859pt too wide) detected at line 2985
+[]
+ []
+
+[59] [60]
+Overfull \hbox (4.05542pt too wide) detected at line 3075
 \OMS/cmsy/m/n/10 V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 C; \OT1/cmr/m/n/10 [\OML/cm
 m/m/it/10 A \OMS/cmsy/m/n/10 
  \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 B; J\OT1/cmr/m/n/10 ][]\OML/cmm/m/it/10 ; J\
@@ -1322,83 +1335,83 @@ ML/cmm/m/it/10 C \OMS/cmsy/m/n/10
  \OML/cmm/m/it/10 A; B\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :
  []
 
-[59] [60]
-<tangle1.png, id=529, 913.4125pt x 443.6575pt>
+[61] [62]
+<tangle1.png, id=570, 913.4125pt x 443.6575pt>
 File: tangle1.png Graphic file (type png)
 <use tangle1.png>
-Package pdftex.def Info: tangle1.png  used on input line 3149.
+Package pdftex.def Info: tangle1.png  used on input line 3193.
 (pdftex.def)             Requested size: 274.02586pt x 133.09827pt.
- [61 <./tangle1.png>]
-<tangle2.png, id=539, 730.73pt x 365.365pt>
+ [63 <./tangle1.png>]
+<tangle2.png, id=579, 730.73pt x 365.365pt>
 File: tangle2.png Graphic file (type png)
 <use tangle2.png>
-Package pdftex.def Info: tangle2.png  used on input line 3156.
+Package pdftex.def Info: tangle2.png  used on input line 3200.
 (pdftex.def)             Requested size: 292.28682pt x 146.1434pt.
-<tangle3.png, id=540, 763.85374pt x 342.27875pt>
+<tangle3.png, id=580, 763.85374pt x 342.27875pt>
 File: tangle3.png Graphic file (type png)
 <use tangle3.png>
-Package pdftex.def Info: tangle3.png  used on input line 3161.
+Package pdftex.def Info: tangle3.png  used on input line 3205.
 (pdftex.def)             Requested size: 305.53607pt x 136.90906pt.
 
-Overfull \hbox (33.18964pt too wide) detected at line 3175
+Overfull \hbox (33.18964pt too wide) detected at line 3219
 []
  []
 
-[62 <./tangle2.png> <./tangle3.png>] [63]
-<yb1.png, id=553, 551.05875pt x 313.17pt>
+[64 <./tangle2.png> <./tangle3.png>] [65]
+<yb1.png, id=592, 551.05875pt x 313.17pt>
 File: yb1.png Graphic file (type png)
 <use yb1.png>
-Package pdftex.def Info: yb1.png  used on input line 3240.
+Package pdftex.def Info: yb1.png  used on input line 3284.
 (pdftex.def)             Requested size: 165.3189pt x 93.95172pt.
-<yb2.png, id=554, 726.715pt x 348.30125pt>
+<yb2.png, id=593, 726.715pt x 348.30125pt>
 File: yb2.png Graphic file (type png)
 <use yb2.png>
-Package pdftex.def Info: yb2.png  used on input line 3244.
+Package pdftex.def Info: yb2.png  used on input line 3288.
 (pdftex.def)             Requested size: 218.01617pt x 104.49118pt.
- [64 <./yb1.png> <./yb2.png>]
-<yb3.png, id=563, 1211.52625pt x 338.26375pt>
+ [66 <./yb1.png> <./yb2.png>]
+<yb3.png, id=602, 1211.52625pt x 338.26375pt>
 File: yb3.png Graphic file (type png)
 <use yb3.png>
-Package pdftex.def Info: yb3.png  used on input line 3267.
+Package pdftex.def Info: yb3.png  used on input line 3311.
 (pdftex.def)             Requested size: 363.46068pt x 101.4799pt.
 
-Overfull \hbox (18.46068pt too wide) in paragraph at lines 3267--3268
+Overfull \hbox (18.46068pt too wide) in paragraph at lines 3311--3312
  [] 
  []
 
 
-Overfull \hbox (7.72292pt too wide) in paragraph at lines 3285--3286
+Overfull \hbox (7.72292pt too wide) in paragraph at lines 3329--3330
 \OT1/cmr/m/n/10 Besides, monoidal func-tors take bal-anced YB-operators to bal-
 anced YB-operators. 
  []
 
 
-Overfull \hbox (48.80481pt too wide) detected at line 3292
+Overfull \hbox (48.80481pt too wide) detected at line 3336
 []
  []
 
 
-Overfull \hbox (67.19373pt too wide) detected at line 3298
+Overfull \hbox (67.19373pt too wide) detected at line 3342
 []
  []
 
-[65 <./yb3.png>]
-Overfull \hbox (67.19373pt too wide) detected at line 3304
+[67 <./yb3.png>]
+Overfull \hbox (67.19373pt too wide) detected at line 3348
 []
  []
 
 
-Overfull \hbox (106.52698pt too wide) detected at line 3324
+Overfull \hbox (106.52698pt too wide) detected at line 3368
 []
  []
 
-[66]
-Overfull \hbox (70.25589pt too wide) detected at line 3363
+[68]
+Overfull \hbox (70.25589pt too wide) detected at line 3407
 []
  []
 
-[67] [68]
-runsystem(latexminted cleantemp  --timestamp 20260423160329 9DFFBF69FFBA8BC38BC
+[69] [70]
+runsystem(latexminted cleantemp  --timestamp 20260424153825 9DFFBF69FFBA8BC38BC
 4E01ABF4B1675)...executed.
 
  (./Text.aux)
@@ -1407,16 +1420,16 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `Text.out' has not changed.
-(rerunfilecheck)             Checksum: 07CACF9054CB28DFBE14CF9D735ADD69;2717.
+(rerunfilecheck)             Checksum: EFBC877F587503C50526D0163C157D1F;2822.
  ) 
 Here is how much of TeX's memory you used:
- 35838 strings out of 467525
- 747488 string characters out of 5408440
- 1259961 words of memory out of 5000000
- 63981 multiletter control sequences out of 15000+600000
+ 36019 strings out of 467525
+ 752002 string characters out of 5408440
+ 1262646 words of memory out of 5000000
+ 64148 multiletter control sequences out of 15000+600000
  643917 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,20n,104p,3235b,1181s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 83i,20n,104p,3235b,1187s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmbx10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmbx12.pfb></opt/homebrew/Cellar/texlive/20260301/
@@ -1453,10 +1466,10 @@ mbols/msbm10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msbm7.pfb></opt/homebrew/Cellar/texlive/20260301/
 share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></opt/homebrew/Cellar
 /texlive/20260301/share/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on Text.pdf (68 pages, 989988 bytes).
+Output written on Text.pdf (70 pages, 997397 bytes).
 PDF statistics:
- 768 PDF objects out of 1000 (max. 8388607)
- 603 compressed objects within 7 object streams
- 244 named destinations out of 1000 (max. 500000)
- 232 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 810 PDF objects out of 1000 (max. 8388607)
+ 643 compressed objects within 7 object streams
+ 255 named destinations out of 1000 (max. 500000)
+ 240 words of extra memory for PDF output out of 10000 (max. 10000000)
 

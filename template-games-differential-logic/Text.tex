@@ -279,7 +279,43 @@ associated to the $\operatorname{append}_A$, whereas the dereliction and the cod
   \item $\operatorname{der}_A : {\bf Sym}(A) \not\to A$,
   \item $\operatorname{coder}_A : A \not\to {\bf Sym}(A)$
 \end{itemize}
-are associated to $\eta_A$.
+are the left and right adjoint distributors associated to $\eta_A$.
+
+The composite of the codereliction with the comultiplication
+\[
+A \xrightarrow{\operatorname{coder}_A } {\bf Sym}(A) \xrightarrow{d_A} {\bf Sym}(A) \otimes {\bf Sym}(A)
+\]
+is equal to the disjoint union of the following two composites:
+\begin{center}
+  $A \xrightarrow{\operatorname{coder}_A } {\bf Sym}(A) \xrightarrow{u_A \otimes 1_{\bf Sym}(A)} {\bf Sym}(A) \otimes {\bf Sym}(A)$
+
+  $A \xrightarrow{\operatorname{coder}_A } {\bf Sym}(A) \xrightarrow{1_{\bf Sym}(A) \otimes u_A}{\bf Sym}(A) \otimes {\bf Sym}(A)$
+\end{center}
+where the disjoint product of distributors $M, N : A \not\to B$ is the distributor $M + N$ defined using the convolution product
+associated to the additive comonoid and monoid structures on $A$ and $B$:
+\[
+A \xrightarrow{\Delta_A} A \oplus A \xrightarrow{M + N} B \oplus B \xrightarrow{\nabla_B} B
+\]
+or defined as the presheaf:
+\[
+M + N : (b,a) \mapsto M(b,a) \sqcup N(b,a)
+\]
+
+The property of the dereliction ensures that the Leibniz rule is satisfied, in the technical sense that the composite distributor
+\[
+A \otimes {\bf Sym}(A) \xrightarrow{\partial_A} {\bf Sym}(A) \xrightarrow{d_A} {\bf Sym}(A) \otimes {\bf Sym}(A)
+\]
+is isomorphic to the sum of the two distributors obtained by precomposing the distributor:
+\[
+A \otimes {\bf Sym}(A) \xrightarrow{1_A \otimes d_A} A \otimes {\bf Sym}(A) \otimes {\bf Sym}(A)
+\]
+with the two distributors represented below:
+\[
+\begin{tikzcd}
+  A \otimes {\bf Sym}(A) \otimes {\bf Sym}(A) \ar[rr, "\partial_A \otimes 1_{{\bf Sym}(A)}"] \ar[dr, "\operatorname{symmetry}"'] && {\bf Sym}(A) \otimes {\bf Sym}(A) \\
+  & {\bf Sym}(A) \otimes A \otimes {\bf Sym}(A) \ar[ur, "1_{{\bf Sym}(A)} \otimes \partial_A"']
+\end{tikzcd}
+\]
 
 \bibliographystyle{alpha}
 \bibliography{Text}
