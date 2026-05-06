@@ -1,0 +1,222 @@
+\documentclass[8pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsopn}
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{bussproofs}
+\usepackage[all, 2cell]{xy}
+\usepackage[all]{xy}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{minted}
+\usepackage{dsfont}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{stmaryrd}
+\usepackage{multicol}
+\usepackage{cmll}
+\usepackage{wasysym}
+\usetikzlibrary{shapes.geometric, arrows, positioning, backgrounds}
+\usetikzlibrary{cd}
+\makeatletter
+\tikzcdset{
+  eq node/.style={
+    commutative diagrams/math mode=false, anchor=center},
+  eq/.style={
+    phantom,
+    /tikz/every to/.append style={
+      edge node={node[commutative diagrams/eq node]
+        {\@eqnswtrue\make@display@tag\ltx@label{#1}}}}}}
+\makeatother
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{claim}{Claim}[section]
+
+\theoremstyle{definition}
+\newtheorem{ex}{Example}[section] 
+
+\theoremstyle{definition}
+\newtheorem{cons}{Construction}[section] 
+
+\theoremstyle{definition}
+\newtheorem{rem}{Remark}[section] 
+
+
+\theoremstyle{definition}
+\newtheorem{prop}{Proposition}[section]
+
+\theoremstyle{definition}
+\newtheorem{lemma}{Lemma}[section]
+
+\theoremstyle{definition}
+\newtheorem{fact}{Fact}[section]
+
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}[section]
+
+\theoremstyle{definition}
+\newtheorem{notation}{Notation}[section]
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[section]
+
+\theoremstyle{definition}
+\newtheorem{col}{Corollary}[section]
+
+\theoremstyle{question}
+\newtheorem{question}{Question}
+
+\let\strokeL\L
+\renewcommand\L{\mathbf{L}}
+
+\DeclareMathOperator{\bang}{!}
+
+\DeclareMathOperator*{\colim}{\operatorname{colim}}
+\newcommand{\Ob}[1]{\operatorname{Ob}({\mathcal{#1}})}
+\newcommand{\Cov}[1]{\operatorname{Cov}(#1)}
+
+\newcommand{\circvee}{\mathbin{\text{\ooalign{\hfil$\vee$\hfil\cr\kern0.1ex$\bigcirc$}}}}
+\newcommand{\circwedge}{\mathbin{\text{\ooalign{\hfil$\wedge$\hfil\cr\kern0.1ex$\bigcirc$}}}}
+
+\title{Notes A Functorial Excursion Between Algebraic Geometry and Linear Logic}
+\author{Daniel Rogozin}
+\date{ }
+
+\newcommand{\IntHom}[1]{[#1]}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Basics}
+
+Let us start by recalling basic principles of algebraic geometry. The intuition is that a space $X$ comes along with a topological space
+$(X,\Sigma_X)$ such that every open set $U$ is equipped with a set $\mathcal{O}_X(U)$ of local operations called \emph{regular functions}. 
+Such regular functions are typically defined as polynomials with division and each  $\mathcal{O}_X(U)$ defines a commutative ring.
+In functorial terms, every space gives rise to a ringed space, that is, a topological space $(X, \Sigma_X)$ equipped with a contravariant functor
+$\mathcal{O}_X : \Sigma^{op}_X \to {\bf Ring}$ from the set of opens $\Sigma^{op}_X$ with the reversed inclusion order. The functorial action
+of $\mathcal{O}_X$ describes the restriction functions 
+\[
+\mathcal{O}_X(V \subseteq U) : \mathcal{O}_X(U) \to \mathcal{O}_X(V)
+\]
+which takes an operation $f \in \mathcal{O}_X(U)$ defined on an open set $U$ and restrict it to an operation
+\[
+f|_V := \mathcal{O}_X(V \subseteq U)(f)
+\]
+on an open subset $V \subseteq U$. The functorial understanding of the concept of a space is supported by the observation
+that every commutative ring $R$ defines a ringed space:
+\[
+\operatorname{Spec}R = (\operatorname{Spec}R, \mathcal{O}_{\operatorname{Spec}R})
+\]
+on the set of prime ideals $\mathfrak{p}$ of the commutative ring $R$. Such a ringed space is called the \emph{affine scheme} associated to $R$.
+Every space $X$ of the theory, called a \emph{scheme}, is a patchwork of affine schemes $\operatorname{Spec}R_i$ glued together using the language of sheaf theory. 
+
+Every scheme $X$ comes equipped with a symmetric monoidal category ${\bf qcMod}_X$ of quasicoherent sheaf of $\mathcal{O}_X$-modules.
+By a presheaf of $\mathcal{O}_X$-modules $M$ of a ringed space $(X, \mathcal{O}_X)$, we mean a contravariant functor
+\[
+M : \Omega^{op}_X \to {\bf Ab}
+\]
+where ${\bf Ab}$ is the category of Abelian groups such that each Abelian group $M(U)$ defines a $\mathcal{O}_X(U)$-module.
+The Serre-Swann theorem states a vector bundle on a suitable ringed space $(X, \mathcal{O}_X)$ can be equivalently encoded as its sheaf of sections
+that defines a locally free and projective sheaf of $\mathcal{O}_X$-modules. A sheaf of $\mathcal{O}_X$ is called quasicoherent
+when it is locally presentable, that is, it is locally the cokernel of a morphism of free modules. The category ${\bf qcMod}_X$ extends 
+the category of vector bundles to define an Abelian category where kernels and direct images can be computed.
+
+The idea is to associate a model of intuitionistic linear logic, where formulas are understood as generalised vector bundles and proofs are vector fields
+by building an appropriate linear-non-linear adjunction. To associate a model of linear logic with each scheme $X$, we take the category
+${\bf PshMod}_X$ of presheafs of $\mathcal{O}_X$-modules and their homomorphisms as the underlying symmetric monoidal closed category with tensor product $\otimes_X$,
+the structural sheaf $\mathcal{O}_X$ as unit, and $\multimap_X$ for internal homs. For the cartesian part 
+of a linear-non-linear adjunction, we take the category ${\bf PshCoAlg}_X$ of cocommutative comonoids (or commutative coalgebras) in ${\bf PshMod}_X$.
+It is convenient to the approach based on the functor of points (see \cite[I.4]{eisenbud2000geometry}). $\operatorname{Spec}$
+defines a contravariant functor $\operatorname{Spec} : {\bf Ring}^{op} \to {\bf Scheme}$ that induces the \emph{nerve functor}
+\[
+{\bf nerve} : {\bf Scheme} \to [{\bf Ring},{\bf Set}]
+\]
+associating to every commutative ring $R$ \emph{the set of $R$-points in a scheme $X$} defined as ${\bf Scheme}(\operatorname{Spec}R, X)$.
+The nerve functor is fully faithful and it allows one to see every scheme $X$ as a covariant presheaf
+\[
+{\bf nerve}(X) : {\bf Ring} \to {\bf Set}
+\]
+So we move to schemes to ${\bf Ring}$-spaces and associate a model of intuitionistic linear logic with each ${\bf Ring}$-space $X$, 
+where formulas are interpreted in ${\bf PshMod}_X$ as presheaves of $\mathcal{O}_X$-module understood as generalised vector bundles
+on the ${\bf Ring}$-space. The linear-non-linear adjunction (and therefore the exponential modality) is constructed by the Sweedler construction.
+
+\section{On the category of rings}
+
+Let $(\mathcal{A}, \otimes, \mathds{1})$ be a symmetric monoidal category with reflexive coequalisers preserved by tensor products in every coordinate.
+For example, the category ${\bf Ab}$ of Abelian groups and homomorphisms. A ring is a monoid object $(R, m, e)$ in $(\mathcal{A}, \otimes, \mathds{1})$.
+In other words, a ring is a triple such that $(R, m, e)$ consisting of an object $R$ and morphisms $m : R \otimes R \to R$ and $e : \mathds{1} \to R$
+such that the following diagrams commute:
+\[
+\begin{tikzcd}
+  R \otimes R \otimes R \ar[d, "R \otimes m"'] \ar[rr, "m \otimes R"] && R \otimes R \ar[d, "m"]  & R \otimes R \ar[d, "m"'] \ar[rr, "m"] && R \ar[d, "e \otimes R"] \\
+  R \otimes R \ar[rr, "m"'] && R                                                                  & R \ar[urr, equal] \ar[rr, "R \otimes e"'] && R \otimes R
+\end{tikzcd}
+\]
+
+A ring $(R, m, e)$ is commutative is the following triangle commutes:
+\[
+\begin{tikzcd}
+R \otimes R \ar[dr, "m"'] \ar[rr, "\gamma_{R,R}"] && R \otimes R \ar[dl, "m"] \\
+& R
+\end{tikzcd}
+\]
+
+A \emph{ring morphism} $u : (R, m_R, e_R) \to (S, m_S, e_S)$ is a morphism $u : R \to S$ in the underlying category $\mathcal{A}$ making the following diagrams commute:
+\[
+\begin{tikzcd}
+  R \otimes R \ar[d, "m_S"'] \ar[rr, "u \otimes u"] && S \otimes S \ar[d, "m_S"] && \mathds{1} \ar[dr, "e_S"] \ar[dl, "e_R"'] \\
+  R \ar[rr, "u"'] && S                                                 &   R \ar[rr, "u"'] && S
+\end{tikzcd}
+\]
+The category ${\bf Ring}(\mathcal{A})$ of rings in $\mathcal{A}$ defined by the tensor product $R,S \mapsto R \otimes S$ in $\mathcal{A}$.
+
+\section{On the category of $R$-modules and modules}
+
+Given a ring $R$ in a symmetric monoidal category $\mathcal{A}$, an \emph{$R$-module} is a pair $(M, \operatorname{act})$ where $M$ is an object
+in $\mathcal{A}$ along with a morphism $\operatorname{act} : R \otimes M \to M$ in $\mathcal{A}$ such that:
+\[
+\begin{tikzcd}
+  R \otimes R \otimes M \ar[d, "R \otimes \operatorname{act}"'] \ar[rr, "m_R \otimes M"] && R \otimes M \ar[d, "\operatorname{act}"] && R \otimes M \ar[dr, "\operatorname{act}"] \\
+  R \otimes M \ar[rr, "\operatorname{act}"'] && M & M \ar[ur, "e_R \otimes M"] \ar[rr, equal] && M
+\end{tikzcd}
+\]
+Equivalently, an R-module is an Eilenberg-Moore algebra for the monad $A \mapsto R \otimes A$. An $R$-module homomorphism $f : M \to N$
+between two modules is a map $f$ in $\mathcal{A}$ such that the following diagram commutes:
+\[
+\begin{tikzcd}
+  R \otimes M \ar[rr, "R \otimes f"] \ar[d, "\operatorname{act}_M"'] && R \otimes N \ar[d, "\operatorname{act}_N"]\\
+  M \ar[rr, "f"'] && N
+\end{tikzcd}
+\]
+
+${\bf Mod}_R$ is the category of $R$-modules and their morphisms.
+
+A \emph{module} is a pair $(R, M)$ where $R$ is a ring and $M$ is a module. A \emph{module homomorphism} $(u, f) : (R, M) \to (S, N)$
+is a ring morphism $u : R \to S$ and a morphism $f : M \to N$ such that
+\[
+\begin{tikzcd}
+  R \otimes M \ar[rr, "u \otimes f"] \ar[d, "\operatorname{act}_M"'] && S \otimes N \ar[d, "\operatorname{act}_N"] \\
+  M \ar[rr, "f"'] && N
+\end{tikzcd}
+\]
+${\bf Mod}$ is the category of modules and their morphisms.
+\bibliographystyle{alpha} 
+\bibliography{Text}
+
+\end{document}
