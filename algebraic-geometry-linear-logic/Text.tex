@@ -216,7 +216,68 @@ is a ring morphism $u : R \to S$ and a morphism $f : M \to N$ such that
 \end{tikzcd}
 \]
 ${\bf Mod}$ is the category of modules and their morphisms.
+
+There is a functor $\pi : {\bf Mod} \to {\bf Ring}$ transporting every module $(R, M)$ to the underlying ring $R$ and every morphism
+$(u, f)$ to $u$. We will write
+\[
+u : R \to S \models f : M \to N
+\]
+for a module morphism $(u, f) : (R, M) \to (S, N)$. The intuition behind the notation is that every ring homomorphism
+$u : R \to S$ induces a ``fibre'' consisting of all module morphisms $(u, f) : (R, M) \to (S, N)$ living above and refining the ring morphism
+$u : R \to S$. The fibre of $\pi R$ for a commutative ring is the category ${\bf Mod}_R$. The functor $\pi : {\bf Mod} \to {\bf Ring}$ defines 
+a Grothendieck fibration: every pair consisting of a ring morphism $u : R \to S$ and of an $S$-module $(N, \operatorname{act}_N)$ induces
+an $R$-module noted 
+\[{\bf res}_u N = (N, \operatorname{act}'_N)
+\]
+with the action morphism $\operatorname{act}'_N$ defined as the composite:
+\[
+R \otimes N \xrightarrow{u \otimes N} S \otimes N \xrightarrow{\operatorname{act}_N} N
+\]
+Moreover, the $S$-module with a module morphism:
+\[
+u : R \to S \models id_{N} : {\bf res}_u N \to N
+\]
+which is weakly Cartesian in the sense that every module morphism
+\[
+u : R \to S \models f : M \to N
+\]
+factors uniquely as 
+\[
+M \xrightarrow{(id_{R}, h)} {\bf res}_u N \xrightarrow{(u, id_N)} N
+\]
+for a morphism $h : M \to {\bf res}_u N$ in the category ${\bf Mod}_R$. The unique solution $h$ is equal to the original morphism $f : M \to N$
+viewed as a morphism in ${\bf Mod}_R$. Given a ring morphism $u : R \to S$, the existence of a weakly Cartesian map for every $S$-module $N$
+ensures the existence of a functor
+\[
+{\bf res}_u : {\bf Mod}_S \to {\bf Mod}_R
+\]
+called restriction of scalar along $u$. Along with the fact that the composite of weakly Cartesian maps is weakly Cartesian we have that
+the forgetful functor $\pi : {\bf Mod} \to {\bf Ring}$ is a Grothendieck fibration.
+
+Now we use that fact the category $\mathcal{A}$ has reflexive coequalisers, so one can show that ${\bf res}_u$ has a left adjoint
+\[
+{\bf ext}_u : {\bf Mod}_R \to {\bf Mod}_S
+\]
+constructed as follows. Every ring homomorphism $u : R \to S$ induces an $R \otimes S$-module notes as $R \otimes_u S$ defined as the reflexive 
+coequaliser of the following diagram
+\[
+\begin{tikzcd}
+  R \otimes R \otimes S \arrow[rrr, shift left=4, "m_R \otimes S"] \arrow[rrr, shift right=4, "(R \otimes m_S) \circ (R \otimes u \otimes S)"'] &&& R \otimes S \ar[lll, "R \otimes e_R \otimes S" description]
+\end{tikzcd}
+\]
+computed in $\mathcal{A}$. Given three commutative rings $R$, $S_1$ and $S_2$, we define the functor 
+\[
+\circledast_R : {\bf Mod}_{S_1 \otimes R} \times {\bf Mod}_{R \otimes S_2} \to {\bf Mod}_{S_1 \otimes S_2}
+\]
+The two maps $\operatorname{act}_M : M \otimes R \to M$ and $\operatorname{act}_N : N \otimes R \to N$ are deduced by restriction of scalar
+from the $S_1 \otimes R$-module structure of $M$ and the $R \otimes S_2$-module structure of $N$. The left adjunction functor ${\bf ext}_u$
+is then defined the following way:
+\[
+{\bf ext}_u : M \mapsto M \circledast_R (R \otimes_u S)
+\]
+
+\section{The category ${\bf Mod}^{\ominus}$ of modules and retromorphisms}
+
 \bibliographystyle{alpha} 
 \bibliography{Text}
-
 \end{document}
