@@ -278,6 +278,48 @@ is then defined the following way:
 
 \section{The category ${\bf Mod}^{\ominus}$ of modules and retromorphisms}
 
+Let $[M, N]$ denote the internal hom of $M$ and $N$ in $\mathcal{A}$. A \emph{module retromorphism}
+\[
+(u, f) : (S, N) \to (R, M)
+\]
+is a pair $(u, f)$ where $u : R \to S$ is a ring morphism and $f : N \to M$ is a morphism in $\mathcal{A}$ such that the following diagram commutes:
+\[
+\begin{tikzcd}
+  R \otimes M \ar[d, "\operatorname{act}_M"'] & R \otimes N \ar[l, "R \otimes f"'] \ar[r, "u \otimes N"] & S \otimes N \ar[d, "\operatorname{act}_N"]\\ 
+  M && N \ar[ll, "f"]
+\end{tikzcd}
+\]
+The category ${\bf Mod}^{\ominus}$ has ring modules as objects and module retromorphisms. There is a forgetful functor $\pi : {\bf Mod}^{\ominus} \to {\bf Ring}$
+transporting every retromorphism to the underlying ring morphism and $\pi$ is also a Grothendieck fibration. 
+$\pi$ is also a bifibration. Let $u : R \to S$ be a ring morphism, then functor defined by coextension of scalar along $u$
+\[
+{\bf coext}_u : {\bf Mod}_R \to {\bf Mod}_S
+\]
+transport every $R$-module $(M, \operatorname{act}_M)$ to the $S$-module $[S,M]_u$ defined as the coreflexive equaliser of the below diagram:
+\[
+\begin{tikzcd}
+  {[S,M]} \ar[rrrr, shift left=4, "{[u \otimes S, M]} \circ {[m_S, M]}"] \ar[rrrr, shift right=4, "{[R  \otimes S, \operatorname{act}_M]} \circ {[R \otimes \underline{\:\:}, R \otimes \underline{\:\:}]}"'] &&&& {[R \otimes S, M]} \ar[llll, "{[e_R \otimes M, M]}" description]
+\end{tikzcd}
+\]
+Note that $[S,M]_u$ provides an internal description of the set of morphisms $f : S \to M$ making the following diagram commute:
+\[
+\begin{tikzcd}
+  R \otimes S \ar[rr, "R \otimes f"] \ar[d, "u \otimes S"'] && R \otimes M \ar[dd, "\operatorname{act}_M"]\\
+  S \otimes S \ar[d, "m_S"'] \\
+  S \ar[rr, "f"'] && M
+\end{tikzcd}
+\]
+or, equivalently, as the set of morphisms $f : {\bf res}_u S \to M$. Thus, every ring morphism $u : R \to S$ induces the following sequence of 
+adjunctions:
+\[
+\begin{tikzcd}
+  {\bf Mod}_R \ar[rrr, shift left=4, "{\bf coext}_u", ""{name=coext}] \ar[rrr, shift right=4, "{\bf ext}_u"', ""{name=ext}] &&& {\bf Mod}_S \ar[lll, "{\bf res}_u" description, ""{name=res}]
+  \arrow[phantom, from=coext, to=res, "\vdash" rotate=-90]
+  \arrow[phantom, from=ext, to=res, "\vdash" rotate=-90]
+\end{tikzcd}
+\]
+
+\section{The category ${\bf Mod}_R$ is symmetric monoidal closed}
 \bibliographystyle{alpha} 
 \bibliography{Text}
 \end{document}
