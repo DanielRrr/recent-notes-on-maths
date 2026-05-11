@@ -320,6 +320,66 @@ adjunctions:
 \]
 
 \section{The category ${\bf Mod}_R$ is symmetric monoidal closed}
+
+It is well known that the category ${\bf Mod}_R$ of modules over a ring $R$ is symmetric monoidal closed. Its tensor product
+\[
+\otimes_R : {\bf Mod}_R \times {\bf Mod}_R \to {\bf Mod}_R
+\]
+transports every pair of $R$-modules $(M,N)$ into the coreflexive equaliser of the following diagram calculated in $\mathcal{A}$:
+\[
+\begin{tikzcd}
+  M \otimes R \otimes N \ar[rrr, shift left=4, "\operatorname{act}_M \otimes N"] \ar[rrr, shift right=4, "M \otimes \operatorname{act}_N"'] &&& M \otimes N \ar[lll, "M \otimes e_R \otimes N" description]
+\end{tikzcd}
+\]
+In ${\bf Mod}_R$, the tensorial unit is the $R$ itself seen as an $R$-module. The internal hom
+\[
+  [.,.]_R : {\bf Mod}^{op}_R \times {\bf Mod}_R \to {\bf Mod}_R
+\]
+takes every pair of $R$-modules $M$ and $N$ to the coreflexive equaliser of the following diagram:
+\[
+\begin{tikzcd}
+  {[M,N]} \ar[rrrr, shift left=4, "{[\operatorname{act}_M, N]}"] \ar[rrrr, shift right=4, "{[R \otimes M,\operatorname{act}_N]} \circ {[R \otimes \underline{\:\:},R \otimes \underline{\:\:}]}"'] &&&& {[R \otimes M, N]} \ar[llll, "{[e_R \otimes M, N]}" description]
+\end{tikzcd}
+\]
+
+\section{The category ${\bf Mod}$ as a symmetric monoidal ringed category}
+
+Let us consider the category ${\bf Mod} \times_{\bf Ring} {\bf Mod}$ defined by the pullback diagram as follows:
+\[
+\begin{tikzcd}
+  {\bf Mod} \times_{\bf Ring} {\bf Mod} \ar[d] \ar[rr] && {\bf Mod} \ar[d, "\pi"] \\
+  {\bf Mod} \ar[rr, "\pi"'] && {\bf Ring}
+\end{tikzcd}
+\]
+The fibrewise tensor product 
+\[
+\otimes_{\bf Mod} : {\bf Mod} \times_{\bf Ring} {\bf Mod} \to {\bf Mod}
+\]
+transports every pair of modules $(R, M)$ and $(R, N)$ on the same monoid $R$ to the $R$-module $(R, M \otimes_R N)$, so every pair
+of module homomorphisms:
+\begin{center}
+  $u : R \to S \models h_1 : M_1 \to N_1$
+
+  $u : R \to S \models h_2 : M_2 \to N_2$
+\end{center}
+above the same ring morphism $u : R \to S$ to the module homomorphism:
+\[
+u : R \to S \models h_1 \otimes_u h_2 : M_1 \otimes_R M_2 \to N_1 \otimes_R N_2
+\]
+where $h_1 \otimes_u h_2$ is a unique morphism making the following diagram commute:
+\[
+\begin{tikzcd}
+  M_1 \otimes R \otimes M_2 \ar[d, shift left=2, "\operatorname{act}_{M_1} \otimes M_2"] \ar[d, shift right=2, "M_1 \otimes \operatorname{act}_{M_2}"'] \ar[rrr, "h_1 \otimes u \otimes h_2"] &&& N_1 \otimes S \otimes N_2 \ar[d, shift left=2, "\operatorname{act}_{N_1} \otimes N_2"] \ar[d, shift right=2, "N_1 \operatorname{act}_{N_2} "']  \\
+  M_1 \otimes M_2 \ar[d, "quotient"'] \ar[rrr, "h_1 \otimes h_2"] &&& N_1 \otimes N_2 \ar[d, "quotient"] \\
+  M_1 \otimes_R M_2 \ar[rrr, "h_1 \otimes_u h_2"'] &&& N_1 \otimes_S N_2
+\end{tikzcd}
+\]
+The fibrewise unit $\mathds{1}_{\bf Mod} : {\bf Ring} \to {\bf Mod}$ takes every commutative ring and converts it to itself viewed as a module.
+Categorically, one can understood that with the concept of a \emph{ringed category}, which defined as a pair $(\mathcal{C}, \pi)$
+where $\mathcal{C}$ is a category and $\pi : \mathcal{C} \to {\bf Ring}$ is a functor. The slice 2-category $\mathcal{C}/{\bf Ring}$
+consists of ringed categories, fibrewise functions as 1-cells and natural transformations as 2-cells. The 2-category $\mathcal{C}/{\bf Ring}$
+is Cartesian; the fibrewise product and the unit define a symmetric pseudomonoid structure on the ringed category $({\bf Mod}, \pi)$
+in $\mathcal{C}/{\bf Ring}$.
 \bibliographystyle{alpha} 
 \bibliography{Text}
 \end{document}
