@@ -380,6 +380,41 @@ where $\mathcal{C}$ is a category and $\pi : \mathcal{C} \to {\bf Ring}$ is a fu
 consists of ringed categories, fibrewise functions as 1-cells and natural transformations as 2-cells. The 2-category $\mathcal{C}/{\bf Ring}$
 is Cartesian; the fibrewise product and the unit define a symmetric pseudomonoid structure on the ringed category $({\bf Mod}, \pi)$
 in $\mathcal{C}/{\bf Ring}$.
+
+\section{The categories ${\bf Alg}$ abd ${\bf CoAlg}$ of (co)commutative (co)algebras}
+
+Let $R$ be a commutative ring in $\mathcal{A}$, a \emph{commutative $R$-algebra} is a commutative monoid in the symmetric monoidal category
+${\bf Mod}_R$. A \emph{commutative algebra} is a pair $(R, A)$ where $R$ is a commutative ring and $A$ is a commutative $R$-algebra.
+An algebra morphism $(u, f) : (R, A) \to (S, B)$ is a pair $(u, f)$ where $u$ is a ring morphism and $f : A \to B$ is a module morphism such that the 
+following diagrams commute:
+\[
+\begin{tikzcd}
+  A \otimes_R A \ar[d, "m_A"'] \ar[rr, "f \otimes_u f"] && B \otimes_S B \ar[d, "m_B"] & 1_R \ar[r, "u"] \ar[d, "e_A"'] & 1_S \ar[d, "e_B"] \\
+  A \ar[rr, "f"'] && B                                                                 & A \ar[r, "f"'] & B
+\end{tikzcd}
+\]
+Assume that for every commutative ring $R$ the symmetric monoidal category ${\bf Mod}_R$ has free commutative monoids, which means that the forgetful 
+functor
+\[
+{\bf Forget}_R : {\bf Alg}_R \to {\bf Mod}_R
+\]
+has a left adjoint
+\[
+{\bf Sym}_R : {\bf Mod}_R \to {\bf Alg}_R
+\]
+and the adjunction ${\bf Mod} \dashv {\bf Alg}$ is also fibrewise above ${\bf Ring}$.
+
+Given a commutative ring $R$, a \emph{cocommutative $R$-coalgebra $K$} is defined as a cocommutative comonoid in the symmetric monoidal category
+${\bf Mod}_R$. Let us also assume that for any commutative ring $R$, ${\bf Mod}_R$ has cofree cocommutative comonoids, then the forgetful functor
+\[
+{\bf Forget}_R : {\bf CoAlg}_R \to {\bf Mod}_R
+\]
+have a right adjoint  
+has a left adjoint
+\[
+{\bf Sym}_R : {\bf Mod}_R \to {\bf CoAlg}_R
+\]
+ 
 \bibliographystyle{alpha} 
 \bibliography{Text}
 \end{document}
