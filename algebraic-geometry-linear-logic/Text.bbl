@@ -1,8 +1,19 @@
-\begin{thebibliography}{EH00}
+\begin{thebibliography}{Mur15}
 
 \bibitem[EH00]{eisenbud2000geometry}
 David Eisenbud and Joe Harris.
 \newblock {\em The geometry of schemes}.
 \newblock Springer, 2000.
+
+\bibitem[Mur15]{murfet2015sweedler}
+Daniel Murfet.
+\newblock On sweedler's cofree cocommutative coalgebra.
+\newblock {\em Journal of Pure and Applied Algebra}, 219(12):5289--5304, 2015.
+
+\bibitem[Por15]{porst2015formal}
+Hans-E Porst.
+\newblock The formal theory of hopf algebras part i: Hopf monoids in a monoidal
+  category.
+\newblock {\em Quaestiones Mathematicae}, 38(5):631--682, 2015.
 
 \end{thebibliography}

@@ -409,12 +409,74 @@ ${\bf Mod}_R$. Let us also assume that for any commutative ring $R$, ${\bf Mod}_
 \[
 {\bf Forget}_R : {\bf CoAlg}_R \to {\bf Mod}_R
 \]
-have a right adjoint  
-has a left adjoint
+has a right adjoint  
 \[
-{\bf Sym}_R : {\bf Mod}_R \to {\bf CoAlg}_R
+{\bf Sym}_R : {\bf Mod}_R \to {\bf CoAlg}_R.
 \]
  
+One can describe the construction of the above adjunction explicitly in many cases, for example when $R = k$ is an algebraic closed field, see \cite{murfet2015sweedler}.
+One can also describe it for a general commutative ring $R$. First of all, the free commutative algebra ${\bf Sym}_R$ is calculated the following way
+with enough limits in the category ${\bf Mod}_R$:
+\[
+{\bf Sym}_R : M \mapsto \bigoplus \limits_{n < \omega} M \otimes^{sym}_R \ldots \otimes^{sym}_R M
+\]
+where $M \otimes^{sym}_R \ldots \otimes^{sym}_R M$ is the symmetrised tensor product of $M$ with itself $n$ times. If $R = k$ is a field,
+then the Sweedler construction transports every $k$-vector space $V$ into the commutative $k$-algebra defined the below way:
+\[
+{\bf CoFree}_k(V) = ({\bf Sym}_k(V^*))^{\circ}
+\]
+where $V^*$ is the dual of $V$ and $A \mapsto A^{\circ}$ is the Sweedler finite dual constuction mapping every $R$-algebra $A$ into the $R$-coalgebra $A^{\circ}$.
+In the case of a general commutative ring, one needs to use the construction from \cite{porst2015formal}.
+
+\section{Functor of Points, ${\bf Ring}$-spaces and Presheaves of Modules}
+
+We work with covariant presheaves $X$, $Y$ on the category ${\bf Ring}$ of commutative rings that we call \emph{${\bf Ring}$-spaces}.
+To every such space $X : {\bf Ring} \to {\bf Set}$ we associate its Grothendieck category ${\bf Points}(X)$ whose objects 
+are pairs $(R, x)$ with $x \in X(R)$ and whose morphisms $(R, x) \to (S, y)$ are ring morphisms $u : R \to S$ transporting 
+the element $x \in X(R)$ to the element $y \in X(S)$ in the sense that $X(u)(x) = y$. 
+
+The category ${\bf Points}(X)$ comes with a functor $\pi_X : {\bf Points}(X) \to {\bf Ring}$. $\pi_X$ is called the functor of points of $X$ and 
+it defines a discrete Grothendieck opfibration above the category ${\bf Ring}$. A morphism $f : X \to Y$ between ${\bf Ring}$-spaces may be equivalently 
+defined as a functor:
+\[
+f : {\bf Points}(X) \to {\bf Points}(Y)
+\]
+making the following diagram commute:
+\[
+\begin{tikzcd}
+  {\bf Points}(X) \ar[dr, "\pi_X"'] \ar[rr, "f"] && {\bf Points}(Y) \ar[dl, "\pi_Y"] \\
+  & {\bf Ring}
+\end{tikzcd}
+\]
+The functor $f$ is necessarily a discrete opfibration. The following ${\bf Ring}$-space
+\[
+\operatorname{Spec}\mathbb{Z} : R \mapsto \{ *_R \}
+\]
+is the terminal object in the presheaf category $[{\bf Ring}, {\bf Set}]$, and that its Grothendieck category is isomorphism to ${\bf Ring}$.
+
+The following definition is adapted from \cite{rosenberg2011noncommutative}.
+
+\begin{definition}
+  A \emph{presheaf of modules $M$ on the ${\bf Ring}$-space} or an \emph{$\mathcal{O}_X$-module $M$} consists of the following data:
+  \begin{itemize}
+    \item For each point $(R, x) \in {\bf Points}(X)$, a module $M_x$ over the commutative ring $R$,
+    \item Each map $u : (R, x) \to (S, y)$ in ${\bf Points}(X)$, a module morphism
+    \[
+    u : R \to S \models \theta(u,x) : M_x \to N_y
+    \]
+    lining over the ring morphism $u : R \to S$.
+  \end{itemize}
+\end{definition}
+The map $\theta$ is required to satisfy the following functorial properties: the identity on the point $(R, x)$ in ${\bf Points}(X)$
+is transported to the identity morphism on the associated $R$-module
+\[
+1_R \models \theta(1_{(R,x)}) = 1_{M_x}
+\]
+and given two maps $(u, x) : (R, x) \to (S, y)$ and $(v, y) : (S, y) \to (T, z)$ in ${\bf Points}(X)$, one has:
+\[
+v \circ u \models \theta((v, y) \circ (u, x)) = \theta(v, y) \circ \theta(u, x)
+\]
+where the composite is calculated in the discrete opfibration ${\bf Points}(X) \to {\bf Ring}$
 \bibliographystyle{alpha} 
 \bibliography{Text}
 \end{document}
