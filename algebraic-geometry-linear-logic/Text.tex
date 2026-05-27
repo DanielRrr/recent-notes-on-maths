@@ -476,7 +476,98 @@ and given two maps $(u, x) : (R, x) \to (S, y)$ and $(v, y) : (S, y) \to (T, z)$
 \[
 v \circ u \models \theta((v, y) \circ (u, x)) = \theta(v, y) \circ \theta(u, x)
 \]
-where the composite is calculated in the discrete opfibration ${\bf Points}(X) \to {\bf Ring}$
+where the composite is calculated in the discrete opfibration ${\bf Points}(X) \to {\bf Ring}$.
+
+There is the following characterisation:
+\begin{prop}
+  An $\mathcal{O}_X$-module $M$ is the same thing as a functor $M : {\bf Points}(X) \to {\bf Mod}$ making the following diagram commute:
+  \[
+  \begin{tikzcd}
+    {\bf Points}(X) \ar[dr, "\pi_X"'] \ar[rr, "M"] && {\bf Mod} \ar[dl, "\pi" ]\\
+    & {\bf Ring}
+  \end{tikzcd}
+  \]
+\end{prop}
+
+Note that every ${\bf Ring}$-every space $X$ comes with a presheaf of modules called \emph{the structure presheaf} of $X$, and defined 
+as the composite
+\[
+\mathcal{O}_X : {\bf Points}(X) \xrightarrow{\pi_X} {\bf Ring} \xrightarrow{i_{\bf Ring}} {\bf Mod}
+\]
+where the functor $i_{\bf Ring} : {\bf Ring} \to {\bf Mod}$ is the section of the forgetful functor $\pi : {\bf Mod} \to {\bf Ring}$ transporting
+every ring to itself viewed as a module.
+
+\section{The category ${\bf PshMod}$ of Presheaves of modules and forward morphisms}
+
+We construct the category ${\bf PshMod}$ of presheaves of modules and forward morphisms as follows. A \emph{presheaf of modules} $(X,M)$
+is defined as a pair consisting of a ${\bf Ring}$-space $X : {\bf Ring} \to {\bf Set}$ along with a presheaf $\mathcal{O}_X$-module $M$ as above.
+A \emph{forward morphism} between presheafs of modules $(f, \varphi) : (X, M) \to (Y, N)$ is defined as a morphism $f : X \to Y$ along with a natural transformation:
+\[
+\begin{tikzcd}
+  {\bf Points}(X) \ar[rr, "{\bf Points}(f)"] \ar[dr, "M"', ""{name=M}] && {\bf Points}(Y) \ar[dl, "N", ""{name=N}]  \\ 
+  & {\bf Mod}
+  \ar[from=M,to=N, Rightarrow, "\varphi", shorten=1.5mm]
+\end{tikzcd}
+\]
+$\varphi$ is also required to vertical above ${\bf Ring}$, i.e. the natural transformation obtained by composing 
+\[
+\begin{tikzcd}
+  \pi \circ M \ar[r, "\pi \circ \varphi", Rightarrow] & \pi \circ N \circ {\bf Points}(f)
+\end{tikzcd}
+\]
+is equal to the identity natural transformation. Equivalently, one can say that the following natural transformation
+\[
+\begin{tikzcd}
+  \pi_X \ar[r, "1", Rightarrow] & \pi \circ M \ar[r, "\pi \circ \varphi", Rightarrow] & \pi \circ N \circ {\bf Points}(f) \ar[r, Rightarrow, "1"] & \pi_Y \circ {\bf Points}(f)
+\end{tikzcd}
+\]
+is obtained by composing the three natural transformations depicted below:
+  \begin{center}
+  \includegraphics[scale=0.38]{annoying-diagram.png}
+  \end{center}
+coincides with the identity natural transformation from $\pi_X$ to $\pi_Y \circ f$.
+There is an obvious functor
+\[
+{\bf p} : {\bf PshMod} \to [{\bf Ring}, {\bf Set}]
+\]
+that transports every presheaf of modules $(X, M)$ to its underlying ${\bf Ring}$-space $X$
+and every forward morphism $(f, \varphi) : (X, M) \to (Y, N)$ to $f : X \to Y$ between ${\bf Ring}$-spaces.
+We will further write
+\[
+f : X \to Y \models \varphi : M \to N
+\]
+for a forward morphirm $(f, \varphi) : (X, M) \to (Y, N)$ between presheaf modules.
+
+The functor ${\bf p}$ is a Grothendieck fibration every ${\bf Ring}$-space morphism $f : X \to Y$ induces 
+a functor
+\[
+f^* : {\bf PshMod}_Y \to {\bf PshMod}_X
+\]
+transporting every $\mathcal{O}_Y$-module $N$ into the $\mathcal{O}_X$-module $N \circ {\bf Points}(f)$
+obtained by precomposing with the discrete fibration ${\bf Points}(f)$ as depicted below:
+\[
+\begin{tikzcd}
+  {\bf Points}(X) \ar[rrrr, "{\bf Points}(f)"] \ar[ddrr, "\pi_X"'] &&&& {\bf Points}(Y) \ar[ddll, "\pi_Y"] \ar[dll, "N"'] \\
+  && {\bf Mod} \ar[d, "\pi"] \\
+  && {\bf Ring}
+\end{tikzcd}
+\]
+${\bf p}$ is also a Grothendieck bifibration, but it is less straightforward. Let us also assume that ${\bf Ring}$
+as well as ${\bf Mod}_R$ has small colimits. Such a property is the case for, say, $\mathcal{A} = {\bf Ab}$.
+
+\begin{prop}
+  For every morphism $f : X \to Y$ of ${\bf Ring}$-spaces, there is a functor
+  \[
+  f_! : {\bf PshMod}_X \to {\bf PshMod}_Y
+  \]
+\end{prop}
+
+\begin{proof}
+
+\end{proof}
+
+\section{The category ${\bf PshMod}^{\ominus}$ of presheaf modules and backward morphisms}
+
 \bibliographystyle{alpha} 
 \bibliography{Text}
 \end{document}
