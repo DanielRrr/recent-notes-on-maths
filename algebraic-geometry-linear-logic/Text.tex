@@ -381,7 +381,7 @@ consists of ringed categories, fibrewise functions as 1-cells and natural transf
 is Cartesian; the fibrewise product and the unit define a symmetric pseudomonoid structure on the ringed category $({\bf Mod}, \pi)$
 in $\mathcal{C}/{\bf Ring}$.
 
-\section{The categories ${\bf Alg}$ abd ${\bf CoAlg}$ of (co)commutative (co)algebras}
+\section{The categories ${\bf Alg}$ and ${\bf CoAlg}$ of (co)commutative (co)algebras}
 
 Let $R$ be a commutative ring in $\mathcal{A}$, a \emph{commutative $R$-algebra} is a commutative monoid in the symmetric monoidal category
 ${\bf Mod}_R$. A \emph{commutative algebra} is a pair $(R, A)$ where $R$ is a commutative ring and $A$ is a commutative $R$-algebra.
@@ -560,10 +560,78 @@ as well as ${\bf Mod}_R$ has small colimits. Such a property is the case for, sa
   \[
   f_! : {\bf PshMod}_X \to {\bf PshMod}_Y
   \]
+  which is left adjoint to $f^*$.
 \end{prop}
 
-\begin{proof}
+A proof of the statement based on a 2-categorical construction of the $\mathcal{O}_Y$-module $f_!(M)$. Note that
+the $\mathcal{O}_Y$-module $f_!(M)$ can be explicitly described by the following formula:
+\[
+f_!(M) : y \in Y(R) \mapsto \bigoplus \limits_{x \in X(R), f x = y} M_x \in {\bf Mod}_R
+\]
+The adjunction $f_! \dashv f^*$ gives rise to a sequence of natural bijections formulated as the following derivations:
+\begin{prooftree}
+  \AxiomC{$1_X : X \to X \models M \to f^*(N)$}
+  \UnaryInfC{$f : X \to Y \models M \to N$}
+  \UnaryInfC{$1_Y : Y \to Y \models f_!(M) \to N$}
+\end{prooftree}
 
+\begin{proof}
+One uses the fact that the functor $\pi : {\bf Mod} \to {\bf Ring}$ is a bifibration, in particular,
+a Grothendieck opfibration. This implies that ${\bf Mod}$ has small colimits, which are preserved by $\pi$.
+Suppose we are given the following diagram:
+\[
+\begin{tikzcd}
+  {\bf Points}(X) \ar[rrrr, "{\bf Points}(f)"] \ar[drr, "M"] \ar[ddrr, "\pi_X"'] &&&& {\bf Points}(Y) \ar[ddll, "\pi_Y"] \\
+  && {\bf Mod} \ar[d, "\pi"] \\
+  && {\bf Ring}
+\end{tikzcd}
+\]
+We start by calculating the left Kan extension of the functor $M$ along the discrete fibration
+\[
+{\bf Points}(f) : {\bf Points}(X) \to {\bf Points}(Y)
+\]
+One further obtains a functor $M' : {\bf Points}(Y) \to {\bf Mod}$ and a natural transformation $\lambda$
+exhibiting $M'$ as the left Kan extension of $M$ along points ${\bf Points}(f)$ depicted below:
+\[
+\begin{tikzcd}
+  {\bf Points}(X) \ar[rrrr, "{\bf Points}(f)"] \ar[ddrr, "M", ""{name=M}] \ar[dddrr, "\pi_X"'] &&&& {\bf Points}(Y) \ar[dddll, "\pi_Y"] \ar[ddll, "M'"', ""{name=M'}] \\
+  \\
+  && {\bf Mod} \ar[d, "\pi"] \\
+  && {\bf Ring}
+  \ar[from=M,to=M', Rightarrow, "\lambda", shorten=3.5mm]
+\end{tikzcd}
+\]
+
+The left Kan extension is a pointwise Kan extension calculated by small limits. As mentioned above,
+$\pi$ preserves small colimits, and thus pointwise left Kan extensions. This established that the natural
+transformation $\pi \circ \lambda$ exhibits the functor $\pi \circ N'$ as the left Kan extension of
+the composite $\pi \circ M$ along ${\bf Points}(f)$. The universality property of left Kan extensions ensures
+that there exists a unique natural transformation $\mu : \pi \circ N' \Rightarrow \pi_Y$:
+\[
+\begin{tikzcd}
+  {\bf Points}(X) \ar[rrrr, "{\bf Points}(f)"] \ar[ddrr, "M", ""{name=M}] \ar[ddddrr, "\pi_X"'] &&&& {\bf Points}(Y) \ar[ddddll, "\pi_Y", ""{name=piY}] \ar[ddll, "M'"', ""{name=M'}] \\
+  \\
+  && {\bf Mod} \ar[dd, "\pi"] \\
+  \\
+  && {\bf Ring}
+  \ar[from=M,to=M', Rightarrow, "\lambda", shorten=3.5mm]
+  \ar[from=M',to=piY, Rightarrow, "\mu"]
+\end{tikzcd}
+\]
+such that the following composite:
+\[
+\begin{tikzcd}
+  \pi \circ M \ar[r, Rightarrow, "\pi \circ \lambda"] & \pi \circ M' \circ {\bf Points}(f) \ar[rrr, Rightarrow, "\mu \circ {\bf Points}(f)"] &&& \pi_Y \circ {\bf Points}(f)
+\end{tikzcd}
+\]
+is equal to the identity natural transformation on the functor $\pi_X = \pi_Y \circ {\bf Points}(f)$. The functor $\pi$
+is a Grothendieck bifibration, so is the associated postcomposition functor:
+\[
+{\bf Cat}({\bf Points}(Y), {\bf Mod}) \to {\bf Cat}({\bf Points}(Y),{\bf Ring})
+\]
+is also a Grothendieck bifibration. 
+
+(TODO: complete this proof)
 \end{proof}
 
 \section{The category ${\bf PshMod}^{\ominus}$ of presheaf modules and backward morphisms}
