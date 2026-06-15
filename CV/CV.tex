@@ -1,0 +1,239 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\pagestyle{plain}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\textbf{Curriculum Vitae}}\\[0.3cm]
+{\Large Daniel Rogozin}
+\end{center}
+
+\section{Education}
+
+\begin{itemize}[leftmargin=*]
+    \item PhD programme at the Institute for Information Transmission Problems (2020--2022) under supervision by Ilya Shapirovsky (unfinished because of the sudden immigration in March 2022 caused by the political reasons).
+    \item Master's degree at the Lomonosov Moscow State University, The Faculty of Philosophy (2016--2018).
+    \item Bachelor's degree at the State Academic University for the Humanities, The Faculty of Philosophy (2012--2016).
+\end{itemize}
+
+\section{Theses}
+
+\begin{itemize}[leftmargin=*]
+    \item 2018, \textit{Modal type theory based on intuitionistic epistemic logic}, Master's thesis, Lomonosov Moscow State University.
+    \item 2016, \textit{Type theory in the foundations of mathematics}, Bachelor's thesis, State Academic University for the Humanities.
+\end{itemize}
+
+\section{Employment}
+
+\begin{itemize}[leftmargin=*]
+    \item (March 26 ---) Corca Research, Mathematician.
+    \item (Sep' 23---Feb' 26) Noeon Research, Research Scientist. 
+    
+    My research at Noeon was about mathematical and philosophical conceptualisation of engineering ideas and transforming practice-related requirements
+    into a coherent mathematical theory. I contributed to a number of internal projects related to type theory and category theory with applications to interpretable
+    artificial intelligence and knowledge representation:
+\begin{itemize}
+    \item I suggested a proof-theoretic conceptualisation of the category theory-based reasoning framework that resulted in a mathematical preprint ``Term Assignment and Categorical Models for Intuitionistic Linear Logic with Subexponentials''
+    \item Developing a Haskell type checker for the DreamCoder-based program synthesis utility.
+    \item Permanently reviewing amounts of the current literature in programming language theory,
+    \item Educate colleagues in mathematical logic, philosophy of language, denotational semantics, universal algebra, type theory, programming language theory, etc.
+\end{itemize}
+    \item (Jan' 23---June 23) University College London, Department of Computer Science, teaching assistant.
+    \item (May' 22---April' 23) Yatima Inc/Lurk Lab, Lean 4 engineer. The projects include:
+    \begin{itemize}
+    \item The Lean 4 formalisation of finite fields, elliptic curve cryptography and the zero-knowledge proof generation framework Nova in Lean.
+    \end{itemize} 
+    \item (Feb' 18---Jun' 22) Serokell OÜ, Tallinn, Estonia, Senior Haskell software engineer. The projects include:
+    \begin{itemize}[leftmargin=*]
+    \item (2018) Cardano, a cryptocurrency backend in Haskell.
+    \item (2018) Ariadne, an R\&D project, a cryptocurrency wallet.
+    \item (2018) Snowdrop, an R\&D project, a framework for blockchain systems with a proof-of-stake consensus.
+    \item (2019) Machine Learning in Haskell, an R\&D project on type-safe matrix operations via singletons. The work on that project also included the preparation of blogposts and the conference talk.
+    \item (2019) Formality, an R\&D project, a dependently typed language with affine types.
+    \item (2020--2022) Glasgow Haskell Compiler contribution: the implementation of the Char Kind and partial implementation of @-binders in function declarations.
+    \end{itemize}
+    \item (Jan' 21---Mar' 22) Institute for Information Transmission Problems of Russian Academy of Sciences, Laboratory of Algebra and Number Theory, Trainee researcher.
+\end{itemize}
+
+\section{Research Areas}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Modal logic}: semantic analysis of constructive modal logics and decidability aspects of classical modal logics.
+    \item \textbf{Categorical logic}: category-theoretic models of intuitionistic modal and linear logics and Kripke-Joyal semantics.
+    \item \textbf{Algebraic logic}: representation theory for Boolean algebras with operators.
+    \item \textbf{Programming language theory}: functional languages, formal verification with dependent types.
+    \item \textbf{Knowledge Representation}: mathematical and philosophical foundations of knowledge representation as a theoretical discipline.
+\end{itemize}
+
+\section{Publications}
+
+\begin{itemize}[leftmargin=*]
+    \item Daniel Rogozin. ``Semantic Analysis of Subexponential Modalities in Distributive Non-commutative Linear Logic'', \emph{Proceedings Modalities in substructural logics: Applications at the interfaces of logic, language and computation (AMSLO 2023)}, \emph{Electronic Proceedings in Theoretical Computer Science}, 381, pp. 60–70.
+    \item Daniel Rogozin and Ilya Shapirovsky. ``On decidable extensions of Propositional Dynamic Logic'', \emph{Journal of Applied Logics – IfCoLog Journal}, 10(4): 629–642, 2023.
+    \item Amin, Nada, John Burnham, François Garillot, Rosario Gennaro, Daniel Rogozin, Chhi'med Kunzang and Cameron Wong. ``Lurk: Lambda, the ultimate recursive knowledge.'' \emph{Proceedings of the ACM on Programming Languages}, 7(ICFP), 259-274.
+    \item Daniel Rogozin. ``Some results on relation algebra reducts: Residuated and semilattice-ordered semigroups.'' \textit{Journal of Logic and Computation} 32, (2022): 266--280.
+    \item Daniel Rogozin. ``Reducts of relation algebras: The aspects of axiomatisability and finite representability.'' In \textit{International Symposium on Logical Foundations of Computer Science}, pp. 266--280. Springer, Cham, 2022.
+    \item Daniel Rogozin. ``Categorical and algebraic aspects of the intuitionistic modal logic IEL$^-$ and its predicate extensions.'' \textit{Journal of Logic and Computation} 31, no. 1 (2021): 347--374.
+    \item Daniel Rogozin. ``Modal Type Theory Based on the Intuitionistic Modal Logic IEL$^-$.'' In \textit{International Symposium on Logical Foundations of Computer Science}, pp. 236--248. Springer, Cham, 2020.
+\end{itemize}
+
+\section{Preprints}
+
+\begin{itemize}[leftmargin=*]
+    \item Rogozin, Daniel. ``Term Assignment and Categorical Models for Intuitionistic Linear Logic with Subexponentials.'' arXiv preprint arXiv:2507.12360 (2025).
+    \item Daniel Rogozin. ``The distributive full Lambek calculus with modal operators.'' arXiv preprint arXiv:2003.09975 (2020).
+    \item Daniel Rogozin. ``Quantale semantics of Lambek calculus with subexponential modalities.'' arXiv preprint arXiv:1908.01055 (2019).
+\end{itemize}
+
+\section{Conference Talks}
+
+\begin{itemize}[leftmargin=*]
+    \item Winter 2026, workshop ``Formalisation and deformalisation of mathematical reasoning'', Paris, France, \emph{Operational Knowledge Representation with Monoidal Categories and Linear Type Theory}.
+    \item September 2025, conference ``British Logic Colloquium 2025'', Manchester, UK, \textit{Term Assignment and Categorical Models for Intuitionistic Linear Logic with Subexponentials}.
+    \item July 2023, 34th European Summer School in Logic, Language and Information, workshop ``Modalities in substructural logics: applications at the interfaces of logic, language and computation'', Ljubljana, Slovenia, \textit{Semantic Analysis of Subexponential Modalities in Distributive Non-commutative Linear Logic}.
+    \item August 2022, conference ``Advances in Modal Logic 2022'', Rennes, France, \textit{On decidable extensions of Propositional Dynamic Logic} (joint work with Ilya Shapirovsky).
+    \item January 2022, conference ``Logical Foundations of Computer Science 2022'', Deerfield Beach, Florida, USA, \textit{Reducts of Relation Algebras: The Aspects of Axiomatisability and Finite Representability}.
+    \item June 2021, conference ``BLAST: Boolean Algebras, Lattices, Algebraic and Quantum logic, Universal Algebra, Set Theory Set-theoretic and Point-free Topology'', New Mexico State University, New Mexico, USA, \textit{Reducts of representable relation algebras: finite representability and axiomatisability}.
+    \item June 2021, workshop ``Logical Perspectives 2021'', Steklov Institute of Mathematics of Russian Academy of Sciences, Moscow, Russia, \textit{The distributive full Lambek calculus with modal operators}.
+    \item August 2020, conference ``Advances in Modal Logic'', Helsinki, Finland, \textit{Canonical Extensions for the Distributive Full Lambek Calculus with Modal Operators}.
+    \item January 2020, conference ``Logical Foundations of Computer Science 2022'', Deerfield Beach, Florida, USA, \textit{Modal Type Theory Based on the Intuitionistic Modal Logic ${\bf IEL}^{-}$}.
+    \item December 2019, workshop ``Logic matters'', Higher School of Economics, The Faculty of Computer Science, \textit{Semantics of the Lambek calculus and its modal extensions: approaches and open issues}.
+    \item June 2019, conference ``Topology, Algebra, and Categories in Logic'', Nice, France, \textit{Quantale semantics for Lambek calculus with subexponentials}.
+\end{itemize}
+
+\section{Seminar Talks}
+
+\begin{itemize}[leftmargin=*]
+    \item Winter 2023, PPLV group seminar, UCL, London, \textit{Intuitionistic epistemic logic categorically and algebraically}.
+    \item Winter 2023, PPLV group seminar, UCL, London, \textit{Decidable extensions of propositional dynamic logic}.
+    \item Spring 2022, New Mexico State University, New Mexico, \textit{Categories and lambda calculus for programming language theory}.
+    \item Winter 2022, The Seminar on Modal and Algebraic Logic, Steklov Mathematical Institute of Russian Academy of Sciences, \textit{Relation algebras: overview and open questions}.
+    \item Autumn 2021, seminar ``Computational Logic'', City University of New York, The Graduate Centre, \textit{Decidability results for relation algebras and their reducts}.
+    \item Autumn 2021, seminar ``Constructive Knowledge'', Institute of Philosophy of Russian Academy of Sciences, Moscow, \textit{A version of Kripke-Joyal semantics for intuitionistic modal predicate logics}.
+    \item Autumn 2021, seminar ``From the Logical Point of View'', Higher School of Economics, The Faculty of Philosophy, \textit{A survey of relation algebras}.
+    \item Spring 2021, The Seminar on Modal and Algebraic Logic, Lomonosov Moscow State University, The Faculty of Mechanics and Mathematics, \textit{Representation of cylindric algebras with back-and-forth games}.
+    \item Autumn 2020, seminar ``Computational Logic'', City University of New York, The Graduate Centre, \textit{Categorical and Algebraic Aspects of the Intuitionistic Modal Logic IEL$^-$ and its predicate extensions}.
+    \item Spring 2020, The Logical Seminar of the Laboratory of Mathematical logic, St. Petersburg Department of Mathematical Institute of Russian Academy of Sciences, St. Petersburg, \textit{Canonical extensions for modal logics}.
+    \item Spring 2020, The Seminar on Modal and Algebraic Logic, Lomonosov Moscow State University, The Faculty of Mechanics and Mathematics, \textit{Topological duality and canonical extensions for logics of distributive residuated lattices with modal operators}.
+    \item Winter 2020, seminar ``Contemporary problems of mathematical logic'', Higher School of Economics, The Faculty of Mathematics, \textit{Introduction to Canonical extensions}.
+    \item Autumn 2019, seminar ``Constructive Knowledge'', Institute of Philosophy of Russian Academy of Sciences, Moscow, \textit{Concept analysis via substructural logics}.
+    \item Autumn 2019, The Seminar on Modal and Algebraic Logic, Lomonosov Moscow State University, The Faculty of Mechanics and Mathematics, \textit{Topological duality for classical modal logics}.
+    \item Autumn 2019, seminar ``Contemporary problems of mathematical logic'' seminar, Higher School of Economics, The Faculty of Mathematics, \textit{Duality for Heyting algebras}.
+    \item Autumn 2019, The Proof Theory seminar, Steklov Institute of Mathematics of Russian Academy of Sciences, Moscow, \textit{Discussion on the paper ``Locales, nuclei, and Dragalin frames'' by G. Bezhanishvili and W. Holliday}.
+    \item Spring 2019, seminar ``Constructive Knowledge'', Institute of Philosophy of Russian Academy of Sciences, Moscow, \textit{Formal concept lattices}.
+    \item Spring 2019, seminar ``Constructive Knowledge'', Institute of Philosophy of Russian Academy of Sciences, Moscow, \textit{The univalence axiom in Coq}.
+    \item Spring 2019, The Proof Theory seminar, Steklov Institute of Mathematics of Russian Academy of Sciences, Moscow, \textit{Semantics of the Lambek calculus with subexponentials}.
+    \item Autumn 2018, seminar ``Constructive Knowledge'', Institute of Philosophy of Russian Academy of Sciences, Moscow, \textit{Formal verification for blockchain}.
+    \item Spring 2018, The Constructive Knowledge seminar, Institute of Philosophy of Russian Academy of Sciences, Moscow, \textit{Categorical semantics of the type theory based on the Intuitionistic Epistemic Logic}.
+    \item Spring 2018, The seminar on non-classical logics and computability, Lomonosov Moscow State University, Moscow, \textit{Type theory for the intuitionistic modal logic IEL$^-$}.
+    \item Autumn 2017, The Constructive Knowledge seminar, Institute of Philosophy of Russian Academy of Sciences, Moscow, \textit{Modal Type Theory based on the Intuitionistic Epistemic Logic}.
+    \item Spring 2017, The Constructive Knowledge seminar, Institute of Philosophy of Russian Academy of Sciences, Moscow, \textit{Curry-Howard correspondence and Kolmogorov complexity}.
+    \item Autumn 2016, The Constructive Knowledge seminar, Institute of Philosophy of Russian Academy of Sciences, Moscow, \textit{Type theory, intuitionistic logic, and Kolmogorov complexity}.
+    \item Spring 2016, The Constructive Knowledge seminar, Institute of Philosophy of Russian Academy of Sciences, Moscow, \textit{Type theory and proof formalisation}.
+\end{itemize}
+
+\section{Research Projects}
+
+I participated in the following projects as a collaborator.
+\begin{itemize}[leftmargin=*]
+    \item The research grant MK-1184.2021.1.1 (2021--2022), \textit{Algorithmic and semantic questions of modal extensions of linear logics}.
+    \item The research grant MK-430.2019.1 (2019--2021), \textit{Subexponential modalities in noncommutative linear logic}.
+    \item The research RFBR grant 19-011-00799 (2019--2021), \textit{Knowledge Justification in Formal Epistemology}.
+    \item The research RFBR grant 16-03-00364 (2016--2018), \textit{Logical and Epistemological Aspects of Constructive Knowledge}.
+\end{itemize}
+
+\section{Grants}
+
+\begin{itemize}[leftmargin=*]
+    \item London Mathematical Society Solidarity Supplementary Grant, (2022--2023).
+    \item Isaac Newton Institute Solidarity Scheme, (2022--2023).
+\end{itemize}
+
+\section{Teaching}
+
+\begin{itemize}[leftmargin=*]
+    \item Winter and Spring 2023, University College London, The Department of Computer Science, London, UK, \textit{Introduction to Logic and Algorithms}, teaching assistant.
+    \item Autumn 2021, Higher School of Economics, The Faculty of Computer Science, Moscow, \textit{Functional programming} (with Stepan Kuznetsov), lecturer and teaching assistant.
+    \item Autumn 2021, ITMO University, The Department of CS, St. Petersburg, \textit{Functional Programming}, lecturer and teaching assistant.
+    \item Autumn 2021, Computer Science Club, St. Petersburg, \textit{Semantic aspects of intuitionistic logic}, lecturer.
+    \item Summer 2021, Lalalambda summer school, Moscow, \textit{Introduction to modal and temporal logics}, lecturer.
+    \item Spring 2021, Higher School of Economics, The Faculty of Computer Science, Moscow, \textit{Functional programming} (with Stepan Kuznetsov), lecturer and teaching assistant.
+    \item Spring 2020, Higher School of Economics, The Faculty of Computer Science, Moscow, \textit{Functional programming} (with Stepan Kuznetsov), lecturer and teaching assistant.
+    \item Spring 2020, ITMO University, The Department of CS, St. Petersburg, \textit{Functional Programming}, lecturer and teaching assistant.
+    \item Autumn 2019, Lomonosov Moscow State University, \textit{Introduction to Logic}, teaching assistant.
+    \item Autumn 2019, Computer Science Club, St. Petersburg, \textit{Introduction to modal logic}, lecturer.
+    \item Summer 2019, Computer Summer School, Narva, lecture \textit{Introduction to computability and logic}.
+    \item Spring 2019, Mathematical Class at Moscow Pedagogical State University, lecture \textit{Proofs and computations}.
+    \item Spring 2019, Higher School of Economics, The Faculty of Computer Science, Moscow, \textit{Functional programming} (with Stepan Kuznetsov), lecturer and teaching assistant.
+    \item Spring 2019, ITMO University, The Department of CS, St. Petersburg, \textit{Functional Programming}, lecturer and teaching assistant.
+    \item Autumn 2018, Lomonosov Moscow State University, \textit{Introduction to Logic}, teaching assistant.
+\end{itemize}
+
+\section{Paper Reviewing}
+
+I was a reviewer for the conferences ``Advances in Modal Logic 2020'', ``The Eighth International Conference On Logic, Rationality, and Interaction'', ``International Colloquium on Automata, Languages and Programming 2023'', ``31st EACSL Annual Conference on Computer Science Logic'',
+``Relational and Algebraic Methods in Computer Science''.
+
+\section{Blogposts and YouTube Videos}
+
+\begin{itemize}[leftmargin=*]
+    \item ``A Walk Through L: Operationalising Knowing How with Category Theory and Linear Logic'', \url{https://subexponentials.substack.com/p/a-walk-through-l}
+    \item ``Algebraic data types in 10 minutes. Haskell Tutorial'', \url{https://youtu.be/UqwLn2OyQ_E}
+    \item ``Operators in 10 minutes. Haskell Tutorial'', \url{https://youtu.be/O1K8EMiPEVE}
+    \item ``Philosophy and metamathematics'', \url{https://youtu.be/GjBgWk83GVw}
+    \item ``How Dependent Haskell Can Improve Industry Projects'' (written with Vladislav Zavialov), \url{https://serokell.io/blog/how-dependent-haskell-can-improve-industry-projects}
+    \item ``Formal verification: History and Methods'', \url{https://serokell.io/blog/formal-verification-history}
+    \item ``Incomplete and Utter Introduction to Modal Logic, Pt. 1'', \url{https://serokell.io/blog/incomplete-and-utter-introduction-to-modal-logic}
+    \item ``Incomplete and Utter Introduction to Modal Logic, Pt. 2'', \url{https://serokell.io/blog/rapid-introduction-to-modal-logic-2}
+    \item ``Dimensions and Haskell: Introduction'', \url{https://serokell.io/blog/dimensions-and-haskell-introduction}
+    \item ``Dimensions and Haskell: Singletons in Action'', \url{https://serokell.io/blog/dimensions-haskell-singletons}
+    \item ``Constructive and Non-Constructive Proofs in Agda (Part 1): Logical Background'', \url{https://serokell.io/blog/logical-background}
+    \item ``Constructive and Non-Constructive Proofs in Agda (Part 2): Agda in a Nutshell'', \url{https://serokell.io/blog/agda-in-nutshell}
+    \item ``Constructive and Non-Constructive Proofs in Agda (Part 3): Playing with Negation'', \url{https://serokell.io/blog/playing-with-negation}
+\end{itemize}
+
+\section{Awards}
+
+\begin{itemize}[leftmargin=*]
+    \item 2022, Best student paper award, for the paper \textit{Reducts of relation algebras: The aspects of axiomatisability and finite representability} at Logical Foundations of CS 2022, Miami.
+    \item 2021, Category ``Best Course for New Knowledge and Skills'' for the Functional programming course at Higher School of Economics, Moscow.
+    \item 2020, Category ``Best Course for New Knowledge and Skills'' for the Functional programming course at Higher School of Economics, Moscow.
+\end{itemize}
+
+\section{Languages}
+
+\begin{itemize}
+    \item Russian (native speaker),
+    \item English (fluent, close to native),
+    \item French (actively learning, currently ~A2),
+    \item Yiddish (learning for cultural curiousity),
+\end{itemize}
+
+\section{Contact Info and Links}
+
+\begin{itemize}[leftmargin=*]
+    \item Phone number: +447438533004
+    \item Email: \href{mailto:relationalgebra@gmail.com}{relationalgebra@gmail.com}
+    \item Location: London, United Kingdom
+    \item Github: \url{https://github.com/DanielRrr}
+    \item LinkedIn: \url{https://www.linkedin.com/in/daniel-rogozin-a94659265/}
+    \item Google Scholar: \url{https://scholar.google.com/citations?user=t3Vf1oAAAAAJ&hl=en}
+\end{itemize}
+
+\end{document}
