@@ -103,7 +103,55 @@
 
 \tableofcontents
 
-\section{Basics}
+\section{Preliminary Definitions}
+
+
+\begin{definition}
+  Let $\mathcal{C}$ be a category, then $\mathcal{C}$ is a Grothendieck category if the following is satisfied:
+
+  \begin{itemize}
+    \item $\mathcal{C}$ is Abelian, that is,
+    \begin{itemize}
+      \item $\mathcal{C}$ has a zero object,
+      \item $\mathcal{C}$ has all binary biproducts,
+      \item $\mathcal{C}$ has all kernels and cokernels,
+      \item all monomorphisms and epimorphisms are normal.
+    \end{itemize}
+    \item $\mathcal{C}$ admits a generator, that is, there is $G \in \mathcal{C}$ such that
+    for every parallel pair of morphisms $f, g : X \to Y$, $f \circ e = g \circ e$ implies $f = g$
+    for any $e : G \to X$.
+    \item Let $I$ be a directed set and let $0 \to A_i \to B_i \to C_i \to 0$ be an exact sequence for each $i \in I$, then
+    $0 \to \operatorname{colim} A_i \to \operatorname{colim} B_i \to \operatorname{colim} C_i \to 0$ is an exact sequence.
+  \end{itemize}
+\end{definition}
+
+\begin{definition}
+  $ $
+
+  \begin{itemize}
+    \item Let $P : \mathcal{E} \to \mathcal{B}$ be a functor, then a morphism $f : A \to B$ in $\mathcal{E}$
+    is \emph{Cartesian} if for any morphism $g : C \to B$ in $\mathcal{E}$ and $w : P(C) \to P(A)$ such that
+    \[
+    \begin{tikzcd}
+      P(C) \ar[rr, "P(g)"] \ar[dr, "w"'] && P(B) \\
+      & P(A) \ar[ur, "P(f)"']
+    \end{tikzcd}
+    \]
+    there exists a unique $\hat{w} : C \to A$ in $\mathcal{E}$ such that $g = f \circ \hat{w}$ and $P(\hat{w}) = w$:
+    \[
+    \begin{tikzcd}
+      \mathcal{E} \ar[d, "P"'] & C \ar[dr, "\exists! w"'] \ar[rr, "\forall g"] && B & P(C) \ar[rr, "P(g)"] \ar[dr, "\forall w"'] && P(B) \\
+      \mathcal{B}              && A \ar[ur, "f"']                                   &&& P(A) \ar[ur, "P(f)"']                    
+    \end{tikzcd}
+    \]
+    \item A functor $P : \mathcal{E} \to \mathcal{B}$ is a \emph{Grothendieck fibration} if for all $A \in \mathcal{E}$
+    and morphisms $f_0 : B \to P(A)$ in $\mathcal{B}$ there is a Cartesian morphism $f : B \to A$ such that $P(f) = f_0$.
+    $P : \mathcal{E} \to \mathcal{B}$ is an opfibration, if $P^{op} : \mathcal{E}^{op} \to \mathcal{B}^{op}$
+    is a fibration, and $P : \mathcal{E} \to \mathcal{B}$ is a bifibration if it is both a fibration and bifibration.
+  \end{itemize}
+\end{definition}
+
+\section{Motivational Thoughts}
 
 Let us start by recalling basic principles of algebraic geometry. The intuition is that a space $X$ comes along with a topological space
 $(X,\Sigma_X)$ such that every open set $U$ is equipped with a set $\mathcal{O}_X(U)$ of local operations called \emph{regular functions}. 
@@ -344,7 +392,7 @@ takes every pair of $R$-modules $M$ and $N$ to the coreflexive equaliser of the 
 
 \section{The category ${\bf Mod}$ as a symmetric monoidal ringed category}
 
-Let us consider the category ${\bf Mod} \times_{\bf Ring} {\bf Mod}$ defined by the pullback diagram as follows:
+Let us consider the category ${\bf Mod} \times_{\bf Ring} {\bf Mod}$ defined by the pullback diagram (in {\bf Cat}?) as follows:
 \[
 \begin{tikzcd}
   {\bf Mod} \times_{\bf Ring} {\bf Mod} \ar[d] \ar[rr] && {\bf Mod} \ar[d, "\pi"] \\
@@ -414,7 +462,8 @@ has a right adjoint
 {\bf Sym}_R : {\bf Mod}_R \to {\bf CoAlg}_R.
 \]
  
-One can describe the construction of the above adjunction explicitly in many cases, for example when $R = k$ is an algebraic closed field, see \cite{murfet2015sweedler}.
+The above adjunction can be defined at a purely formal level without describing explicitly the cofree 
+construction ${\bf CoFree}_R$ in each fibre ${\bf Mod}_R$. One can describe the construction of the above adjunction explicitly in many cases, for example when $R = k$ is an algebraic closed field, see \cite{murfet2015sweedler}.
 One can also describe it for a general commutative ring $R$. First of all, the free commutative algebra ${\bf Sym}_R$ is calculated the following way
 with enough limits in the category ${\bf Mod}_R$:
 \[
@@ -435,7 +484,7 @@ To every such space $X : {\bf Ring} \to {\bf Set}$ we associate its Grothendieck
 are pairs $(R, x)$ with $x \in X(R)$ and whose morphisms $(R, x) \to (S, y)$ are ring morphisms $u : R \to S$ transporting 
 the element $x \in X(R)$ to the element $y \in X(S)$ in the sense that $X(u)(x) = y$. 
 
-The category ${\bf Points}(X)$ comes with a functor $\pi_X : {\bf Points}(X) \to {\bf Ring}$. $\pi_X$ is called the functor of points of $X$ and 
+The category ${\bf Points}(X)$ comes with an obvious functor $\pi_X : {\bf Points}(X) \to {\bf Ring}$ such that $\pi_X : (R, x) \mapsto R$. $\pi_X$ is called the functor of points of $X$ and 
 it defines a discrete Grothendieck opfibration above the category ${\bf Ring}$. A morphism $f : X \to Y$ between ${\bf Ring}$-spaces may be equivalently 
 defined as a functor:
 \[
@@ -499,7 +548,7 @@ every ring to itself viewed as a module.
 
 \section{The category ${\bf PshMod}$ of Presheaves of modules and forward morphisms}
 
-We construct the category ${\bf PshMod}$ of presheaves of modules and forward morphisms as follows. A \emph{presheaf of modules} $(X,M)$
+We construct the category ${\bf PshMod}$ of \emph{presheaves of modules and forward morphisms as follows}. A \emph{presheaf of modules} $(X,M)$
 is defined as a pair consisting of a ${\bf Ring}$-space $X : {\bf Ring} \to {\bf Set}$ along with a presheaf $\mathcal{O}_X$-module $M$ as above.
 A \emph{forward morphism} between presheafs of modules $(f, \varphi) : (X, M) \to (Y, N)$ is defined as a morphism $f : X \to Y$ along with a natural transformation:
 \[
@@ -563,20 +612,10 @@ as well as ${\bf Mod}_R$ has small colimits. Such a property is the case for, sa
   which is left adjoint to $f^*$.
 \end{prop}
 
-A proof of the statement based on a 2-categorical construction of the $\mathcal{O}_Y$-module $f_!(M)$. Note that
-the $\mathcal{O}_Y$-module $f_!(M)$ can be explicitly described by the following formula:
-\[
-f_!(M) : y \in Y(R) \mapsto \bigoplus \limits_{x \in X(R), f x = y} M_x \in {\bf Mod}_R
-\]
-The adjunction $f_! \dashv f^*$ gives rise to a sequence of natural bijections formulated as the following derivations:
-\begin{prooftree}
-  \AxiomC{$1_X : X \to X \models M \to f^*(N)$}
-  \UnaryInfC{$f : X \to Y \models M \to N$}
-  \UnaryInfC{$1_Y : Y \to Y \models f_!(M) \to N$}
-\end{prooftree}
-
 \begin{proof}
-One uses the fact that the functor $\pi : {\bf Mod} \to {\bf Ring}$ is a bifibration, in particular,
+
+A proof of the statement based on a 2-categorical construction of the $\mathcal{O}_Y$-module $f_!(M)$.
+One uses the fact that the functor $\pi : {\bf Mod} \to {\bf Ring}$ is a Grothendieck bifibration, in particular,
 a Grothendieck opfibration. This implies that ${\bf Mod}$ has small colimits, which are preserved by $\pi$.
 Suppose we are given the following diagram:
 \[
@@ -629,10 +668,38 @@ is a Grothendieck bifibration, so is the associated postcomposition functor:
 \[
 {\bf Cat}({\bf Points}(Y), {\bf Mod}) \to {\bf Cat}({\bf Points}(Y),{\bf Ring})
 \]
-is also a Grothendieck bifibration. 
+is also a Grothendieck bifibration. In particular, there exists a functor $N : {\bf Points}(Y) \to {\bf Mod}$
+and a natural transformation $\nu : M \Rightarrow N'$, which is cocartesian above the natural transformation
+$\mu : \pi \circ M' \Rightarrow \pi \circ N$ as in the diagram below:
+\[
+\begin{tikzcd}
+  {\bf Points}(X) \ar[rrrr, "{\bf Points}(f)"] \ar[ddrr, "M", ""{name=M}] \ar[ddddrr, "\pi_X"', bend right=15] &&&& {\bf Points}(Y) \ar[ddddll, "\pi_Y", bend left=15, ""{name=piY}] \ar[ddll, "M'"', bend right=15, ""{name=M'}] \ar[ddll, "N'", bend left=15, ""{name=N}]  \\
+  \\
+  && {\bf Mod} \ar[dd, "\pi"] \\
+  \\
+  && {\bf Ring}
+  \ar[from=M,to=M', Rightarrow, "\lambda", shorten=3.5mm]
+  \ar[from=M',to=N, Rightarrow, "\nu"]
+\end{tikzcd}
+\]
+The natural transformation $\varphi = \nu \circ \lambda : M \Rightarrow N \circ {\bf Points}(f)$ is vertical. Besides, $\pi \circ \varphi = 1$
+and $N \circ \pi = \pi_Y$. The $\mathcal{O}_X$-module $N$ is defined $N : {\bf Points}(Y) \to {\bf Ring}$.
+Therefore we obtain a functor $f_! : {\bf PshMod}_X \to {\bf PshMod}_Y$ is left adjoint to the inverse image functor
+$f^* : {\bf PshMod}_Y \to {\bf PshMod}_X$ defined earlier.
 
-(TODO: complete this proof)
 \end{proof}
+
+Note that
+the $\mathcal{O}_Y$-module $f_!(M)$ can be explicitly described by the following formula:
+\[
+f_!(M) : y \in Y(R) \mapsto \bigoplus \limits_{x \in X(R), f x = y} M_x \in {\bf Mod}_R
+\]
+The adjunction $f_! \dashv f^*$ gives rise to a sequence of natural bijections formulated as the following derivations:
+\begin{prooftree}
+  \AxiomC{$1_X : X \to X \models M \to f^*(N)$}
+  \UnaryInfC{$f : X \to Y \models M \to N$}
+  \UnaryInfC{$1_Y : Y \to Y \models f_!(M) \to N$}
+\end{prooftree}
 
 \section{The category ${\bf PshMod}^{\ominus}$ of presheaf modules and backward morphisms}
 
