@@ -703,6 +703,114 @@ The adjunction $f_! \dashv f^*$ gives rise to a sequence of natural bijections f
 
 \section{The category ${\bf PshMod}^{\ominus}$ of presheaf modules and backward morphisms}
 
+We construct the category ${\bf PshMod}^{\ominus}$ of presheaves of modules and backwards morphisms. 
+A \emph{backward morphism} between presheaves of modules $(f, \psi) : (X, M) \to (Y, N)$ is a morphism $f : X \to Y$
+between ringed spaces along with a natural transformation $\psi : N \circ f \Rightarrow M : {\bf Points}(X) \to {\bf Points}(Y)$
+making the following diagram commute:
+\[
+\begin{tikzcd}
+  {\bf Points}(X) \ar[ddrr, "M"', ""{name=M}] \ar[rrrr, "f"] \ar[ddddrr, "\pi_X"'] &&&& {\bf Points}(Y) \ar[ddll, "N", ""{name=N}] \ar[ddddll, "\pi_Y"]\\
+  \\
+  && {\bf Mod} \ar[dd, "\pi"] \\
+  \\
+  && {\bf Ring}
+  \ar[from=N,to=M, Rightarrow, "\psi", shorten=3.5mm]
+\end{tikzcd}
+\]
+The category ${\bf PshMod}^{\ominus}$ is the category of presheaves and their backward morphisms. There is an obvious
+functor
+\[
+{\bf p}^{\ominus} : {\bf PshMod}^{\ominus} \to [{\bf Ring}, {\bf Set}]
+\]
+so we write
+\[
+f : X \to Y \models^{op} \psi : M \to N
+\]
+for a backward morphism $(f, \psi) : (X, M) \to (Y, N)$ between presheaf modules. 
+As the opposite of the fibration ${\bf p}$, the functor ${\bf p}^{\ominus}$ is also a Grothendieck fibration
+with the functor
+\[
+(f^{*})^{op} : {\bf PshMod}^{op}_Y \to  {\bf PshMod}^{op}_X
+\]
+as a pullback functor. Let us make an extra assumption that both ${\bf Ring}$ and ${\bf Mod}_R$ have small limits.
+
+\begin{prop}
+  For every morphism $f : X \to Y$ between ringed spaces, there exists a functor called \emph{direct image}
+  \[
+  f_* : {\bf PshMod}_X \to {\bf PshMod}_Y
+  \]
+  right adjoint to the functor $f^*$.
+\end{prop}
+\begin{proof}
+  Suppose we are given the following diagram:
+  \[
+  \begin{tikzcd}
+    {\bf Points}(X) \ar[ddrr, "M"'] \ar[ddddrr, bend right=15, "\pi_X"'] \ar[rrrr, "{\bf Points}(f)"] &&&& {\bf Points}(Y) \ar[ddddll, bend left=15, "\pi_Y"] \\
+    \\
+    && {\bf Mod} \ar[dd, "\pi"]\\
+    \\
+    && {\bf Ring}
+  \end{tikzcd}
+  \]
+  We then compute the right Kan extension of the discrete fibration functor
+  \[
+  {\bf Points}(f) : {\bf Points}(X) \to {\bf Points}(Y)
+  \]
+  Then we obtain a functor $M' : {\bf Points}(Y) \to {\bf Mod}$ and a natural transformation $\rho$ exhibiting
+  as the right extension of $M$ along ${\bf Points}(f)$:
+  \[
+    \begin{tikzcd}
+    {\bf Points}(X) \ar[ddrr, "M"'] \ar[ddddrr, bend right=15, "\pi_X"'] \ar[rrrr, "{\bf Points}(f)"] &&&& {\bf Points}(Y) \ar[ddddll, bend left=15, "\pi_Y"] \ar[ddll, "M'", ""{name=M'}] \\
+    \\
+    && {\bf Mod} \ar[dd, "\pi"]\\
+    \\
+    && {\bf Ring}
+    \ar[from=M',to=M, "\rho", Rightarrow, shorten=3.5mm]
+  \end{tikzcd}
+  \]
+  Recall that the right Kan extension is a pointwise Kan extension computed by small limits. In turn, $\pi$ preserves
+  small limits, and, therefore, it preserves pointwise right Kan extensions. Thus, the natural
+  transformation $\pi \circ \rho$ exhibits the functor $\pi \circ M'$ as the right Kan extension of the composite functor $\pi \circ M$
+  along ${\bf Points}(f)$. The universality property of right Kan extensions ensures that a natural 
+  transformation $\mu : \pi_Y \Rightarrow \pi \circ M'$ exists uniquely:
+    \[
+    \begin{tikzcd}
+    {\bf Points}(X) \ar[ddrr, "M"'] \ar[ddddrr, bend right=15, "\pi_X"'] \ar[rrrr, "{\bf Points}(f)"] &&&& {\bf Points}(Y) \ar[ddddll, bend left=15, "\pi_Y", ""{name=piY}] \ar[ddll, "M'"', ""{name=M'}] \\
+    \\
+    && {\bf Mod} \ar[dd, "\pi"]\\
+    \\
+    && {\bf Ring}
+    \ar[from=M',to=M, "\rho", Rightarrow, shorten=3.5mm]
+    \ar[from=piY,to=M', Rightarrow, "\mu", shorten=1.5mm]
+  \end{tikzcd}
+  \]
+  such that the composite
+  \[
+  \pi_Y \circ {\bf Points}(f) \xrightarrow{\mu \circ {\bf Points}(f)} \pi \circ M' \circ {\bf Points}(f) \xrightarrow{\pi \circ \rho} \pi \circ M
+  \]
+  is equal to the identity natural transformation on the functor $\pi_X = \pi_Y \circ {\bf Points}(f)$. Recall,
+  that $\pi$ is a Grothendieck bifibration, is so the postcomposition functor
+  \[
+  {\bf Cat}({\bf Points}(Y), {\bf Mod}) \to  {\bf Cat}({\bf Points}(Y), {\bf Ring}).
+  \]
+  Thus, there is a functor $N : {\bf Points}(Y) \to {\bf Ring}$ and a natural transformation $\nu : N \to M'$
+  such that
+      \[
+    \begin{tikzcd}
+    {\bf Points}(X) \ar[ddrr, "M"'] \ar[ddddrr, bend right=15, "\pi_X"'] \ar[rrrr, "{\bf Points}(f)"] &&&& {\bf Points}(Y) \ar[ddddll, bend left=15, "\pi_Y", ""{name=piY}] \ar[ddll, bend right=15, "M'"', ""{name=M'}] \ar[ddll, bend left=15, "N", ""{name=N}] \\
+    \\
+    && {\bf Mod} \ar[dd, "\pi"]\\
+    \\
+    && {\bf Ring}
+    \ar[from=M',to=M, "\rho", Rightarrow, shorten=3.5mm]
+    \ar[from=N,to=M', "\nu", Rightarrow]
+  \end{tikzcd}
+  \]
+  In particular, the natural transformation $\psi = \rho \circ \nu : N \circ {\bf Points}(f) \Rightarrow M$ is vertical.
+  The $\mathcal{O}_Y$-module $f_*(M)$ associated to the $\mathcal{O}_X$-module $N$ defined as $N : {\bf Points}(Y) \to {\bf Ring}$. Therefore,
+  we obtain a functor $f_* : {\bf PshMod}_X \to {\bf PshMod}_Y$ which is right adjoint to $f^* : {\bf PshMod}_Y \to {\bf PshMod}_X$.
+\end{proof}
+
 \bibliographystyle{alpha} 
 \bibliography{Text}
 \end{document}
