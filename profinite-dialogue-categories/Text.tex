@@ -1,0 +1,217 @@
+\documentclass[8pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsopn}
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{bussproofs}
+\usepackage[all, 2cell]{xy}
+\usepackage[all]{xy}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{minted}
+\usepackage{dsfont}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{stmaryrd}
+\usepackage{multicol}
+\usepackage{cmll}
+\usepackage{wasysym}
+\usetikzlibrary{shapes.geometric, arrows, positioning, backgrounds}
+\usetikzlibrary{cd}
+\makeatletter
+\tikzcdset{
+  eq node/.style={
+    commutative diagrams/math mode=false, anchor=center},
+  eq/.style={
+    phantom,
+    /tikz/every to/.append style={
+      edge node={node[commutative diagrams/eq node]
+        {\@eqnswtrue\make@display@tag\ltx@label{#1}}}}}}
+\makeatother
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{claim}{Claim}[section]
+
+\theoremstyle{definition}
+\newtheorem{ex}{Example}[section] 
+
+\theoremstyle{definition}
+\newtheorem{cons}{Construction}[section] 
+
+\theoremstyle{definition}
+\newtheorem{rem}{Remark}[section] 
+
+
+\theoremstyle{definition}
+\newtheorem{prop}{Proposition}[section]
+
+\theoremstyle{definition}
+\newtheorem{lemma}{Lemma}[section]
+
+\theoremstyle{definition}
+\newtheorem{fact}{Fact}[section]
+
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}[section]
+
+\theoremstyle{definition}
+\newtheorem{notation}{Notation}[section]
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[section]
+
+\theoremstyle{definition}
+\newtheorem{col}{Corollary}[section]
+
+\theoremstyle{question}
+\newtheorem{question}{Question}
+
+\let\strokeL\L
+\renewcommand\L{\mathbf{L}}
+
+\DeclareMathOperator{\bang}{!}
+
+\DeclareMathOperator*{\colim}{\operatorname{colim}}
+\newcommand{\Ob}[1]{\operatorname{Ob}({\mathcal{#1}})}
+\newcommand{\Cov}[1]{\operatorname{Cov}(#1)}
+
+\newcommand{\circvee}{\mathbin{\text{\ooalign{\hfil$\vee$\hfil\cr\kern0.1ex$\bigcirc$}}}}
+\newcommand{\circwedge}{\mathbin{\text{\ooalign{\hfil$\wedge$\hfil\cr\kern0.1ex$\bigcirc$}}}}
+
+\title{$h$-adic topology and profinite linear lambda terms}
+\author{Daniel Rogozin}
+\date{ }
+
+\newcommand{\IntHom}[1]{[#1]}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Profinite Lambda terms and related concepts}
+
+One starts with the observation that if we have a work over a finite alphabet $\Sigma$:
+\[
+W = a_{w_1} \ldots a_{w_n} \in \Sigma^*
+\]
+then one can represent $W$ as a well-typed term in the simply typed lambda calculus:
+\[
+a_{w_1} : q \to q, \ldots, a_{w_n} : q \to q \vdash W : q \to q
+\]
+where $q$ is a base type that we informally interpret as a type of states, so we have a closed lambda
+term
+\[
+\lambda a_{w_1}^{q \to q} \ldots \lambda a_{w_n}^{q \to q} \lambda x^q. a_{w_k} (\ldots (a_{w_1} \: q)\ldots) : (q \to q) \ldots (q \to q) \to q \to q
+\]
+encoding a word $w$ via the instance of the Church encoding. Further, we will call the type of such terms $\operatorname{Church}_{\Sigma}$.
+Further, we have the monoid isomorphism:
+\[
+\Sigma^* \cong \{ \text{$M$ is a lambda term} \: | M : \operatorname{Church}_{\Sigma} \:\}/\beta \eta
+\]
+In other words, words over a finite alphabet can be viewed as lambda terms of a particular type factorised module the $\beta\eta$-equivalence.
+Generally, there is amount literature studying both syntactic and semantic aspects of the Church encoding of the finite words.
+
+The claim made in \cite{van2023profinite} connects the finitary interpretation of STLC in the category of finite sets ${\bf FinSet}$
+with deterministic finite automata as follows. Take any finite set $Q$,
+so for any type $A$, we define a set $[\![A]\!]_Q$ inductively defined as
+\begin{itemize}
+\item $[\![p]\!]_Q = Q$
+\item $[\![A \to B]\!]_Q = [\![A]\!]_Q \Rightarrow [\![B]\!]_Q$
+\end{itemize}
+so every term $x_1 : A_1, \ldots, x_n : A_n \vdash M : A$ transports
+to the function between finite sets $[\![M]\!] : [\![A_1]\!]_Q \times \ldots \times [\![A_n]\!]_Q \to [\![A]\!]_Q$.
+On closed terms, the interpretation induces a function $[\![.]\!]_Q  : \Lambda_{\beta \eta}(A) \to [\![A]\!]_Q$
+mapping every closed term $M$ of type $A$ to its interpretation $[\![M]\!]_Q$. 
+Further, a word $W = a_{w_1} \ldots a_{w_k} \in \Sigma^*$ is mapped to the following morphism in ${\bf FinSet}$:
+$[\![W]\!]_Q : (Q \Rightarrow Q) \times \ldots \times (Q \Rightarrow Q) \to (Q \Rightarrow Q)$, i.e.,
+\[
+[\![W]\!]_Q : f_{w_1}, \ldots, f_{w_k} \mapsto f_{w_k} \circ \ldots \circ f_{w_1}
+\]
+
+Recall that a \emph{deterministic finite state automaton} on a finite alphabet $\Sigma = \{ a_1, \ldots, a_n \}$
+is a structure $\mathcal{A} = (Q, \delta, q_0, Acc)$, where $Q$ is a finite set of states,
+$\delta : \Sigma \times Q \to Q$ is a transition function, $q_0 \in Q$ is the initial state and
+$Acc \subseteq Q$ is the set of accepting states. The transition function $\delta$ induces a family
+of functions $\delta_{a_i}(q_k) = \delta(a_i, q_k) : Q \to Q$ for each $a_i \in \Sigma$ and $q_k \in Q$.
+$\delta_{a_i}(q_k) = q_{k'}$ means that $\mathcal{A}$ transitions from $q_k$ to $q_k'$ encountering $a_i$.
+Now one can apply the interpretation $[\![W]\!]_Q$ to the functions $\delta_{a_{w_i}}$ for $1 \leq i \leq k$,
+so we obtain
+\[
+\delta_w : [\![W]\!]_Q (\delta_{a_{w_1}}, \ldots, \delta_{a_{w_k}}) : Q \to Q
+\]
+
+Therefore, given a deterministic finite automaton $\mathcal{A} = (Q, \delta, q_0, Acc)$,
+the tuple $(Q, \delta, q_0)$ induces the evaluation function
+\[
+\operatorname{eval}_{\delta, q_0} : [\![\operatorname{Church}_{\Sigma}]\!]_Q \to Q
+\]
+transporting every functional $F \in [\![\operatorname{Church}_{\Sigma}]\!]_Q$ to the state
+$F(\delta_{a_{w_1}}, \ldots, \delta_{a_{w_k}})$ in $Q$, therefore we have
+\[
+\Sigma^{*} \cong \Lambda_{\beta\eta}(\operatorname{Church}_{\Sigma}) \to [\![\operatorname{Church}_{\Sigma}]\!]_Q \xrightarrow{\operatorname{eval}_{\delta, q_0}} Q
+\]
+so we associate every finite word $w \in \Sigma^*$ with the final state $q_f = \delta_w (q_0)$.
+The inverse image $Acc \subseteq Q$ under this composite is called a \emph{regular language} $L_{\mathcal{A}}$, the
+set of finite words recognisable by $\mathcal{A}$.
+
+\section{On Dialogue Categories}
+
+\section{$h$-adic topology}
+
+The following summary is based on \cite[Chapter XVI]{kassel2012quantum}.
+
+Consider the complex algebra $K = \mathbb{C}[[h]]$ of complex formal series
+in one variable $h$. Every element $f \in \mathcal{K}$ has the form
+\[
+f = \sum \limits_{n = 0}^{\infty} a_n h^n
+\]
+where $a_n \in \mathbb{C}$ for each $n \in \mathbb{N}$. Every polynomial $f \in \mathbb{C}[h]$ is clearly a formal series. $K$ form a commutative ring with operations given as
+\begin{itemize}
+  \item $f + g = \sum \limits_{n = 0}^{\infty} a_n h^n + \sum \limits_{n = 0}^{\infty} b_n h^n = \sum \limits_{n = 0}^{\infty} (a_n + b_n) h^n$
+  \item $f \cdot g = (\sum \limits_{n = 0}^{\infty} a_n h^n) \cdot (\sum \limits_{n = 0}^{\infty} b_n h^n) = \sum \limits_{n=0}^{\infty} (\sum \limits_{n = p + q} a_p b_q) h^n$
+\end{itemize}
+A formal series $f$ is invertible iff its every coefficient is non-zero.
+
+For any $n > 0$, consider the algebra $K_n = \mathbb{C}[h]/(h^n)$
+of truncated polynomials obtained as the quotient of the ring of complex
+polynomials generated by the ideal $(h^n)$. There is a morphism
+\[
+\pi_n : K \to K_n
+\]
+sending each formal series $\sum \limits_{n = 0}^{\infty} a_n h^n$
+to the class of $\sum \limits_{k = 0}^{n - 1} a_k h^k$ modulo $(h^n)$.
+$\pi_n$ is onto and its kernel is the ideal $h^n K$ generated by $h^n$
+in the ring of formal series. Therefore, we have the following isomorphism:
+\[
+\mathbb{C}[[h]]/(h^n) \cong \mathbb{C}[h]/(h^n)
+\]
+For $n > 0$, there is a surjective map of algebras $p_n : K_n \to K_{n - 1}$
+generated by the inclusion of ideals $(h^{n}) \subset (h^{n-1})$. 
+So we have the inverse system of algebras $(K_n, p_n)_{n > 0}$ and its inverse
+limit $\lim \limits_{\leftarrow \\ n} K_n$. One has $p_n \circ \pi_n = \pi_{n - 1}$
+for each $n$. Also, there is a unique morphism of algebras from $K$ to
+$\lim \limits_{\leftarrow \\ n} K_n$ whose composition
+with the projection of the inverse limit is equal to $\pi_n$. 
+Besides, the map $\pi : \mathbb{C}[[h]] \twoheadrightarrow \lim \limits_{\leftarrow \\ n} \mathbb{C}[[h]] / (h^n)$
+is the isomorphism, which is partly the instance of Birkhoff’s subdirect representation theorem, \cite[Theorem 8.6]{sankappanavar1981course}.
+
+Let us equip $K$ with the \emph{$h$-adic topology}.
+
+\bibliographystyle{alpha} 
+\bibliography{Text}
+
+\end{document}
