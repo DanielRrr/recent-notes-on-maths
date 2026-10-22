@@ -208,7 +208,16 @@ M \ar[rr, "f"'] && M'
 \end{tikzcd}
 \]
 
-\section{On Dialogue Categories}
+The projection functor $\pi : \Sigma^*/{\bf FinMon} \rightarrow {\bf FinMon}$ transports $(M, h)$
+to its underlying monoid $M$. One obtains $\widehat{\Sigma^*}$ as the limit of a codirected diagram 
+of monoid homomorphisms $(M \to M')_{(M,h) \to (M',h')}$ extending the diagram formed from 
+the family $(\Sigma^*/\phi \to \Sigma^*/\phi')_{\phi \subseteq \phi'}$ to all homomorphisms 
+$h : \Sigma^* \to M$ to a finite monoid $M$.
+
+Recall that every homomorphism $h : \Sigma^* \to M$ induces a deterministic finite automaton 
+with $Q := M$, $\delta(a, q) = q \cdot_M a$ for every $q \in M$ and $a \in \Sigma$. 
+So every homomorphism $h : \Sigma^* \to M$ (assume $M = \{ q_1, \ldots, q_m\}$) induces a decomposition of $\Sigma^*$
+into $m$ components $L_{q_i} = h^{-1}(q_i)$ for $1 \leq i \leq m$ where each $L_{q_i}$ is a regular language.
 
 \section{$h$-adic topology}
 
@@ -296,6 +305,111 @@ if $i$ is injective.
 
 For any module $K$, the module $M/\operatorname{Ker}(i)$ is separated and the completion 
 $\widetilde{M}$ of $M$ is complete. 
+
+\section{Term Assignment for Tensorial Logic}
+
+\begin{figure}[H]
+  \hrule
+  \caption{Term Calculus for Tensorial Logic}~\label{fig:1}
+
+
+  \begin{minipage}[b]{0.33333\textwidth}
+    \begin{small}
+      \begin{prooftree}
+        \AxiomC{$ $}
+        \RightLabel{$\mathds{1}{\bf I}$}
+        \UnaryInfC{$\vdash {\bf 1} : \mathds{1}$}
+      \end{prooftree}
+    \end{small}
+    \end{minipage}%
+    \begin{minipage}[b]{0.33333\textwidth}
+      \begin{small}
+        \begin{prooftree}
+          \AxiomC{$ $}
+          \RightLabel{\bf ax}
+          \UnaryInfC{$x : A \vdash x : A$}
+        \end{prooftree}
+        \end{small}
+    \end{minipage}%
+    \begin{minipage}[b]{0.33333\textwidth}
+    \begin{small}
+      \begin{prooftree}
+        \AxiomC{$\Gamma \vdash M : \mathds{1}$}
+        \AxiomC{$\Delta \vdash N : B$}
+        \RightLabel{$\mathds{1}{\bf E}$}
+        \BinaryInfC{$\Gamma, \Delta \vdash {\bf let} \: {\bf 1} = M \: {\bf in} \: N : B$}
+      \end{prooftree}
+    \end{small}
+    \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \begin{small}
+    \begin{prooftree}
+      \AxiomC{$x : A, \Gamma \vdash M : \bot $}
+      \RightLabel{${\multimap \bot}_{\bf I}$}
+      \UnaryInfC{$\Gamma \vdash \nabla_l x. M : A \multimap \bot $}
+    \end{prooftree}
+
+      \begin{prooftree}
+      \AxiomC{$\Gamma, x : A \vdash M : \bot $}
+      \RightLabel{${\bot \multimapinv}_{\bf I}$}
+      \UnaryInfC{$\Gamma \vdash \nabla_r x. M : \bot \multimapinv A$}
+    \end{prooftree}
+
+    \begin{prooftree}
+      \AxiomC{$\Gamma \vdash M : A$}
+      \AxiomC{$\Delta \vdash N : B$}
+      \RightLabel{$\otimes{\bf I}$}
+      \BinaryInfC{$\Gamma, \Delta \vdash M \otimes N : A \otimes B$}
+    \end{prooftree}
+  \end{small}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \begin{tabular}{p{\textwidth}}
+      \begin{small}
+      \begin{prooftree}
+        \AxiomC{$\Delta \vdash N : A$}
+        \AxiomC{$\Gamma \vdash M : A \multimap \bot$}
+        \RightLabel{$\multimap{\bf E}$}
+        \BinaryInfC{$\Gamma, \Delta \vdash N \triangleleft M : \bot$}
+      \end{prooftree}
+
+      \begin{prooftree}
+        \AxiomC{$\Gamma \vdash M : A \multimapinv \bot$}
+        \AxiomC{$\Delta \vdash N : A$}
+        \RightLabel{$\multimap{\bf E}$}
+        \BinaryInfC{$\Gamma, \Delta \vdash M \triangleright N : \bot$}
+      \end{prooftree}
+
+
+      \begin{prooftree}
+        \AxiomC{$\Gamma \vdash M : A \otimes B$}
+        \AxiomC{$\Delta, x : A, y : B \vdash N : C$}
+        \RightLabel{$\otimes{\bf E}$}
+        \BinaryInfC{$\Delta, \Gamma \vdash {\bf let} \: x \otimes y \: = \:M \: {\bf in} \: N : C$}
+      \end{prooftree}
+    \end{small}
+    \end{tabular}
+  \end{minipage}
+  \vspace{\baselineskip}
+  \hrule
+\end{figure}
+
+\begin{definition} Reduction rules for tensorial logic:
+  \begin{itemize}
+    \item[$(\multimap \bot \beta)$] $N \triangleleft (\nabla_l x. M) \to M[x := N]$,
+    \item[$(\bot \multimapinv \beta)$] $(\nabla_r x. M) \triangleright N \to M [x:=N]$,
+    \item[$(\mathds{1}\beta)$] ${\bf let} \: {\bf 1} = {\bf 1} \: {\bf in} \: N \to N$,
+    \item[$(\otimes\beta)$] ${\bf let} \: x \otimes y = M \otimes N \: {\bf in} \: P \to P [x := M, y := N]$,
+    \item[$(\multimap \bot \eta)$] $(\nabla_l x. x \triangleleft M) \to M$ if $x$ is not free in $M$,
+    \item[$(\bot \multimapinv \eta)$] $(\nabla_r x. M \triangleright x) \to M$ if $x$ is not free in $M$,
+    \item[$(\otimes \eta)$] ${\bf let} \: x \otimes y = M \: {\bf in} \: N[z := x \otimes y] \to N [z:= M]$,
+    \item[$(\otimes_{\bf nat})$] $P[w := {\bf let} \: x \otimes y = M \: {\bf in} \: N] \to {\bf let} \: x \otimes y = M \: {\bf in} \: P [w := N]$,
+    \item[$(\mathds{1}_{\bf nat})$] $P [w := {\bf let} \: {\bf 1} = M \: {\bf in} \: N] \to {\bf let} \: {\bf 1} = M \: {\bf in} \: P[w := N]$.
+  \end{itemize}
+\end{definition}
+
+\section{On Dialogue Categories}
 
 \bibliographystyle{alpha} 
 \bibliography{Text}
