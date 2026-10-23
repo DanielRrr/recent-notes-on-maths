@@ -1,4 +1,5 @@
 \documentclass[8pt]{article}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage{graphicx} % Required for inserting images
 \usepackage{amsthm}
 \usepackage{amsmath}
@@ -237,6 +238,75 @@ one can relate different interpretations of $A$ by constructing a relation $[\![
 Such relations are called \emph{logical relations}. Lambda terms are parametric: that is, if $M$ has type $A$ and $R \subseteq Q \times Q'$,
 then $([\![M]\!]_Q, [\![M]\!]_{Q'}) \in [\![A]\!]_R$.
 
+Now let us discuss how one can define the exponential of relations. Let $S \subseteq P \times P'$ and
+$R \subseteq Q \times Q'$ be relations on finite sets, the exponential $S \Rightarrow R \subseteq (P \Rightarrow Q) \times (P' 
+\Rightarrow Q')$ is given as:
+\[
+S \Rightarrow R := \{ (g,h) \: | \: \forall x \in P \forall y \in P' \: (x S y \to g(x) R h(y))\}
+\]
+Therefore, for any relation $R \subseteq Q \times Q'$ between finite sets $Q$ and $Q'$, one constructs a relation
+$[\![A]\!]_R \subseteq [\![A]\!]_Q \times [\![A]\!]_{Q'}$ defined by induction on $A$ as follows:
+\begin{itemize}
+  \item $[\![p]\!] = R$,
+  \item $[\![A \Rightarrow B]\!]_R = [\![A]\!]_R \Rightarrow [\![B]\!]_R$
+\end{itemize}
+The \emph{fundamental lemma of logical relations} states that for any $M \in \Lambda_{\beta\eta}(A)$ for any $A$
+and for any $R \subseteq Q \times Q'$, the interpretations of $M$ are related as follows: 
+\[
+([\![M]\!]_Q, [\![M]\!]_{Q'}) \in [\![A]\!]_R
+\]
+Further, we will be using partial surjections since they are stable under taking relational exponentials. Also,
+if $f : Q \twoheadrightarrow Q'$ is a partial surjection, so $[\![A]\!]_f \subseteq [\![A]\!]_Q \times [\![A]\!]_{Q'}$
+for any $A$. Besides, we have the inclusion of Boolean algebras $\operatorname{Reg}_{Q'}(A) \subseteq \operatorname{Reg}_Q(A)$,
+which is proved using the fundamental lemma of logical relations.
+
+\begin{theorem}
+  The diagram of Boolean algebras $\operatorname{Reg}_{(.)}(A) : {\bf FinPSurj}^{op} \to {\bf BA}$:
+  \[
+  (\operatorname{Reg}_{Q'}(A) \hookrightarrow \operatorname{Reg}_{Q}(A))_{f : Q \to Q' \in {\bf FinPSurj}}
+  \]
+  is directed, and its colimit in ${\bf BA}$ coincides with the Boolean algebra $\operatorname{Reg}(A)$
+  of regular languages for a higher-order type $A$. 
+\end{theorem}
+Also, for any simple type $A$, the set of regular languages $\operatorname{Reg}(A)$ is closed under finite intersections.
+
+Now let us discuss how the space of profinite lambda terms is constructed. The idea is that for any
+simple type $A$ as parametric families of semantic elements, so they form a Stone space dual to 
+the Boolean algebra $\operatorname{Reg}(A)$.
+
+\begin{prop}
+  Let $Q, Q'$ be finite sets,
+
+  \begin{enumerate} 
+    \item The set of atoms $\operatorname{At}_Q(A)$ of the finite Boolean algebra $\operatorname{Reg}_Q(A)$
+    is in bijection with the set $[\![A]\!]_{Q}^{\bullet}$ of definable elements of simple type $A$, given by the
+    function $q \mapsto [\![.]\!]^{-1}_Q(\{ q \}) : \operatorname{At}_Q(A) \to [\![A]\!]_{Q}^{\bullet}$.
+    \item For partial surjection $f : Q \twoheadrightarrow Q'$ and for any simple type $A$,
+    the set $[\![A]\!]_Q^{\bullet} \subseteq [\![A]\!]_Q$ of definable elements is contained 
+    in the domain of $[\![A]\!]_f$, and the restriction of $[\![A]\!]_f$ to $[\![A]\!]_Q^{\bullet}$
+    is the unique function $p_{Q,Q'}$ such that the following triangle commutes:
+    \[
+    \begin{tikzcd}
+      & \Lambda_{\beta\eta}(A) \ar[dl, "{[\![.]\!]}_Q^{\bullet}"'] \ar[dr, "{[\![.]\!]}_{Q'}^{\bullet}"] \\
+    {[\![A]\!]}_Q^{\bullet} \ar[rr, "p_{Q,Q'}"'] && {[\![A]\!]}_{Q'}^{\bullet}
+    \end{tikzcd}
+    \]
+  \end{enumerate}
+\end{prop}
+
+Note that if $f, g : Q \to Q'$ are partial surjections, then, while the semantic interpretations
+$[\![A]\!]_f, [\![A]\!]_g : [\![A]\!]_Q \to [\![A]\!]_Q'$ are different, their restrictions 
+to $[\![A]\!]^{\bullet}_Q$ are both equal to $p_{Q,Q'}$.
+
+One defines profinite lambda terms of simple type $A$ as follows.
+\begin{definition}
+  Let $A$ be a simple type, the set of \emph{profinite lambda terms} is defined as the limit 
+  $\widehat{\Lambda}_{\beta\eta}(A)$ in ${\bf Set}$ of the diagram:
+  \[
+  ([\![A]\!]_f^{\bullet} : [\![A]\!]_Q^{\bullet} \twoheadrightarrow [\![A]\!]_{Q'}^{\bullet})_{f : Q \twoheadrightarrow Q' \in {\bf FinPSurj}}
+  \]
+\end{definition}
+
 \section{$h$-adic topology}
 
 The following summary is based on \cite[Chapter XVI]{kassel2012quantum}.
@@ -340,6 +410,8 @@ in the category of $K$-modules and $K$-linear maps:
 \[
 \operatorname{Hom}_K(V[[h]], N) \cong \operatorname{Hom}_K(V, N)
 \]
+Further, a $K$-module $M$ is topologically free iff it is complete, separated and torsion-free, that is,
+there is such that $m h \neq 0$ for any non-zero $m \in M$.
 
 
 \section{On Dialogue Categories and their internal language}
