@@ -232,6 +232,86 @@ $\operatorname{Reg}_{(.)}(\Sigma)$:
 \]
 can be obtained by applying the contravariant powerset functor to the above trianlge and $(M \to M')_{(M,h) \to (M',h')}$.
 
+\subsection{The Explicit Description of Profinite Topology}
+
+This description is based on \cite[C.X.2]{pin2010mathematical}. Let $\Sigma$ be
+a finite alphabet and let $M$ be a finite monoid, given $u, v \in \Sigma^*$,
+a monoid homomorphism $f : \Sigma^* \to M$ \emph{separates} $u$ and $v$ if $f(u) \neq f(v)$. A monoid
+$M$ separates $u$ and $v$ if there is a homomorphism $\Sigma^* \to M$ separating $u$ and $v$. The important 
+fact is that every $u$ and $v$ are separated by some monoid $M$. 
+
+A metric on $\Sigma^*$ is defined as follows: two words are closed if they are separated by the large monoid.
+Take $u, v \in \Sigma^*$, put:
+\begin{itemize}
+  \item $r(u,v) = \min \{ |M| \: | \: \text{$M$ separates $u$ and $v$}\}$,
+  \item $d(u, v) = 2^{-r(u,v)}$.
+\end{itemize}
+Therefore, $d(u,v) < 2^{n}$ iff $u$ and $v$ cannot be separated by a monoid smaller than $n$
+and $d(u,v) < \varepsilon$ iff $u$ and $v$ cannot be separated by a monoid of size $n$,
+where $n$ is the unique natural number such that $2^{-(n+1)} < \varepsilon \leq 2^{-n}$.
+$d$ is a metric on $\Sigma^{*}$ such that $(\Sigma^*, d)$ is an ultrametric space such that, for each 
+$u, v, w \in \Sigma^*$:
+\begin{itemize}
+  \item $d(uw, vw) \leq d(uv)$,
+  \item $d(wu, wv) \leq d(uv)$.
+\end{itemize}
+As a topological space, $(\Sigma^*, d)$ is discrete, but open balls are of more interest. For any $n \geq 2$,
+consider the congruence relation $\sim_n$ on $\Sigma^*$ defined as:
+\[
+u \sim_n v \Leftrightarrow \forall M \: (|M| \leq n \rightarrow (()\forall f : \Sigma^* \twoheadrightarrow M) \rightarrow f(u) = f(v)))
+\]
+Clearly $\sim_n$ is a congruence of finite index as they are finitely many surjections $\Sigma^* \twoheadrightarrow M$
+for a fixed finite $M$. Thus $d(u,v) < 2^{-n}$ iff they cannot be separated by a monoid of size smaller than $n$.
+
+\begin{prop} Let $\Sigma$ be a finite alphabet,
+\begin{enumerate}
+  \item The concatenation function $(u,v) \mapsto uv$ is uniformly continuous,
+  \item Every open ball of  $(\Sigma^*, d)$  is a recognisable language and every recognisable language is a finite union
+  of open balls.
+  \item $(\Sigma^*, d)$ is totally bounded: for every $n > 0$, $\Sigma^*$ is covered by a finite number
+  of open balls of radius strictly smaller than $2^{-n}$.
+\end{enumerate}
+\end{prop}
+
+\begin{prop}
+  Let $\Sigma_1$ and $\Sigma_2$ be finite alphabets, then $f : \Sigma_1 \to \Sigma_2$
+  is uniformly continuous iff for every recognisable language of $\Sigma_2$ $L$, $f^{-1}(L)$
+  is also recognisable.
+\end{prop}
+
+Let $\widehat{\Sigma^{*}}$ denote the completion of $\Sigma^*$, whose points are called profinite words of $\Sigma$.
+
+\begin{prop}
+  Let $M$ be a finite monoid and let $f : \Sigma^* \to M$ be uniformly continuous, then $f$ uniquely extends
+  to $\widehat{f} : \widehat{\Sigma^*} \to M$.
+\end{prop}
+The following is the universal property of the free profinite monoid:
+\begin{prop} Let $\Sigma$ be a finite alphabet, then
+  if $f : \Sigma \to M$ is a function to a finite monoid $M$, there exists a unique uniformly
+  continuous monoid morphism $\widehat{f} : \widehat{\Sigma^*} \to M$
+  such that for each $a \in \Sigma$, $\widehat{f}(a) = f(a)$. $\widehat{f}$ is onto iff $f(\Sigma)$
+  generates $M$.
+\end{prop}
+\begin{prop}
+  Let $\Sigma_1$ and $\Sigma_2$ be finite alphabets, then every uniformly continuous morphism
+  $f : \Sigma_1^* \to \Sigma_2^*$ uniquely extends to uniformly continuous 
+  $\widehat{f} : \widehat{\Sigma_1^*} \to \widehat{\Sigma_2^*}$.
+\end{prop}
+
+The metric on $\widehat{\Sigma^*}$ is defined similarly. Let $M$ be a finite monoid, then
+a morphism $f : \Sigma^* \twoheadrightarrow M$ separates profinite words $u, v \in \widehat{\Sigma^*}$
+if $\widehat{f}(u) = \widehat{f}(v)$. For $u, v \in u, v \in \widehat{\Sigma^*}$, we set:
+\begin{itemize}
+  \item $r(u,v) = \min \{ |M| \: | \: \text{$M$ separates $u$ and $v$} \}$,
+  \item $d(u, v) = 2^{-r(u,v)}$.
+\end{itemize}
+\begin{prop}
+  The profinite topology on $\widehat{\Sigma^*}$ is the least topology 
+  making every continuous every morphism $\Sigma^*$ onto a finite discrete monoid.
+\end{prop}
+
+\subsection{Profinite Lambda Terms}
+
 One moves from profinite words to profinite lambda terms in the following way. For any finite set $Q$, one has the interpretation
 of any type $A$ as the finite set $[\![A]\!]_Q$. Given another finite set $Q'$ with a relation $R \subseteq Q \times Q'$, 
 one can relate different interpretations of $A$ by constructing a relation $[\![A]\!]_R \subseteq [\![A]\!]_Q \times [\![A]\!]_{Q'}$.
@@ -307,6 +387,8 @@ One defines profinite lambda terms of simple type $A$ as follows.
   \]
 \end{definition}
 
+
+
 \section{$h$-adic topology}
 
 The following summary is based on \cite[Chapter XVI]{kassel2012quantum}.
@@ -339,11 +421,11 @@ in the ring of formal series. Therefore, we have the following isomorphism:
 For $n > 0$, there is a surjective map of algebras $p_n : K_n \to K_{n - 1}$
 generated by the inclusion of ideals $(h^{n}) \subset (h^{n-1})$. 
 So we have the inverse system of algebras $(K_n, p_n)_{n > 0}$ and its inverse
-limit $\varprojlim_{n} K_n$. One has $p_n \circ \pi_n = \pi_{n - 1}$
+limit $\varprojlim \limits_{n} K_n$. One has $p_n \circ \pi_n = \pi_{n - 1}$
 for each $n$. Also, there is a unique morphism of algebras from $K$ to
-$\varprojlim_{n} K_n$ whose composition
+$\varprojlim \limits_{n} K_n$ whose composition
 with the projection of the inverse limit is equal to $\pi_n$. 
-Besides, the map $\pi : \mathbb{C}[[h]] \twoheadrightarrow \varprojlim_{n} \mathbb{C}[[h]] / (h^n)$
+Besides, the map $\pi : \mathbb{C}[[h]] \twoheadrightarrow \varprojlim \limits_{n} \mathbb{C}[[h]] / (h^n)$
 is the isomorphism, which is partly the instance of Birkhoff’s subdirect representation theorem, \cite[Theorem 8.6]{sankappanavar1981course}.
 
 Let us equip $K$ with the \emph{$h$-adic topology}. The family of 
@@ -378,7 +460,7 @@ p_n : M_n = M/h^n M \to M_{n - 1} = M/h^{n - 1} M
 \]
 They form an inverse system of $K$-modules, so we can consider the inverse limit
 \[
-\widetilde{M} = \varprojlim_{n} M_n
+\widetilde{M} = \varprojlim \limits_{n} M_n
 \]
 having a natural structure of a left $K$-module. $\widetilde{M}$ has a natural topology as well,
 the inverse limit topology, for which the family of submodules $(h^n \widetilde{M})_n$ form an open basis.
@@ -413,6 +495,31 @@ in the category of $K$-modules and $K$-linear maps:
 Further, a $K$-module $M$ is topologically free iff it is complete, separated and torsion-free, that is,
 there is such that $m h \neq 0$ for any non-zero $m \in M$.
 
+Let $M$ and $N$ be left modules over the algebra $K = \mathbb{C}[[h]]$. The $K$-module 
+$M \otimes_K N$ is the quotient of the vector space $M \otimes N$ obtained by spanning all
+elements of the form $fm \otimes n - m \otimes fn$ for $f \in K$, $m \in M$ and $n \in N$.
+
+\begin{definition}
+  The topological tensor product $M \widetilde{\otimes} N$ of $M$ and $N$ is the $h$-adic completion of $M \otimes_K N$:
+  \[
+  M \widetilde{\otimes} N := \widetilde{M \otimes_K N} = \varprojlim \limits_{n > 0} (M \otimes_K N) / h^n (M \otimes_K N)
+  \]
+\end{definition}
+By definition, $M \widetilde{\otimes} N$ is complete.
+
+Take $m \in M$ and $n \in N$, let $m \widetilde{\otimes} n$ denote the image of $m \otimes n$ under the following image:
+\[
+M \otimes N \rightarrow M \otimes_K N \rightarrow M \widetilde{\otimes} N
+\]
+The subspace of the topological tensor product spanned by all elements of this form is dense in $M \otimes N$.
+
+\begin{prop}
+  \item The class left modules over the algebra $K = \mathbb{C}[[h]]$ with $\widetilde{\otimes}$ is endowed with the structure of a symmetric monoidal category
+  \item If $M$ and $N$ be topologically free modules, so is $M \widetilde{\otimes} N$, that is:
+  \[
+  V[[h]] \widehat{\otimes} W[[h]] = (V \otimes W)[[h]].
+  \]
+\end{prop}
 
 \section{On Dialogue Categories and their internal language}
 \begin{definition}
