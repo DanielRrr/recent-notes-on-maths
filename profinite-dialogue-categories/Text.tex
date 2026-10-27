@@ -232,6 +232,8 @@ $\operatorname{Reg}_{(.)}(\Sigma)$:
 \]
 can be obtained by applying the contravariant powerset functor to the above trianlge and $(M \to M')_{(M,h) \to (M',h')}$.
 
+
+
 \subsection{The Explicit Description of Profinite Topology}
 
 This description is based on \cite[C.X.2]{pin2010mathematical}. Let $\Sigma$ be
@@ -258,7 +260,7 @@ $u, v, w \in \Sigma^*$:
 As a topological space, $(\Sigma^*, d)$ is discrete, but open balls are of more interest. For any $n \geq 2$,
 consider the congruence relation $\sim_n$ on $\Sigma^*$ defined as:
 \[
-u \sim_n v \Leftrightarrow \forall M \: (|M| \leq n \rightarrow (()\forall f : \Sigma^* \twoheadrightarrow M) \rightarrow f(u) = f(v)))
+u \sim_n v \Leftrightarrow \forall M \: (|M| \leq n \rightarrow (\forall f : \Sigma^* \twoheadrightarrow M) \rightarrow f(u) = f(v))
 \]
 Clearly $\sim_n$ is a congruence of finite index as they are finitely many surjections $\Sigma^* \twoheadrightarrow M$
 for a fixed finite $M$. Thus $d(u,v) < 2^{-n}$ iff they cannot be separated by a monoid of size smaller than $n$.
@@ -354,7 +356,7 @@ Now let us discuss how the space of profinite lambda terms is constructed. The i
 simple type $A$ as parametric families of semantic elements, so they form a Stone space dual to 
 the Boolean algebra $\operatorname{Reg}(A)$.
 
-\begin{prop}
+\begin{prop}~\label{triangle:lemma}
   Let $Q, Q'$ be finite sets,
 
   \begin{enumerate} 
@@ -387,7 +389,37 @@ One defines profinite lambda terms of simple type $A$ as follows.
   \]
 \end{definition}
 
+In particular, by the definition of a limit in ${\bf Set}$, it means that a profinite lambda term 
+in $\widehat{\Lambda_{\beta \eta}(A)}$ is a family $\theta$ of definable terms 
+$\theta_Q \in [\![A]\!]_Q$ for every finite set $Q$ such that for every 
+partial surjection $f : Q \twoheadrightarrow Q'$ one has $[\![A]\!]_f^{\bullet}(\theta_Q) = \theta_{Q'}$.
+By Proposition~\ref{triangle:lemma}, the above condition is equivalent to the condition that for every 
+term $M : A$ for simple $A$ and any finite sets $Q$ and $Q'$:
+\[
+\theta_Q = [\![M]\!]_Q \land |Q'| \leq |Q| \Rightarrow \theta_{Q'} = [\![M]\!]_{Q'}
+\]
 
+$\widehat{\Lambda_{\beta\eta}(A)}$ is equipped with a natural topology making it a Stone dual of the Boolean algebra
+$\operatorname{Reg}(A)$. One can define this topology as inherited from the inclusion
+\[
+\widehat{\Lambda_{\beta\eta}(A)} \hookrightarrow \prod \limits_{Q} [\![A]\!]_Q^{\bullet}
+\]
+into the product space $\prod \limits_{Q} [\![A]\!]_Q^{\bullet}$ where each $[\![A]\!]_Q^{\bullet}$ is considered a space
+with the discrete topology. Concretely, for any finite set $Q$ and $q \in [\![A]\!]_Q^{\bullet}$,
+let $U_{Q,q}$ denote the set of profinite lambda terms taking value at $Q$:
+\[
+U_{Q,q} := \{ \theta \in \widehat{\Lambda_{\beta\eta}(A)} \: | \: \theta_Q = q \}
+\]
+Now we take the collection $U_{Q,q}$ as the basis on $\widehat{\Lambda_{\beta\eta}(A)}$
+for any $Q$ and $q$.
+
+The following is similar to \cite[Section 4.2]{gehrke2016stone}:
+
+\begin{prop}
+  The space $\widehat{\Lambda_{\beta\eta}(A)}$ is a Stone dual to the Boolean algebra $\operatorname{Reg}(A)$.
+\end{prop}
+
+\subsection{The cartesian closed category of profinite lambda terms}
 
 \section{$h$-adic topology}
 
@@ -514,11 +546,13 @@ M \otimes N \rightarrow M \otimes_K N \rightarrow M \widetilde{\otimes} N
 The subspace of the topological tensor product spanned by all elements of this form is dense in $M \otimes N$.
 
 \begin{prop}
+\begin{enumerate}
   \item The class left modules over the algebra $K = \mathbb{C}[[h]]$ with $\widetilde{\otimes}$ is endowed with the structure of a symmetric monoidal category
   \item If $M$ and $N$ be topologically free modules, so is $M \widetilde{\otimes} N$, that is:
   \[
   V[[h]] \widehat{\otimes} W[[h]] = (V \otimes W)[[h]].
   \]
+\end{enumerate}
 \end{prop}
 
 \section{On Dialogue Categories and their internal language}
@@ -637,6 +671,18 @@ The subspace of the topological tensor product spanned by all elements of this f
     \item[$(\mathds{1}_{\bf nat})$] $P [w := {\bf let} \: {\bf 1} = M \: {\bf in} \: N] \to {\bf let} \: {\bf 1} = M \: {\bf in} \: P[w := N]$.
   \end{itemize}
 \end{definition}
+
+Questions:
+\begin{itemize}
+  \item Do we need resource modalities? If so, then have a look at \cite{mellies2010resource}, \cite{mellies2018explicit}
+  and \cite{mellies2007resource}. Exponential negation? Note sure what's more essential for the profinite setting.
+  \item Do we need sums? Sums are essential for the resource-sensitive CPS as they model non-deterministic choice.
+  \item When we model the profinite lambda terms, we use the category of finite sets as the starting point:
+  intuitively, ${\bf FinSet}$ is the cartesian closed category of finite types. 
+  What's the analogue of ${\bf FinSet}$ for tensorial terms? $\mathbb{F}$-weighted automaton over Galois fields?
+  Some references: \cite{berstel2011noncommutative}, \cite{moreau2023syntactically}, \cite{adamek2018categorical},
+  \cite{urbat2016eilenberg}, \cite{bonchi2012coalgebraic}, \cite{valiron2014modeling}.
+\end{itemize}
 
 \subsection{Parametricity for Tensorial Logic}
 
