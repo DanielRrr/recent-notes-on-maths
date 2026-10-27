@@ -88,6 +88,7 @@
 \DeclareMathOperator*{\colim}{\operatorname{colim}}
 \newcommand{\Ob}[1]{\operatorname{Ob}({\mathcal{#1}})}
 \newcommand{\Cov}[1]{\operatorname{Cov}(#1)}
+\newcommand{\tildetimes}[0]{\widetilde{\otimes}}
 
 \newcommand{\circvee}{\mathbin{\text{\ooalign{\hfil$\vee$\hfil\cr\kern0.1ex$\bigcirc$}}}}
 \newcommand{\circwedge}{\mathbin{\text{\ooalign{\hfil$\wedge$\hfil\cr\kern0.1ex$\bigcirc$}}}}
@@ -550,10 +551,59 @@ The subspace of the topological tensor product spanned by all elements of this f
   \item The class left modules over the algebra $K = \mathbb{C}[[h]]$ with $\widetilde{\otimes}$ is endowed with the structure of a symmetric monoidal category
   \item If $M$ and $N$ be topologically free modules, so is $M \widetilde{\otimes} N$, that is:
   \[
-  V[[h]] \widehat{\otimes} W[[h]] = (V \otimes W)[[h]].
+  V[[h]] \tildetimes W[[h]] = (V \otimes W)[[h]].
   \]
 \end{enumerate}
 \end{prop}
+
+\subsection{Topological Algebras}
+
+A \emph{topological algebra} is a triple $(A, \mu, \eta)$ where $A$ is a module over the ring 
+$K = \mathbb{C}[[h]]$ and $\mu : A \tildetimes A \to A$ and $\eta : A \to K$ are $k$-linear maps such that:
+\begin{itemize}
+  \item $\mu \circ (1_A \tildetimes \mu) = \mu \circ (\mu \tildetimes 1_A)$,
+  \item $\mu \circ (\eta \tildetimes 1_A) = 1_A = \mu \circ (1_A \tildetimes \eta)$.
+\end{itemize}
+For $a, a' \in A$, $aa'$ will stand for $\mu(a \tildetimes a')$.
+
+Let $(A, \mu, \eta)$ be a topological algebra and let $f(h) = \sum \limits c_n h^n$ be a formal series with 
+complex coefficients. For $a$, the formula
+\[
+f(ha) = \sum \limits_{n \geq 0} c_n a^n h^n
+\]
+defines a unique element in the inverse limit $\widetilde{A} = \varprojlim \limits_{n} A/h^n A$. If 
+$A$ is separated and complete, then it defines an element $f(ha)$ in $A \cong \widetilde{A}$. This procedure can
+be applied to the exponential function $e^h = \sum \limits_{n \geq 0} \frac{h^n}{n!}$ yeilding elements of the form
+\[
+e^{ha} = \sum \limits_{n \geq 0} \frac{a^n h^n}{n!}
+\]
+in any separate complete topological algebra. If $a' \in A$, then $a'$ \emph{commutes} with $a$ whenever
+\[
+e^{a + a'} = e^{ha}e^{ha'}
+\]
+$e^{ha}$ is also invertible in $A$ with $e^{-ha}$.
+
+A morphism $f : (A, \mu, \eta) \to (A', \mu', \eta')$ of topological algebras is a $K$-linear map 
+$f : A \to A'$ such that $f \circ \mu = \mu' \circ (f \tildetimes f)$ and $f \circ \eta = \eta'$.
+
+A topological quasi-bialgebra is a structure $(A, \mu, \eta, \Delta, \varepsilon, \Phi)$, where
+$(A, \mu, \eta)$ is a topological algebra, $\Delta : A \to A \tildetimes A$ and $\varepsilon : A \to K$ are 
+$K$-linear maps and $\Phi : A^{\tildetimes 3} \cong A^{\tildetimes 3}$:
+\begin{itemize}
+  \item The following commutes:
+
+  \[
+  \begin{tikzcd}
+    && A \ar[dll, "\Delta"'] \ar[drr, "\Delta"] \\
+    A \tildetimes A \ar[d, "1_A \otimes \Delta"'] &&&& A \tildetimes A \ar[d, "\Delta \otimes 1_A"]\\
+    A \tildetimes A \tildetimes A \ar[rrrr, "\Phi"'] &&&& A \tildetimes A \tildetimes A
+  \end{tikzcd}
+  \]
+  \item $(A, \mu, \eta)$ is a topological coalgebra,
+  \item $(1_A \tildetimes 1_A \tildetimes \Delta)(\Phi) (\Delta \tildetimes 1_A \tildetimes 1_A) (\Phi) = \Phi_{234} (1_A \tildetimes \Delta \tildetimes 1_A)(\Phi) \Phi_{123}$,
+  \item $(1_A \tildetimes \varepsilon \tildetimes 1_A) = 1 \otimes 1$.
+\end{itemize}
+A topological quasi-bialgebra is a topological bialgebra whenever $\Phi = 1^{\tildetimes 3}$.
 
 \section{On Dialogue Categories and their internal language}
 \begin{definition}
@@ -566,7 +616,7 @@ The subspace of the topological tensor product spanned by all elements of this f
   \[
   \psi_{A, B} : \mathcal{C}(A \otimes B, \bot) \cong \mathcal{C}(A, \bot \multimapinv B)
   \]
-  natural in $x$ and $y$ as well.
+  natural in $A$ and $B$ as well.
 \end{definition}
 
 \subsection{Term Assignment for Tensorial Logic}
@@ -676,6 +726,8 @@ Questions:
 \begin{itemize}
   \item Do we need resource modalities? If so, then have a look at \cite{mellies2010resource}, \cite{mellies2018explicit}
   and \cite{mellies2007resource}. Exponential negation? Note sure what's more essential for the profinite setting.
+  \item Should tensorial terms be symmetric (as well as dialogue categories)? At least, we'll have less boilerplate in
+  the reduction rules.
   \item Do we need sums? Sums are essential for the resource-sensitive CPS as they model non-deterministic choice.
   \item When we model the profinite lambda terms, we use the category of finite sets as the starting point:
   intuitively, ${\bf FinSet}$ is the cartesian closed category of finite types. 
