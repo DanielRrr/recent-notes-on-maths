@@ -525,6 +525,62 @@ $\mathcal{P} : {\bf Lam} \to {\bf Set}$ factors through the category of Stone sp
 {\bf Lam} \xrightarrow{\widehat{\Lambda}_{\beta \eta}(.)} {\bf Stone} \xrightarrow{\text{forget}} {\bf Set}
 \]
 
+The category ${\bf ProLam}$ is equipped with a cartesian closed idenity-on-functor functor 
+${\bf idonobj} : {\bf Lam} \to {\bf ProLam}$ derived from the fact that ${\bf Lam}$ is a free cartesian closed category.
+\begin{prop}
+  The functor ${\bf idonobj} : {\bf Lam} \to {\bf ProLam}$ is faithful.
+\end{prop}
+\begin{proof}
+  The category ${\bf ProLam}$ can be obtained as the limit of a codirected diagram of cartesian closed category
+  described as follows. Let $Q$ be a finite set and let $A$ be a simple type, consider the following equivalence relation:
+  \[
+  \sim^A_Q \subseteq \Lambda_{\beta \eta}(A) \times \Lambda_{\beta \eta}(A)
+  \]
+  on the set of terms of type $A$ modulo $\beta\eta$-equivalence defined as
+  \[
+  M \sim^A_Q N \leftrightarrow [\![M]\!]_Q = [\![N]\!]_Q
+  \]
+  Fix a finite set $Q$, the family $\sim_Q$ is parametrised by simple types defines a congruence relation on the category
+  ${\bf Lam}$:
+  \[
+  f \sim^{A \Rightarrow B}_Q f' \land g \sim^{B \Rightarrow C}_Q g' \Rightarrow g \circ f \sim^{A \Rightarrow C}_Q g' \circ f'
+  \]
+  Therefore we obtain the category ${\bf Lam}_Q := {\bf Lam}/Q$ with morphisms defined as:
+  \[
+  {\bf Lam}_Q(A,B) = \Lambda_{\beta \eta}(A \Rightarrow B)/\sim^{A \Rightarrow B}_Q
+  \]
+  First of all, one can observe that for any finite set $Q$, ${\bf Lam}_Q$ is cartesian closed and equipped
+  with cartesian closed identity-on-functor $\pi_Q : {\bf Lam} \to {\bf Lam}_Q$. Besides,
+  every partial surjection $f : Q \twoheadrightarrow Q'$ in ${\bf FinPSurj}$ induces a cartesian closed identity-on-functor
+  ${\bf Lam}_f : {\bf Lam}_Q \to {\bf Lam}_{Q'}$ such that the following triangle commutes:
+  \[
+  \begin{tikzcd}
+    & {\bf Lam} \ar[dl, "\pi_Q"'] \ar[dr, "\pi_{Q'}"] \\
+    {\bf Lam}_Q \ar[rr, "{\bf Lam}_f"'] && {\bf Lam}_{Q'}
+  \end{tikzcd}
+  \]
+  Further, one observes that the category ${\bf ProLam}$ is the codirected limit of the diagram of cartesian closed
+  categories ${\bf Lam}_Q$ indexed by finite sets and partial surjections between them. The projection functor
+  $\pi_Q : {\bf ProLam} \to {\bf Lam}_Q$ is defined by transporting every morphism 
+  $\theta : A \to B$ defined as a family $\theta$ of definable elements in
+  \[
+  {\bf ProLam}(A,B) = \widehat{\Lambda}_{\beta\eta}(A \Rightarrow B)
+  \]
+  to the corresponding $\theta_Q$ in
+  \[
+  {\bf Lam}_Q(A \Rightarrow B) = \widehat{\Lambda}_{\beta\eta}(A \Rightarrow B)/^{A \Rightarrow B}_Q \cong [\![A \Rightarrow B]\!]_Q^{\bullet}
+  \]
+  so the canonical functor makes the following diagram commute:
+  \[
+  \begin{tikzcd}
+  & {\bf Lam} \ar[dd, "{\bf idonobj}"] \ar[dddl, "\pi_Q"', bend right] \ar[dddr, "\pi_{Q'}", bend left] \\
+  \\
+  & {\bf ProLam} \ar[dl, "\pi_Q"'] \ar[dr, "\pi_{Q'}"] \\
+  {\bf Lam}_Q \ar[rr, "{\bf Lam}_f"'] && {\bf Lam}_{Q'}
+  \end{tikzcd}
+  \]
+\end{proof}
+
 \section{$h$-adic topology}
 
 The following summary is based on \cite[Chapter XVI]{kassel2012quantum}.
