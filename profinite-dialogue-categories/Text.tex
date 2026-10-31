@@ -579,7 +579,55 @@ ${\bf idonobj} : {\bf Lam} \to {\bf ProLam}$ derived from the fact that ${\bf La
   {\bf Lam}_Q \ar[rr, "{\bf Lam}_f"'] && {\bf Lam}_{Q'}
   \end{tikzcd}
   \]
+
+  Further, one concludes that ${\bf idonobj}$ is faithful as follows. By Statman's finite completeness theorem \cite{statman1982completeness},
+  for every pair of terms $M, N : A \to B$, then either $M \equiv_{\beta\eta} N$ or there 
+  is a finite set $Q$ such that the interpretations $[\![M]\!]_Q = \pi_Q(M)$ and $[\![N]\!]_Q = \pi_Q(N)$ are different.
+  In this case ${\bf idonobj}(M)$ and  ${\bf idonobj}(N)$ are different as well, and therefore ${\bf idonobj}$ is faithful.
 \end{proof}
+
+  Further, let us recall some facts from the higher-order language theory.
+
+  \begin{prop}
+    Let $\Sigma$ be a finite alphabet, then the Boolean algebras 
+    $\operatorname{Reg}(\operatorname{Church}_{\Sigma})$ and $\operatorname{Reg}(\Sigma)$
+    given by the Church encoding.
+  \end{prop}
+
+  \begin{proof}
+    By the Church encoding, there is a one-to-one correspondence between $L \subseteq \Sigma^*$
+    and $\mathcal{L} \subseteq \Lambda_{\beta \eta} (\operatorname{Church}_{\Sigma})$. 
+    One needs to show that $L \subseteq \Sigma^*$ is regular iff the associated element 
+    $\mathcal{L} \subseteq \Lambda_{\beta \eta} (\operatorname{Church}_{\Sigma})$ belongs to 
+    $\operatorname{Reg}(\operatorname{Church}_{\Sigma})$.
+
+    Let $L$ be a language recognised by a deterministic finite automaton 
+    $\mathcal{A} = (Q, \delta, q_0, \operatorname{Acc})$. The associated set $\mathcal{L} \subseteq \Lambda_{\beta \eta} (\operatorname{Church}_{\Sigma})$ 
+    is defined by the inverse image of the semantic bracket 
+    $[\![.]\!]_Q : \Lambda_{\beta \eta}(\operatorname{Church}_{\Sigma}) \to [\![\operatorname{Church}_{\Sigma}]\!]_Q$
+    of the set of functionals in $[\![\operatorname{Church}_{\Sigma}]\!]_Q$ defined in the following way:
+    \[
+    \operatorname{eval}_{\delta,q_0}^{-1}(\operatorname{Acc}) = \{ F \in [\![\operatorname{Church}_{\Sigma}]\!]_Q \: | \: F(\delta_{a_1}, \ldots, \delta_{a_n})(q_0) \in \operatorname{Acc} \}
+    \]
+    Therefore $\mathcal{L}$ is an element of $\operatorname{Reg}_Q(\operatorname{Church}_{\Sigma})$, and therefore,
+    an element of $\operatorname{Reg}(\operatorname{Church}_{\Sigma})$.
+
+    Conversely, by definition of $\operatorname{Reg}(\operatorname{Church}_{\Sigma})$, it suffices to show 
+    that for every finite set $Q$, a subset $\mathcal{L} \in \operatorname{Reg}_Q(\operatorname{Church}_{\Sigma})$
+    corresponds to some regular language $L \subseteq \Sigma^*$. We can suppose that $\mathcal{L}$ has the following form
+    \[
+    \mathcal{L} = [\![.]\!]^{-1}_Q(\{ F \}) = \{ M \in \Lambda_{\beta \eta}(\operatorname{Church}_{\Sigma}) \: | \: [\![M]\!]_Q = F \}
+    \]
+    where $F$ is a functional in $[\![\operatorname{Church}_{\Sigma}]\!]_Q$. The corresponding set $L \subseteq \Sigma^*$
+    is the finite intersection of regular languages recognised by the deterministic finite automata of the form
+    $\mathcal{A} = (Q, \delta, q_0, \{ q_f \})$ where the unique finite state $q_f$
+    is equal to $q_f = F(\delta_{a_1}, \ldots, \delta_{a_n})(q_0)$, therefore the set $L$ is a regular language itself being 
+    the finite intersection of regular languages.
+  \end{proof}
+  By Stone duality and the above theorem, one also has that for every finite alphabet $\Sigma$,
+  there is a homeomorphism $\widehat{\Lambda}_{\beta \eta} (\operatorname{Church}_\Sigma) \cong \widehat{\Sigma^*}$
+  between the space $\widehat{\Lambda}_{\beta \eta}(\operatorname{Church}_\Sigma)$
+  of profinite lambda terms $\operatorname{Church}_{\Sigma}$ and the space of profinite words $\widehat{\Sigma^*}$.
 
 \section{$h$-adic topology}
 
