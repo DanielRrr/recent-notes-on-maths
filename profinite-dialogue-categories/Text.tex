@@ -365,7 +365,7 @@ Now let us discuss how one can define the exponential of relations. Let $S \subs
 $R \subseteq Q \times Q'$ be relations on finite sets, the exponential $S \Rightarrow R \subseteq (P \Rightarrow Q) \times (P' 
 \Rightarrow Q')$ is given as:
 \[
-S \Rightarrow R := \{ (g,h) \: | \: \forall x \in P \forall y \in P' \: (x S y \to g(x) R h(y))\}
+S \Rightarrow R := \{ (g,h) \: | \: \forall x \in P \:\: \forall y \in P' \: (x S y \to g(x) R h(y))\}
 \]
 Therefore, for any relation $R \subseteq Q \times Q'$ between finite sets $Q$ and $Q'$, one constructs a relation
 $[\![A]\!]_R \subseteq [\![A]\!]_Q \times [\![A]\!]_{Q'}$ defined by induction on $A$ as follows:
@@ -629,6 +629,16 @@ ${\bf idonobj} : {\bf Lam} \to {\bf ProLam}$ derived from the fact that ${\bf La
   between the space $\widehat{\Lambda}_{\beta \eta}(\operatorname{Church}_\Sigma)$
   of profinite lambda terms $\operatorname{Church}_{\Sigma}$ and the space of profinite words $\widehat{\Sigma^*}$.
 
+  This is how the concept of an $\omega$-word transferred to lambda terms.
+  \begin{prop}
+    Let $A$ be a simple type, then there exists a term $\Omega_A : (A \Rightarrow A) \Rightarrow A \Rightarrow A$
+    which, for any profinite term $M \in \widehat{\Lambda}_{\beta \eta} (A \Rightarrow A)$ satisfies the idempotency equation:
+    \[
+    (\Omega_A M) \circ (\Omega_A M) = \Omega_A M
+    \]
+  \end{prop}
+
+
 \section{$h$-adic topology}
 
 The following summary is based on \cite[Chapter XVI]{kassel2012quantum}.
@@ -812,6 +822,57 @@ $K$-linear maps and $\Phi : A^{\tildetimes 3} \cong A^{\tildetimes 3}$:
 \end{itemize}
 A topological quasi-bialgebra is a topological bialgebra whenever $\Phi = 1^{\tildetimes 3}$.
 
+A topological quasi-bialgebra $(A, \mu, \eta, \Delta, \varepsilon, \Phi)$ is a 
+\emph{topological braided quasi-algebra} if there is an invertible element $R \in A \tildetimes A$
+such that 
+\begin{itemize}
+\item $\Delta^{op}(a) = R \Delta(a) R^{-1}$ for any $a \in A$, 
+\item $(1_A \tildetimes \Delta)(R) = (\Phi_{231})^{-1} R_{13} \Phi_{213} R_{12} (\Phi_{123})^{-1}$
+\item $(\Delta \tildetimes 1_A)(R) = \Phi_{321} R_{13} (\Phi_{132})^{-1} R_{23} \Phi_{123}$
+\end{itemize}
+$R$ is called the universal $R$-matrix of $A$.
+
+A \emph{gauge transformation} on a topological quasi-algebra is an invertible element 
+$F \in A \tildetimes A$ such that 
+\[
+(1_A \tildetimes \varepsilon_A) F = (\varepsilon_A \tildetimes 1_A) F = 1
+\]
+
+\begin{example}
+  Let $A_0 = (A_0, \mu_0, \eta_0, \Delta_0, \varepsilon_0, \Phi_0, R_0)$ be a braided
+  quasi-bialgebra over $\mathbb{C}$. One can define the following topological quasi-braided algebra:
+  \[
+  A_0 [[h]] = (A_0[[h]], \mu, \eta, \Delta, \varepsilon, \Phi_0, R_0)
+  \]
+  on the space of formal series with coefficients in $A_0$
+  where $\mu, \eta, \Delta, \varepsilon$ are unique $K$-linear maps such that
+  \[
+  \forall f \in K \:\: \eta(f) = f1 = f\eta_0 1
+  \]
+  and for all $a, a' \in A$
+  \begin{itemize}
+    \item $\mu(a \tildetimes a') = \mu_0(a \otimes a')$,
+    \item $\Delta(a) = \Delta_0(a)$,
+    \item $\varepsilon(a) = \varepsilon_0(a)$.
+  \end{itemize}
+  $A_0 [[h]]$ is called the trivial topological braided quasi-algebra associated to $A_0$.
+\end{example}
+\begin{example}
+  Let $A = (A, \mu, \eta, \Delta, \varepsilon, \Phi, R)$ be a topological braided quasi-algebra.
+  We have $(A \tildetimes A)/h(A \tildetimes A) \cong A/hA \times A/hA$, so the $K$-linear maps
+  $\mu, \eta, \Delta, \varepsilon$ induce $\mathbb{C}$-linear maps:
+  \begin{itemize}
+    \item $\overline{\mu} : A/hA \times A/hA \to A/hA$,
+    \item $\overline{\Delta} : A/hA \to A/hA \times A/hA$,
+    \item $\overline{\eta} : \mathbb{C} \to A/hA$,
+    \item $\overline{\varepsilon} : A/hA \to \mathbb{C}$.
+  \end{itemize}
+  Define $\overline{\Phi}$ as the class of $\Phi$ modulo $(A/hA)^{\otimes 3}$ and define $\overline{R}$
+  as the class of $R$ modulo $(A/hA)^{\otimes 3}$, then 
+  $\overline{A} = (\overline{A}, \overline{\mu}, \overline{\eta}, \overline{\Delta}, \overline{\varepsilon}, \overline{\Phi}, \overline{R})$
+  is a braided quasi-algebra.
+\end{example}
+
 \section{On Dialogue Categories and their internal language}
 \begin{definition}
   A dialogue category is a monoidal category $(\mathcal{C}, \otimes, \mathds{1})$ equipped with an object $\bot$ along with a family
@@ -941,6 +1002,7 @@ Questions:
   What's the analogue of ${\bf FinSet}$ for tensorial terms? $\mathbb{F}$-weighted automaton over Galois fields?
   Some references: \cite{berstel2011noncommutative}, \cite{moreau2023syntactically}, \cite{adamek2018categorical},
   \cite{urbat2016eilenberg}, \cite{bonchi2012coalgebraic}, \cite{valiron2014modeling}.
+  \item How one can describe the constuction with the $\mathcal{P}$-functor from \cite{jacq2018categorical} for dialogue categories?
 \end{itemize}
 
 \subsection{Parametricity for Tensorial Logic}
