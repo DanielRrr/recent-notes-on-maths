@@ -510,7 +510,7 @@ $\mathcal{P}(A) = \widehat{\Lambda_{\beta \eta}}(A)$. $\mathcal{P}$ sends every 
 to the set-theoretic function sending a profinite term $\theta$ of type $A$ on the family $([\![M]\!]_Q (\theta_Q))$
 that can be shown to be profinite term of type $B$ via the fundamental lemma of logical relations. One has
 \begin{center}
-  $\mathcal{P}(A \times B) \cong \mathcal{P}(A) \cong \mathcal{P}(B)$
+  $\mathcal{P}(A \times B) \cong \mathcal{P}(A) \times \mathcal{P}(B)$
 
   $\mathcal{P} \top \cong \top$
 \end{center}
@@ -857,13 +857,13 @@ $F \in A \tildetimes A$ such that
   \end{itemize}
   $A_0 [[h]]$ is called the trivial topological braided quasi-algebra associated to $A_0$.
 \end{example}
-\begin{example}
+\begin{example}~\label{factor:quasi-algebra}
   Let $A = (A, \mu, \eta, \Delta, \varepsilon, \Phi, R)$ be a topological braided quasi-algebra.
-  We have $(A \tildetimes A)/h(A \tildetimes A) \cong A/hA \times A/hA$, so the $K$-linear maps
+  We have $(A \tildetimes A)/h(A \tildetimes A) \cong A/hA \otimes A/hA$, so the $K$-linear maps
   $\mu, \eta, \Delta, \varepsilon$ induce $\mathbb{C}$-linear maps:
   \begin{itemize}
-    \item $\overline{\mu} : A/hA \times A/hA \to A/hA$,
-    \item $\overline{\Delta} : A/hA \to A/hA \times A/hA$,
+    \item $\overline{\mu} : A/hA \otimes A/hA \to A/hA$,
+    \item $\overline{\Delta} : A/hA \to A/hA \otimes A/hA$,
     \item $\overline{\eta} : \mathbb{C} \to A/hA$,
     \item $\overline{\varepsilon} : A/hA \to \mathbb{C}$.
   \end{itemize}
@@ -872,6 +872,101 @@ $F \in A \tildetimes A$ such that
   $\overline{A} = (\overline{A}, \overline{\mu}, \overline{\eta}, \overline{\Delta}, \overline{\varepsilon}, \overline{\Phi}, \overline{R})$
   is a braided quasi-algebra.
 \end{example}
+
+\subsection{Quantum Enveloping Algebras}
+
+\begin{definition}
+  A \emph{complex Lie algebra} is a vector space $\mathfrak{g}$ over $\mathbb{C}$ with the operation $[.,.] : \mathfrak{g} \times \mathfrak{g} \to \mathfrak{g}$
+  satisfying the following axioms for all $x, y, z \in \mathfrak{g}$ and $a, b \in \mathbb{C}$:
+  \begin{enumerate}
+    \item $[x,x] = 0$,
+    \item $[x, [y,z]] + [y,[x,z]] + [z, [x,y]] = 0$,
+    \item $[ax + by, z] = a[x,z] + b[y,z]$,
+    \item $[z, ax + by]= a[z,x] + b[z,y]$.
+  \end{enumerate}
+\end{definition}
+
+Any complex Lie algebra $\mathfrak{g}$ has a universal enveloping algebra $U(\mathfrak{g})$ equipped with the structure of bialgebra as follows
+for all $x \in U(\mathfrak{g})$:
+\begin{itemize}
+  \item $\varepsilon(x) = 0$,
+  \item $\Delta(x) = 1 \otimes x + x \otimes 1$
+\end{itemize}
+$U(\mathfrak{g})$ also has a trivial braided quasi-bialgebra structure with $\Phi = 1 \otimes 1 \otimes 1$ and $R = 1 \otimes 1$. 
+By the Poincaré–Birkhoff–Witt theorem, every Lie algebra $\mathfrak{g}$ embeds into $U(\mathfrak{g})$.
+
+\begin{definition}
+  A \emph{quantum enveloping algebra} (QUE) for the Lie algebra $\mathfrak{g}$ is a topological braided quasi-bialgebra
+  $(A, \mu, \eta, \Delta, \varepsilon, \Phi, R)$ such that $A$ is a topologically free module,
+  and the induced braided quasi-algebra $\overline{A} = (\overline{A}, \overline{\mu}, \overline{\eta}, \overline{\Delta}, \overline{\varepsilon}, \overline{\Phi}, \overline{R})$
+  as in Example~\ref{factor:quasi-algebra} coincides with $U(\mathfrak{g})$ and $\eta$ coincides with $\overline{\eta}$.
+\end{definition}
+
+\section{Duality for Topological $[[h]]$-modules and topological Hopf algebras}
+
+This section is loosely based on \cite{gavarini2002quantum}.
+
+Fix a field $k$, so $k[[h]]$ is by default a topological ring, that is, it is equipped with
+the $h$-adic topology. Let $X$ be any $k[[h]]$-module, then we set 
+\[
+X_0 := X/hX = k \otimes_{k[[h]]} X,
+\]
+a $k$-module via scalar restriction
+\[
+k[[h]] \to k[[h]]/h k[[h]] \cong k
+\]
+that we call \emph{the specialisation of $X$ at $h = 0$}, or, \emph{the semiclassical limit of $X$}.
+Let
+\[
+X \xrightarrow{h \to 0} \overline{Y}
+\]
+We have discussed that if $X$ is complete, torsion-less and separated, then there is a natural
+isomorphism of $k$-modules $X \cong X_0[[h]]$.
+
+Let we set ${}^F X := k((h)) \otimes_{k[[h]]} X$, a vector space over $k((h))$ without any topology. 
+
+Let $X$ be a topological $k[[h]]$-module, we let:
+\begin{itemize}
+  \item $X^* := \operatorname{Hom}_{k[[h]]}(X, k[[h]])$, the \emph{full dual} of $X$,
+  \item $X^{\star} := \{ f \in X^* \: | \: \text{$f$ is continuous}\}$, the \emph{topological dual} of $X$.
+\end{itemize}
+
+There are two monoidal categories of topological $k$-modules:
+\begin{itemize}
+  \item $\mathcal{T}_{\widehat{\otimes}}$, which is modelled on the monoidal category of discrete topological
+  $k$-vector spaces $k$-vector spaces.
+  \item $\mathcal{P}_{\tildetimes}$, which is modelled on the monoidal category of linearly 
+  compact topological $k$-vector spaces.
+\end{itemize}
+
+The monoidal category $\mathcal{T}_{\widehat{\otimes}}$ consists of all topologically free modules (that is, modules
+isomorphic to $V[[h]]$ for some $k$-vector space $V$) and $k[[h]]$-linear maps. The tensor product $T_1 \widehat{\otimes} T_2$
+is the separated $h$-adic completion of the algebraic tensor product $T_1 \otimes_{k[[h]]} T_2$ for $T_1, T_2 \in \mathcal{T}_{\widehat{\otimes}}$.
+
+The monoidal category $\mathcal{P}_{\tildetimes}$ is the closure under isomorphism of the class of topological modules of type $k[[h]]^E$ 
+(the cartesian product indexed by $E$ with the Tikhonov product topology) for some set $E$. These modules are complete w.r.t the weak topology.
+They are isomorphic to the projective limit of their finite free submodule (with the $h$-adic topology). Morphisms
+in $\mathcal{P}_{\tildetimes}$ are $k[[h]]$-linear continuous maps. The tensor product $P_1 \tildetimes P_2$
+for $P_1, P_2 \in \mathcal{P}_{\tildetimes}$ is the completion of $P_1 \otimes_{k[[h]]} P_2$ w.r.t. the weak topology:
+thus, if $P_i \cong k[[h]]^{E_i}$ for $i = 1,2$, then one has $P_1 \tildetimes P_2 \cong k[[h]]^{E_1 \times E_2}$.
+
+Note that objects in both $\mathcal{T}_{\widehat{\otimes}}$ and $\mathcal{P}_{\tildetimes}$ are complete w.r.t. the $h$-adic topology.
+
+Further, $\mathcal{HA}_{\widehat{\otimes}}$ is the subcategory of $\mathcal{T}_{\widehat{\otimes}}$ whose objects are Hopf algebras in 
+$\mathcal{T}_{\widehat{\otimes}}$ and whose morphisms are Hopf algebra morphisms in $\mathcal{T}_{\widehat{\otimes}}$.
+Similarly, $\mathcal{HA}_{\tildetimes}$ is the subcategory of Hopf algebras from $\mathcal{P}_{\tildetimes}$  whose morphisms
+are Hopf algebra morphisms in $\mathcal{P}_{\tildetimes}$. $\mathcal{HA}^{\omega - I}_{\tildetimes}$ is the full subcategory
+of $\mathcal{HA}_{\tildetimes}$ consisting of all $H \in \mathcal{HA}_{\tildetimes}$ whose weak topology coincides with the $I_H$-adic topology where
+\[
+I_H := hH + \operatorname{Ker}(\varepsilon) = \varepsilon^{-1}(h k [[h]])
+\]
+
+Note that objects in $\mathcal{HA}_{\widehat{\otimes}}$ and $\mathcal{P}_{\tildetimes}$ are \emph{topological Hopf algebras}, in particular,
+the comultiplication in those algebras is given as:
+\[
+\Delta(x) = \sum \limits_{(x)} x_{(1)} \otimes x_{(2)}
+\]
+
 
 \section{On Dialogue Categories and their internal language}
 \begin{definition}
@@ -989,6 +1084,12 @@ $F \in A \tildetimes A$ such that
     \item[$(\mathds{1}_{\bf nat})$] $P [w := {\bf let} \: {\bf 1} = M \: {\bf in} \: N] \to {\bf let} \: {\bf 1} = M \: {\bf in} \: P[w := N]$.
   \end{itemize}
 \end{definition}
+
+In non-commutative tensorial logic, contexts in antecedents are lists, but in the formulation with antecedents as multisets, 
+then we can just unify left and right negations.
+
+\subsection{Exponential Negation}
+
 
 Questions:
 \begin{itemize}
