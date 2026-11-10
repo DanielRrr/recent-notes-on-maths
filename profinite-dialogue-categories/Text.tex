@@ -873,6 +873,23 @@ $F \in A \tildetimes A$ such that
   is a braided quasi-algebra.
 \end{example}
 
+A \emph{topological $A$-module $M$} over a topological algebra $(A, \mu, \eta)$ is a left $K$-module with a $K$-linear map
+$\mu_M : A \tildetimes M \to M$ such that
+\[
+\begin{tikzcd}
+  A \otimes A \otimes M \ar[d, "1_A \tildetimes \mu_M"'] \ar[rr, "\mu \tildetimes 1_M"] && A \tildetimes M \ar[d, "\mu_M"] & M \ar[rr, "\eta \tildetimes 1_M"] \ar[drr, equal] && A \otimes M \ar[d, "\mu_M"] \\
+  A \otimes M \ar[rr, "\mu_M"'] && M                                                                                       & && M
+\end{tikzcd}
+\]
+
+One writes $\mu_M (a  \tildetimes m) := am$ for $a \in A$ and $m \in M$. Let $M$ and $N$ be topological $A$-modules,
+then their tensor product $M \tildetimes N$ is a topological $A \tildetimes A$-module. If $A$ has a comultiplication 
+$\Delta : A \to A \tildetimes A$. One can pull back the $A \tildetimes A$-module structure on $M \tildetimes N$ to a topological
+$A$-module structure given as follows, for $a \in A$, $m \in M$ and $n \in N$:
+\[
+a(m \tildetimes n) = \Delta(a)(m \tildetimes n)
+\]
+
 \subsection{Quantum Enveloping Algebras}
 
 \begin{definition}
