@@ -763,7 +763,7 @@ M \otimes N \rightarrow M \otimes_K N \rightarrow M \widetilde{\otimes} N
 \]
 The subspace of the topological tensor product spanned by all elements of this form is dense in $M \otimes N$.
 
-\begin{prop}
+\begin{prop}~\label{tensor:of:top:free:modules}
 \begin{enumerate}
   \item The class left modules over the algebra $K = \mathbb{C}[[h]]$ with $\widetilde{\otimes}$ is endowed with the structure of a symmetric monoidal category
   \item If $M$ and $N$ be topologically free modules, so is $M \widetilde{\otimes} N$, that is:
@@ -890,6 +890,35 @@ $A$-module structure given as follows, for $a \in A$, $m \in M$ and $n \in N$:
 a(m \tildetimes n) = \Delta(a)(m \tildetimes n)
 \]
 
+Let $A$ be a topological braided algebra with universal $R$-matrix $R$, 
+then for any topological $A$-module $M$ the $k$-linear automorphism $c^{R}_{M,M}$ is defined by
+\[
+c^{R}_{M,M}(m_1 \tildetimes m_2) = (R(m_1 \tildetimes m_2))_{21}
+\]
+is a solution of the Yang-Baxter equation in $M^{\tildetimes 3}$.
+
+The universal $R$-matrix of a topological braided quasi-bialgebra gives rise to a representation of 
+of the braid group $\mathcal{B}_n$ on the topological $A$-module $M^{\tildetimes n}$ for each 
+$n > 1$ and a topological $A$-module $M$.
+
+A topological $A$-module $M$ over a topological bialgebra $A = (A, \mu, \eta, \Delta, \varepsilon)$ equipped with a left 
+action $\mu_M : A \tildetimes M \to M$ is a \emph{topological crossed $A$-module} if there is a $k$-linear map 
+$\Delta_M : M \to M \tildetimes A$ such that:
+\[
+\begin{tikzcd}
+  M \ar[d, "\Delta_A"'] \ar[rr, "\Delta_A"] && M \tildetimes A \ar[d, "\Delta_M \tildetimes A"] & M \ar[rr, "\Delta_A"] \ar[drr, equal] && M \tildetimes A \ar[d, "1_M \tildetimes \varepsilon"]\\
+  M \tildetimes A \ar[rr, "1_M \tildetimes \Delta"'] && M \tildetimes A \tildetimes A           & && M
+\end{tikzcd}
+\]
+\[
+\begin{tikzcd}
+  && A \tildetimes A \tildetimes M \tildetimes A \ar[rr, "1_A \tildetimes \sigma_{M,A} \tildetimes 1_A"] && A \tildetimes M \tildetimes A \tildetimes A \ar[drr, "\mu_M \tildetimes \mu"] \\
+  A \tildetimes M \ar[urr, "\Delta \otimes \Delta_M"] \ar[dr, "\Delta_A \tildetimes 1_M"'] &&&&&& M \tildetimes A \\
+  & A \tildetimes A \tildetimes M \ar[dr, "1_A \tildetimes \mu_M"'] &&&& M \tildetimes A \tildetimes A \ar[ur, "1_M \tildetimes \mu"'] \\
+  && A \tildetimes M \ar[rr, "\sigma_{A, M}"'] && M \tildetimes A \ar[ur, "\Delta_M \tildetimes 1_A"'] 
+\end{tikzcd}
+\]
+
 \subsection{Quantum Enveloping Algebras}
 
 \begin{definition}
@@ -918,6 +947,39 @@ By the Poincaré–Birkhoff–Witt theorem, every Lie algebra $\mathfrak{g}$ emb
   and the induced braided quasi-algebra $\overline{A} = (\overline{A}, \overline{\mu}, \overline{\eta}, \overline{\Delta}, \overline{\varepsilon}, \overline{\Phi}, \overline{R})$
   as in Example~\ref{factor:quasi-algebra} coincides with $U(\mathfrak{g})$ and $\eta$ coincides with $\overline{\eta}$.
 \end{definition}
+
+First of all, a QUE is topologically free, so $A = (A/hA)[[h]]$ as a left $K$-module. Therefore $A/hA = U(\mathfrak{g})$.
+So $A = U(\mathfrak{g})[[h]]$ as a $K$-module. So we derive from Proposition~\ref{tensor:of:top:free:modules}:
+\[
+\forall n > 0 \:\: A^{\widetilde n} = (U(\mathfrak{g})^{\otimes n})[[h]]
+\]
+Further, maps $\mu$, $\eta$, $\Delta$ and $\varepsilon$ are determined by their restrictions to 
+$U(\mathfrak{g}) \otimes U(\mathfrak{g})$, $\mathbb{C}$, $U(\mathfrak{g})$ and $U(\mathfrak{g})$ respectively. For $a, a' \in U(\mathfrak{g})$
+we have 
+\[
+\mu(a \otimes a') = \sum \limits_{n \geq 0} \mu_n (a \otimes a') h^n
+\]
+where $\{ \mu_n : U(\mathfrak{g}) \otimes U(\mathfrak{g}) \to U(\mathfrak{g}) \: | \: n \geq 0 \} $ is a family of linear maps
+such that $\mu_0$ is the multiplication in the enveloping algebra. Similarly we have:
+\begin{center}
+  $\forall a \in U(\mathfrak{g})\:\: \Delta(a) = \sum \limits_{n \geq 0} \Delta_n (a) h^n$
+
+  $\forall a \in U(\mathfrak{g})\:\: \sum \limits_{n \geq 0} \varepsilon_n (a) h^n$
+
+  $\forall f \in \mathbb{C}[[h]] \:\: \eta(f) = f1$
+\end{center}
+By Proposition~\ref{tensor:of:top:free:modules}, we also write:
+\begin{center}
+  $\Phi = \sum \limits_{n \geq 0} \Phi_n h^n$ 
+
+  $R = \sum \limits_{n \geq 0} R_n h^n$ 
+\end{center}
+
+By definition, a quantum enveloping algebra $A$ is associated to a Lie algebra $\mathfrak{g}$. $\mathfrak{g}$
+is recovered from $A$ as
+\[
+\mathfrak{g} = \{ x \in A/hA \: | \: \Delta_0(a) = 1 \otimes a + a \otimes 1 \}
+\]
 
 \section{Duality for Topological $[[h]]$-modules and topological Hopf algebras}
 
