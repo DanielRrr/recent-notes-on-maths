@@ -1167,10 +1167,96 @@ the comultiplication in those algebras is given as:
 In non-commutative tensorial logic, contexts in antecedents are lists, but in the formulation with antecedents as multisets, 
 then we can just unify left and right negations.
 
+\subsection{Sums}
+
+Finite sums are given by the following inference rules.
+
+    \begin{prooftree}
+      \AxiomC{$\Gamma \vdash M : A$}
+      \RightLabel{${\oplus_I}_1$}
+      \UnaryInfC{$\Gamma \vdash {\bf inl}(M) : A \oplus B$}
+    \end{prooftree}
+
+    \begin{prooftree}
+      \AxiomC{$\Gamma \vdash M : B$}
+      \RightLabel{${\oplus_I}_2$}
+      \UnaryInfC{$\Gamma \vdash {\bf inl}(M) : A \oplus B$}
+    \end{prooftree}
+
+    \begin{prooftree}
+      \AxiomC{$\Delta \vdash M : A \oplus B$}
+      \AxiomC{$\Gamma, x : A \vdash N_1 : C$}
+      \AxiomC{$\Gamma, y : B \vdash N_2 : C$}
+      \RightLabel{$\oplus_E$}
+      \TrinaryInfC{$\Gamma, \Delta \vdash {\bf case} \: M \: {\bf of} \: x \Rightarrow N_1 \: || y \: \Rightarrow N_2 : C$}
+    \end{prooftree}
+
+Reduction rules:
+\begin{itemize}
+  \item ${\bf case} \: {\bf inl}(M) \: {\bf of} \: x \Rightarrow N_1 \: || \: y \Rightarrow N_2 \to N_1 [x := M]$,
+  \item ${\bf case} \: {\bf inr}(M) \: {\bf of} \: x \Rightarrow N_1 \: || \: y \Rightarrow N_2 \to N_2 [x := M]$,
+  \item ${\bf case} \: M \: {\bf of} \: {\bf inl}(x) \Rightarrow {\bf inl}(x) \: || \: {\bf inr}(x) \Rightarrow {\bf inr}(x) \to M$,
+  \item $\begin{array}{lll}
+    & N[z := {\bf case} \: M \: {\bf of} \: {\bf inl}(x) \Rightarrow N_1 \: || \: {\bf inr}(x) \Rightarrow N_2 ] \to& \\
+    & \:\:\:\: {\bf case} \: M \: {\bf of} \: {\bf inl}(x) \Rightarrow N [z := N_1 ]\: || \: {\bf inr}(x) \Rightarrow N [z := N_2] &
+  \end{array}$
+  \item 
+\end{itemize}
+
 \subsection{Exponential Negation}
 
+Let $\neg A$ denote $A \multimap \bot$. The exponential negation is axiomatised with the following inference rules:
 
-Questions:
+\vspace{\baselineskip}
+
+  \begin{minipage}{0.7\textwidth}
+    \begin{centering}
+    \begin{prooftree}
+      \AxiomC{$\Gamma_1 \vdash M_1 : \dot{\neg} A_1$}
+      \noLine
+      \UnaryInfC{$\ldots$}
+      \noLine
+      \UnaryInfC{$\Gamma_n \vdash M_n : \dot{\neg}A_n$}
+      \AxiomC{$x_1 : \dot{\neg} A_1, \ldots, x_n : \dot{\neg} A_n \vdash N : \neg A$}
+      \LeftLabel{${\dot{\neg}}_I$}
+      \BinaryInfC{$\Gamma_1, \ldots, \Gamma_n \vdash \dot{\neg} \: N \: {\bf with} \: \vec{x} = \vec{M} : \dot{\neg} A$}
+    \end{prooftree}
+    \end{centering}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.2\textwidth}
+    \begin{centering}
+    \begin{prooftree}
+      \AxiomC{$\Gamma \vdash M : \dot{\neg} A$}
+      \RightLabel{${\dot{\neg}}_E$}
+      \UnaryInfC{$\Gamma \vdash {\bf der} \: (M) : \neg A$}
+    \end{prooftree}
+  \end{centering}
+  \end{minipage}
+
+    \begin{minipage}{0.45\textwidth}
+      \begin{prooftree}
+        \AxiomC{$\Gamma \vdash M : \dot{\neg} A$}
+        \AxiomC{$\Delta \vdash N : \bot$}
+        \RightLabel{$\dot{\neg}_{\bf W}$}
+        \BinaryInfC{$\Gamma, \Delta \vdash {\bf del}(M; N) : \bot$}
+      \end{prooftree}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \begin{tabular}{p{\textwidth}}
+      \begin{prooftree}
+        \AxiomC{$\Gamma \vdash M : \dot{\neg} A$}
+        \AxiomC{$\Delta, x : \dot{\neg} A, y : \dot{\neg} A \vdash N : \bot$}
+        \RightLabel{$\dot{\neg}_{\bf C}$}
+        \BinaryInfC{$\Gamma, \Delta \vdash {\bf let} \: x, y = M \: {\bf in} \: N : \bot$}
+      \end{prooftree}
+    \end{tabular}
+  \end{minipage}
+
+Reduction rules for $\dot{\neg}$: TODO: write down all those reduction rules tediously
+
+\section{Current Questions}
 \begin{itemize}
   \item Do we need resource modalities? If so, then have a look at \cite{mellies2010resource}, \cite{mellies2018explicit}
   and \cite{mellies2007resource}. Exponential negation? Note sure what's more essential for the profinite setting.
