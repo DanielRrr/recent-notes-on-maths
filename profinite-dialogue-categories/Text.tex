@@ -1169,7 +1169,12 @@ then we can just unify left and right negations.
 
 \subsection{Sums}
 
-Finite sums are given by the following inference rules.
+Finite sums along with the zero element are given by the following inference rules.
+    \begin{prooftree}
+      \AxiomC{$ $}
+      \RightLabel{$0_I$}
+      \UnaryInfC{$\vec{x} : \Gamma, x : 0 \vdash {\bf absurd}(\vec{x}, x) : A$}
+    \end{prooftree}
 
     \begin{prooftree}
       \AxiomC{$\Gamma \vdash M : A$}
@@ -1254,7 +1259,82 @@ Let $\neg A$ denote $A \multimap \bot$. The exponential negation is axiomatised 
     \end{tabular}
   \end{minipage}
 
+\vspace{\baselineskip}
+
 Reduction rules for $\dot{\neg}$: TODO: write down all those reduction rules tediously
+
+\subsection{Exponential Negation Categorically}
+
+Relative adjunctions and (co)monads are thorougly analysed in \cite{altenkirch2015monads}.
+
+\begin{definition} Let $\mathcal{C}$ and $\mathcal{D}$ be categories and let $F : \mathcal{C} \to \mathcal{D}$
+  be a functor, a \emph{relative comonad} $K$ on $F$ is given by the following data:
+  \begin{itemize}
+    \item an object mapping $K : \operatorname{Ob}(\mathcal{C}) \to \operatorname{Ob}(\mathcal{D})$,
+    \item for any $A \in \mathcal{C}$, there is a map $\varepsilon_A \in \mathcal{D}(KA, FA)$,
+    \item for any $A, B \in \mathcal{C}$ and $f \in \mathcal{D}(KA, FB)$, there is a map 
+    $f^{*} \in (KA, KB)$ (\emph{the co-Kleisli extension}) satisying the following equalities below:
+    \begin{itemize}
+      \item For any $A, B \in \mathcal{C}$, $f \in \mathcal{D}(KA, FB)$:
+      \[
+      \begin{tikzcd}
+        KA \ar[rr, "f"] \ar[dr, "f^*"'] && FB \\
+        & KB \ar[ur, "\varepsilon_B"']
+      \end{tikzcd}
+      \]
+      \item For all $A \in \mathcal{C}$, $\varepsilon^*_A = id_{K A}$.
+      \item For all $A, B, C \in \mathcal{C}$,
+      $f \in \mathcal{D}(KA, FB)$ and $g \in \mathcal{D}(KB, FC)$, $g^* \circ f* = (g \circ f^*)^*$.
+    \end{itemize}
+  \end{itemize}
+\end{definition}
+
+\begin{definition}
+  Let $F : \mathcal{J} \to \mathcal{C}$ be a functor and let $\mathcal{D}$ be a category,
+  then a relative adjunction between $F$ and $\mathcal{D}$ is given by functors
+  $L : \mathcal{J} \to \mathcal{D}$ and $R : \mathcal{D} \to \mathcal{C}$ such that
+  there is the following isomorphism natural in both $A$ and $B$
+  \[
+  \phi_{A,B} : \mathcal{C}(RB,FA) \cong \mathcal{D}(B,LA)
+  \]
+\end{definition}
+
+Any relative adjunction $(L,R,\phi)$ between $F : \mathcal{J} \to \mathcal{C}$ and $\mathcal{D}$ 
+gives rise a relative comonad $(T, \varepsilon, ()^*)$ such that
+\begin{itemize}
+\item $T : A \mapsto R(LA)$,
+\item $\varepsilon_A : T A \to F A$ is given as $\phi^{-1}(1_{LA})$,
+\item For $f : T A \to F B$, we put $f^* = R(\phi f)$.
+\end{itemize}
+
+\vspace{\baselineskip}
+
+We elaborate on the concept of Lamarche-Seely dialogue categories coined in \cite{mellies2026story}.
+Let $\mathcal{D}$ be a symmetric dialogue category with finite sums equipped with a relative comonad
+$A \mapsto \dot{\neg} A$ over the negation functor $A \mapsto \neg A$. We construct a category $\mathcal{M}$
+whose objects are objects of $\mathcal{D}$ and
+\[
+\mathcal{M}(A, B) := \mathcal{D}(\dot{\neg} A, \neg A)
+\]
+coming equipped with a pair of functors $\operatorname{Lin} : \mathcal{M} \to \mathcal{D}$ and
+$\operatorname{Neg} : \mathcal{D}^{op} \to \mathcal{M}$ such that
+\[
+\begin{tikzcd}
+  \mathcal{M} \ar[rr, "\operatorname{Lin}"] && \mathcal{D} \\
+  & \mathcal{D}^{op} \ar[ul, "\operatorname{Neg}"] \ar[ur, "\dot{\neg}"']
+\end{tikzcd}
+\]
+The functor $\operatorname{Lin}$ transports every $A \in \mathcal{M}$ to $\dot{\neg} A \in \mathcal{D}$
+and every map $f \in \mathcal{M}(A, B)$ to $f^{*}(\dot{\neg} A, \dot{\neg} B)$. The functor 
+$\operatorname{Neg}$ sends every $A \in \mathcal{D}$ to $A \in \mathcal{M}$ and every $f : A \to B$ to the composite
+\[
+\dot{\neg} B \xrightarrow{\varepsilon_B} \neg B \xrightarrow{\neg f} \neg A
+\]
+Note that $\mathcal{M}$ is Cartesian.  $\mathcal{M}$ defines linear-non-linear negation on $\mathcal{D}$
+whenever there is a natural isomorphism called Lamarche-Seely:
+\[
+\mathsf{m}_{A,B} : \dot{\neg} A \otimes \dot{\neg} B \to \dot{\neg} (A \oplus B)
+\]
 
 \section{Current Questions}
 \begin{itemize}
