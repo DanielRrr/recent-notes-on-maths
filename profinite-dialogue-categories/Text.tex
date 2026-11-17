@@ -976,10 +976,66 @@ By Proposition~\ref{tensor:of:top:free:modules}, we also write:
 \end{center}
 
 By definition, a quantum enveloping algebra $A$ is associated to a Lie algebra $\mathfrak{g}$. $\mathfrak{g}$
-is recovered from $A$ as
+is recovered from $A$ as follows
 \[
 \mathfrak{g} = \{ x \in A/hA \: | \: \Delta_0(a) = 1 \otimes a + a \otimes 1 \}
 \]
+due to the fact that the subspace of primitive elements in $U(\mathfrak{g})$
+is $\mathfrak{g}$ provided that the characteristic of the ground field is zero.
+
+One associates the extra invariant to the quantum enveloping algebra $A$. Let $R$ be its universal $R$-matrix
+and let $R_{21}$ be its image of $R$ under the flip, the following formula
+\[
+R_{21} R \cong 1 \otimes 1 + h1 \mod h^2
+\]
+defines a unique element $t \in U(\mathfrak{g}) \otimes U(\mathfrak{g})$. So $t$ is expressed as 
+$R_1 + (R_1)_{21}$, so we have $t_{21} = t$.
+
+\begin{prop}
+  The element $t$ is an invariant symmetric element of $\mathfrak{g} \otimes \mathfrak{g}$,
+  that is, $t_{21} = t$ and $[\Delta(x), t] = 0$ for all $x \in \mathfrak{g}$. $t$ is unchanged under gauge 
+  transformations.
+\end{prop}
+
+Such an element $t \in \mathfrak{g} \otimes \mathfrak{g}$ is called \emph{the canonical 2-tensor of the quantum enveloping algebra}.
+According to Drinfield, a pair $(\mathfrak{g}, t)$ is called \emph{the classical limit} and $A$ is the 
+\emph{quantisation} of $(\mathfrak{g}, t)$.
+
+\begin{proof}
+  It suffices to show that $t$ belongs to $\mathfrak{g} \otimes \mathfrak{g}$. First of all, we have
+  \begin{equation}~\label{calculate:delta:r}
+    (\Delta \tildetimes 1_A)(R_{21} R) = ((1_A \tildetimes \Delta)(R))_{312} (\Delta \tildetimes 1_A)(R) = \Phi^{-1} R_{32} \Phi_{132} R_{31} (\Phi_{312})^{-1} \Phi_{312} R_{13} (\Phi_{132})^{-1} R_{23} \Phi
+  \end{equation}
+  Next, we identify the coefficients of $h$ and get 
+  \[
+  (\Delta_0 \otimes 1)(t) = t_{13} + t_{23}
+  \]
+  Now write $t = \Sigma_i x_i \otimes y_i$, where $(y_i)_{i \in I}$ is a family of linearly independent elements of 
+  $U(\mathfrak{g})$, so the equality $(\Delta_0 \otimes 1)(t) = t_{13} + t_{23}$ becomes
+  \[
+  \sum \limits_{i} \Delta_0(x_i) \otimes y_i = \sum \limits_{i} (x_i \otimes 1 + 1 \otimes x_i) \otimes y_i
+  \]
+  and thus
+  \[
+  \forall i \:\:  \Delta_0(x_i) = x_i \otimes 1 + 1 \otimes x_i
+  \]
+  So each $x_i$ is primitive for comultiplication $\Delta_0$ of $U(\mathfrak{g})$ and thus $x_i \in \mathfrak{g}$.
+  Thus $t \in \mathfrak{g} \otimes U(\mathfrak{g})$, and, therefore, by~(\ref{calculate:delta:r}), $t \in \mathfrak{g} \otimes \mathfrak{g}$.
+
+  The invariance of $t$ is checked as follows. One has:
+  \[
+  \forall a \in A \: \Delta(a) R_{21} R = R_{21} R \Delta(a)
+  \]
+  and therefore we obtain
+  \[
+  \forall x \in \mathfrak{g} \:\: \Delta_0 (x) t = t \Delta_0(x)
+  \]
+  So let us apply a gauge transformation $F$ to $A$:
+  \[
+  (R_F)_{21} R_F = F R_{21} F_{21}^{-1} F_{21} R F^{-1} = F R_{21} R F^{-1}
+  \]
+  So we get $t_F = t$ where $t_F$ is the canonical 2-tensor of $A_F$ obtain from $A$ via the gauge transformation.
+\end{proof}
 
 \section{Duality for Topological $[[h]]$-modules and topological Hopf algebras}
 
@@ -1254,14 +1310,26 @@ Let $\neg A$ denote $A \multimap \bot$. The exponential negation is axiomatised 
         \AxiomC{$\Gamma \vdash M : \dot{\neg} A$}
         \AxiomC{$\Delta, x : \dot{\neg} A, y : \dot{\neg} A \vdash N : \bot$}
         \RightLabel{$\dot{\neg}_{\bf C}$}
-        \BinaryInfC{$\Gamma, \Delta \vdash {\bf let} \: x, y = M \: {\bf in} \: N : \bot$}
+        \BinaryInfC{$\Gamma, \Delta \vdash {\bf copy} \: M \: {\bf as} \: x, y \: {\bf in} \: N : \bot$}
       \end{prooftree}
     \end{tabular}
   \end{minipage}
 
 \vspace{\baselineskip}
 
-Reduction rules for $\dot{\neg}$: TODO: write down all those reduction rules tediously
+Reduction rules for $\dot{\neg}$:
+\begin{itemize}
+  \item[$(\dot{\neg}_{\beta})$] ${\bf der}(\dot{\neg} \: N \: {\bf with} \: \vec{x} = \vec{M}) \to N [\vec{x} := \vec{M}]$,
+  \item[$({\bf del}_{\beta})$] ${\bf del}(\dot{\neg} \: N \: {\bf with} \: \vec{x} = \vec{M}, P) \to {\bf del}(\vec{M}, P)$,
+  \item[$({\bf copy}_{\beta})$] 
+  $\begin{array}{lll}
+    & {\bf copy} \: (\dot{\neg} \: N \: {\bf with} \: \vec{x} = \vec{M}) \: {\bf as} \: x, y \: {\bf in} \: P \to & \\
+    & \:\:\:\: {\bf copy} \: \vec{M} \: {\bf as} \: \vec{x'},\vec{x''} \: {\bf in} \: P[x:= \dot{\neg} \: N \: {\bf with} \: \vec{x} = \vec{x'}, y:= \dot{\neg} \: N \: {\bf with} \: \vec{x} = \vec{x''}]&
+  \end{array}$
+  \item[$({\bf del}_{nat})$] $P[x := {\bf del}(M,N)] \to {\bf del}(M, P[x:=N])$,
+  \item[$({\bf copy}_{nat})$] $P[z := {\bf copy} \: M \: {\bf as} \: x,y \: {\bf in} \: N] \to {\bf copy} \: M \: {\bf as} \: x,y \: P[z:=N]$,
+  \item... add some other rules
+\end{itemize}
 
 \subsection{Exponential Negation Categorically}
 
@@ -1333,8 +1401,23 @@ $\operatorname{Neg}$ sends every $A \in \mathcal{D}$ to $A \in \mathcal{M}$ and 
 Note that $\mathcal{M}$ is Cartesian.  $\mathcal{M}$ defines linear-non-linear negation on $\mathcal{D}$
 whenever there is a natural isomorphism called Lamarche-Seely:
 \[
-\mathsf{m}_{A,B} : \dot{\neg} A \otimes \dot{\neg} B \to \dot{\neg} (A \oplus B)
+\mathsf{m}_{A,B} : \dot{\neg} A \otimes \dot{\neg} B \cong \dot{\neg} (A \oplus B)
 \]
+such that the following square commutes for any $A, B, A',B' \in \mathcal{D}$
+and for each $f : \dot{\neg} A \to \neg A'$ and $g : \dot{\neg} B \to \neg B$:
+\[
+\begin{tikzcd}
+  \dot{\neg} A \otimes \dot{\neg} B \ar[rr, "\mathsf{m}_{A,B}"] \ar[d, "f^* \otimes g^*"'] && \dot{\neg} (A \oplus B) \ar[d, "(f \oplus g)^*"] \\
+  \dot{\neg} A' \otimes \dot{\neg} B' \ar[rr, "\mathsf{m}_{A',B'}"'] && \dot{\neg} (A' \oplus B')
+\end{tikzcd}
+\]
+
+Several examples of Lamarche-Seely categories:
+\begin{itemize}
+  \item ...
+  \item ...
+  \item ...
+\end{itemize}
 
 \section{Current Questions}
 \begin{itemize}
