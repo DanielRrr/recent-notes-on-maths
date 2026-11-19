@@ -1037,10 +1037,58 @@ According to Drinfield, a pair $(\mathfrak{g}, t)$ is called \emph{the classical
   So we get $t_F = t$ where $t_F$ is the canonical 2-tensor of $A_F$ obtain from $A$ via the gauge transformation.
 \end{proof}
 
+\begin{example} This example is a quantum enveloping algebra associated to the Heisenberg Lie algebra.
+  Consider a 3-dimensional Lie algebra with the basis $\{ x, y, z \}$ and the Lie bracket given by the following equalities:
+  \begin{itemize}
+    \item $[x,y] = z$,
+    \item $[x,z] = [y,z] = 0$
+  \end{itemize}
+  The symmetric 2-tensor $t = z \otimes z$ is invariant as $z$ is central in the Lie algebra. There exists
+  a quantum enveloping algebra whose classical limit is $(\mathfrak{g}, t)$. One can take the trivial algebra 
+  $A = U(\mathsf{g})[[h]]$ but we set $R = e^{ht/2}$ and $\Phi = 1^{\tildetimes 3}$. One can easily check that
+  $A$ is a topological braided bialgebra. Relations for $\Phi = 1^{\tildetimes 3}$ follow from
+  \begin{center}
+    $e^{h(t_{13} + t_{12})/2} = e^{ht_{13}/2} e^{ht_{12}/2}$
+
+    $e^{h(t_{13} + t_{23})/2} = e^{ht_{13}/2} e^{ht_{23}/2}$
+  \end{center}
+  and those equalities hold as $t_{12}$, $t_{13}$ and $t_{23}$ commute with each other as long as $z$ is central. One has
+  \[
+  R_{21} R = e^{ht} = 1 \otimes 1 + ht \mod h^2
+  \]
+  and this shows that $t = z \otimes z$ is the canonical 2-tensor of $A$.
+\end{example}
+
 \section{Duality for Topological $[[h]]$-modules and topological Hopf algebras}
 
 This section is loosely based on \cite{gavarini2002quantum}.
 
+Let $k$ be a field of zero characteristic. Let $\mathfrak{g}$ be a finite dimensional
+Lie algebra over $k$. Let $F[[\mathfrak{g}]]$ be (the algebra of regular functions) the formal
+group associated to $\mathfrak{g}$: a complete topological Hopf algebra having two realisations.
+
+The first realisation is given as follows: if $G$ is an affine algebraic group with tangent Lie 
+algebra $\mathfrak{g}$, and $F[G]$ is the algebra of regular functions on $G$, then $F[[\mathfrak{g}]]$
+is the $\mathfrak{m}_e$ completion of $F[G]$ of $F[G]$ at the maximal ideal $\mathfrak{m}_e$ of the identity element
+$e \in G$ endowed with the $\mathfrak{m}_e$-adic topology. The other one is $F[[\mathfrak{g}]] = U(\mathfrak{g})^*$,
+the linear dual of $U(\mathfrak{g})^*$ endowed with the weak topology. 
+
+In either case, the enveloping algebra $U(\mathfrak{g})$ is identified with the topological dual $F[[\mathfrak{g}]]$, i.e.
+the set of all linear continuous functions $F[[\mathfrak{g}]] \to k$ with $k$ endowed with the discrete topology.
+Now we assume that $\mathfrak{g}$ is a Lie bialgebra, so $U(\mathfrak{g})$ is a co-Poisson Hopf algebra 
+and $F[[\mathfrak{g}]]$ is a topological Poisson. Furthermore, $\mathfrak{g}^*$, the dual of $\mathfrak{g}$,
+is a Lie bialgebra as well. 
+
+Take a Lie bialgebra $\mathfrak{g}$. A \emph{quantisation} of $\mathfrak{g}$ is a topological Hopf $k[[h]]$-algebra
+which for $h = 0$ is isomorphic to $U(\mathfrak{g})$ as a co-Poisson Hopf algebra. They form the category $\mathcal{QUEA}$.
+A quantisation of $F[[\mathfrak{g}]]$ is a topological Hopf $k[[h]]$-algebra which for $h = 0$ is isomorphic
+to $F[[\mathfrak{g}]]$ as a topological Poisson Hopf algebra. The category of these algebras will be called 
+$\mathcal{QFSHA}$. The quantum duality principle states that there exist functors $(.)' : \mathcal{QUEA} \to \mathcal{QFSHA}$
+and $()^{\vee} : \mathcal{QFSHA} \to \mathcal{QUEA}$ which are inverse to each other, so if $U_h(\mathfrak{g})$
+is a quantisation of $U(\mathfrak{g})$ and $F_h[[\mathfrak{g}]]$ is a quantisation of $F[[\mathfrak{g}]]$,
+then $U_h(\mathfrak{g})'$ is a quantisation of $F_h[[\mathfrak{g}^*]]$ and $F_h[[\mathfrak{g}]]^{\vee}$ is a quantisation
+of $U(\mathfrak{g}^*)$. 
+ 
 Fix a field $k$, so $k[[h]]$ is by default a topological ring, that is, it is equipped with
 the $h$-adic topology. Let $X$ be any $k[[h]]$-module, then we set 
 \[
@@ -1069,7 +1117,7 @@ Let $X$ be a topological $k[[h]]$-module, we let:
 There are two monoidal categories of topological $k$-modules:
 \begin{itemize}
   \item $\mathcal{T}_{\widehat{\otimes}}$, which is modelled on the monoidal category of discrete topological
-  $k$-vector spaces $k$-vector spaces.
+  $k$-vector spaces.
   \item $\mathcal{P}_{\tildetimes}$, which is modelled on the monoidal category of linearly 
   compact topological $k$-vector spaces.
 \end{itemize}
