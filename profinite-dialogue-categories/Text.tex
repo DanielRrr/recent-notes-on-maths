@@ -249,7 +249,7 @@ Take $u, v \in \Sigma^*$, put:
   \item $r(u,v) = \min \{ |M| \: | \: \text{$M$ separates $u$ and $v$}\}$,
   \item $d(u, v) = 2^{-r(u,v)}$.
 \end{itemize}
-Therefore, $d(u,v) < 2^{n}$ iff $u$ and $v$ cannot be separated by a monoid smaller than $n$
+Therefore, $d(u,v) < 2^{-n}$ iff $u$ and $v$ cannot be separated by a monoid smaller than $n$
 and $d(u,v) < \varepsilon$ iff $u$ and $v$ cannot be separated by a monoid of size $n$,
 where $n$ is the unique natural number such that $2^{-(n+1)} < \varepsilon \leq 2^{-n}$.
 $d$ is a metric on $\Sigma^{*}$ such that $(\Sigma^*, d)$ is an ultrametric space such that, for each 
@@ -282,7 +282,7 @@ for a fixed finite $M$. Thus $d(u,v) < 2^{-n}$ iff they cannot be separated by a
   is also recognisable.
 \end{prop}
 
-Let $\widehat{\Sigma^{*}}$ denote the completion of $\Sigma^*$, whose points are called profinite words of $\Sigma$.
+Let $\widehat{\Sigma^{*}}$ denote the completion of $\Sigma^*$, whose points are called \emph{profinite words} of $\Sigma$.
 
 \begin{prop}
   Let $M$ be a finite monoid and let $f : \Sigma^* \to M$ be uniformly continuous, then $f$ uniquely extends
@@ -678,8 +678,7 @@ with the projection of the inverse limit is equal to $\pi_n$.
 Besides, the map $\pi : \mathbb{C}[[h]] \twoheadrightarrow \varprojlim \limits_{n} \mathbb{C}[[h]] / (h^n)$
 is the isomorphism, which is partly the instance of Birkhoff’s subdirect representation theorem, \cite[Theorem 8.6]{sankappanavar1981course}.
 
-Let us equip $K$ with the \emph{$h$-adic topology}. The family of 
-of subsets $\pi^{-1}_n(U_n)$ for $n > 0$ and $U_n \subseteq K_n$ form an open basis on $K$.
+Let us equip $K$ with the \emph{$h$-adic topology}. The family of subsets $\pi^{-1}_n(U_n)$ for $n > 0$ and $U_n \subseteq K_n$ form an open basis on $K$.
 $\{ 0 \}$ is a family of open neighbourhoods in the discrete set $K_n$, 
 the family $\pi_n^{-1}(0)$ is a family of open neighbourhoods of $0$ in $K$ for the $h$-adic topology.
 There is also the structure of a metric space on $K$ given as follows. Given a formal series
@@ -1150,6 +1149,92 @@ the comultiplication in those algebras is given as:
 \Delta(x) = \sum \limits_{(x)} x_{(1)} \otimes x_{(2)}
 \]
 
+The following is from \cite{drinfeld1986quantum}.
+
+\begin{definition}
+  $ $
+
+  \begin{itemize}
+    \item A \emph{quantised universal enveloping algebra} is any $H \in \mathcal{HA}_{\widehat{\times}}$
+    such that $H/hH$ is a co-Poisson Hopf algebra such isomorphic to $U(\mathfrak{g})$, for some finite dimensional
+    Lie bialgebra $\mathfrak{g}$ over $k$. In this case, one writes $H = U_h(\mathfrak{g})$ and says that $H$ is a quantisation
+    of $U(\mathfrak{g})$. $\mathcal{QUEA}$ is the full subcategory of $\mathcal{HA}_{\widehat{\times}}$
+    whose objects are all possible $H = U_h(\mathfrak{g})$ for all possible $\mathfrak{g}$.
+    \item A \emph{quantised formal series Hopf algebra} is any $K \in \mathcal{HA}_{\tildetimes}$
+    such that $K = K/hK$ is a topological Poisson Hopf algebra isomorphic to $F[[\mathfrak{g}]]$,
+    for some finite dimensional Lie bialgebra $\mathfrak{g}$ over $k$. In this case one writes $K = F_h[[\mathfrak{g}]]$
+    and says that $K$ is a quantisation of $F[[\mathfrak{g}]]$. $\mathcal{QFSHA}$ is the full subcategory 
+    $\mathcal{HA}_{\tildetimes}$ whose objects are all  $K = F_h[[\mathfrak{g}]]$ for each $\mathfrak{g}$.
+    \item If $H_1$ and $H_2$ are quantisations of $H \in \mathcal{QUEA}$ 
+    (the definition is the same for quantisations in $\mathcal{QFSHA}$),
+    the $H_1$ is equivalent to $H_2$, written as $H_1 \equiv H_2$, if there is 
+    an isomorphism $\varphi : H_1 \cong H_2$ in $\mathcal{QUEA}$ (or in $\mathcal{QFSHA}$)
+    such that $\phi = \operatorname{id} \mod h$.
+  \end{itemize}
+\end{definition}
+
+\begin{definition}
+  Let $H$, $K$ be Hopf algebras over a ring $R$. A pairing $\langle ., .\rangle : H \times K \to R$ is called \emph{perfect} if
+  it is not degenerate. $\pi$ is a \emph{Hopf pairing} if for all $x, x_1, x_2 \in H$ and $y, y_1, y_2 \in K$
+  the following elements
+  \begin{center}
+    $\langle \Delta(x), y_1 \otimes y_2 \rangle := \sum \limits_{(x)} \langle x_{(1)}, y_1 \rangle \cdot \langle x_{(2)}, y_2 \rangle$ 
+
+    $\langle x_1 \otimes x_2, y \rangle := \sum \limits_{(x)} \langle x_1, y_{(1)} \rangle \cdot \langle x_2, y_{(2)} \rangle$
+  \end{center}
+  are well-defined and the following equalities are satisfied:
+  \begin{itemize}
+    \item $\langle x, y_1 \cdot y_2 \rangle = \langle \Delta(x), y_1 \otimes y_2 \rangle$ and $\langle x_1 \cdot y_2, y\rangle = \langle x_1 \otimes x_2, \Delta(y) \rangle$,
+    \item $\langle x, 1 \rangle = \varepsilon(x)$ and $\langle 1, y \rangle = \varepsilon(y)$,
+    \item $\langle S(x) , y \rangle = \langle x, S(y) \rangle$
+  \end{itemize}
+\end{definition}
+
+Let $H$ be a Hopf algebra over $k[[h]]$. For each $n \in \mathbb{N}$, define $\Delta^n : H \to H^{\otimes n}$ by 
+\begin{itemize}
+  \item $\Delta^0 := \varepsilon$,
+  \item $\Delta^1 := 1_H$,
+  \item $\Delta^{n + 2} := H \xrightarrow{\Delta^{n + 1}} H^{n + 1} \xrightarrow{\Delta \otimes 1^{\otimes n}_H} H^{n + 2}$.
+\end{itemize}
+
+  Take $E = \{ i_1, \ldots, i_k \} \subseteq [n]$ such that $i_1 < \ldots < i_k$, define a morphism
+  $j_E : H^{\otimes k} \to H^{\otimes n}$ by putting
+  \[
+  j_E (a_1 \otimes \ldots \otimes a_k) := b_1 \otimes \ldots \otimes b_n
+  \]
+  such that for $1 \leq m \leq k$ $b_i := 1$ for $i \notin E$ and $b_i := a_i$ for $i \in E$.
+  Let us set:
+  \begin{center}
+    $\Delta_{\emptyset} := \Delta^0 (= \varepsilon)$,
+
+    $\Delta_E = j_E \circ \Delta^k$,
+
+    $\delta_E := \sum \limits_{E' \subset E} (-1)^{n - |E'|} \Delta_{E'}$,
+
+    $\delta_{\emptyset} = \varepsilon$.
+  \end{center}
+  One can easily conclude that 
+  \[
+  \Delta_E = \sum \limits_{E' \subseteq E} \delta_{E'} 
+  \]
+  also write $\delta_0$ for $\delta_{\emptyset}$ and $\delta_n$ for $\delta_{[n]}$. Define $H' \subseteq H$ as
+  \[
+  H' := \{ a \in H \: | \: \forall n \in \mathbb{N} \:\: \delta_n(a) \in h^n H^{\otimes n}\}
+  \]
+  The following holds for non-zero natural numbers $n$:
+  \[
+  \delta_n = (1_H - \varepsilon)^{\otimes n} \circ \Delta_n
+  \]
+  Then $H$ splits as
+  \[
+  H = k[[h]] \cdot J_H \oplus J_H
+  \]
+  and $(1_H - \varepsilon)$ projects $H$ onto $J_H := \operatorname{Ker}(\varepsilon)$,
+  therefore $(1_H - \varepsilon)^{\otimes n}$ projects $H^{\otimes n}$ onto $J^{\otimes n}_H$, and thus
+  \[
+  \forall a \in H \:\: \delta_n(a) = (1_H - \varepsilon)^{\otimes n}(\Delta^n(a)) \in J^{\otimes n}_H
+  \]
+  
 
 \section{On Dialogue Categories and their internal language}
 \begin{definition}
