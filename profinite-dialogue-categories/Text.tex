@@ -1060,7 +1060,55 @@ According to Drinfield, a pair $(\mathfrak{g}, t)$ is called \emph{the classical
 
 \section{Duality for Topological $[[h]]$-modules and topological Hopf algebras}
 
-This section is loosely based on \cite{gavarini2002quantum}.
+This section is loosely based on \cite{gavarini2002quantum}. Let us give a bit more definitions first.
+
+\begin{definition} Let $H = (H, \mu, \eta, \Delta, \varepsilon, S)$ be a commutative Hopf algebra (over a field $k$ of characteristic zero), 
+  \begin{enumerate}
+  \item $H$ is \emph{Poisson} if it is equipped with a bilinear map $\{ . , . \} : H \otimes H \to H$
+  called the \emph{Poisson bracket} such that:
+  \begin{itemize}
+    \item $\{ . , . \}$ is a Lie bracket, that is, the following equalities hold for all $a, b, c \in H$:
+    \begin{itemize}
+      \item (\emph{anti-symmetry}) $\{ a, b\} = - \{ b, a\}$,
+      \item (\emph{Jacobi identity}) $\{ a, \{ b, c \}\} + \{ b, \{ c, a \}\} + \{ c, \{a , b \}\} = 0$
+    \end{itemize}
+    \item $\{ . , . \}$ is compatible with multiplication by the \emph{Leibniz rule}:
+    \[
+    \{ a, \mu(b \otimes c)\} = \mu(\{ a, b \} \otimes c) + \mu(b \otimes \{ a, c \})
+    \]
+    \item The Poisson bracket is compatible with comultiplication:
+    \[
+    \Delta(\{ a, b \}) = \{ \Delta(a), \Delta(b)\}
+    \]
+    \item We also have $\varepsilon(\{ a, b \}) = 0$ and $S(\{ a, b\}) = - \{ S(a), S(b)\}$.
+  \end{itemize}
+  \item $H$ is \emph{co-Poisson} if there is a map $\delta : H \to H \otimes H$ called the \emph{co-Poisson bracket} such that
+  the following conditions are satisfied:
+  \begin{itemize}
+    \item $\delta$ is a \emph{Lie co-bracket}, i.e., 
+    \begin{itemize}
+      \item (\emph{Co-antisymmetry}) $\sigma_{21} \circ \delta = -\delta$,
+      \item (\emph{co-Jacobi identity}) $(\sigma_{123} + \sigma_{231} + \sigma_{312}) \circ (\delta \otimes 1_H) \circ \delta = 0$/
+    \end{itemize}
+    \item $\delta$ is compatible with $\Delta$, that is, it satisfied the \emph{co-Leibniz rule}:
+    \[
+    (1_H \otimes \Delta) \circ \delta = (\delta \otimes 1_H) \circ \Delta + (\sigma_{21} \otimes 1_H) \circ (1_H \otimes \delta) \circ \Delta
+    \]
+    \item $\delta$ is compatible with multiplication:
+    \[
+    \forall a, b \in H \:\: \delta(\mu(a \otimes b)) = \mu(\delta(a) \otimes \Delta(b)) + \mu(\Delta(a) \otimes \delta(b))
+    \]
+    \item $\delta$ is compatible with the counit:
+    \[
+    (\varepsilon \otimes 1_H) \circ \delta = 0
+    \]
+    \item $\delta$ is compatible with the antipode:
+    \[
+    \delta \circ S = (S \otimes S) \circ \delta
+    \]
+  \end{itemize}
+  \end{enumerate}
+\end{definition}
 
 Let $k$ be a field of zero characteristic. Let $\mathfrak{g}$ be a finite dimensional
 Lie algebra over $k$. Let $F[[\mathfrak{g}]]$ be (the algebra of regular functions) the formal
@@ -1155,16 +1203,16 @@ The following is from \cite{drinfeld1986quantum}.
   $ $
 
   \begin{itemize}
-    \item A \emph{quantised universal enveloping algebra} is any $H \in \mathcal{HA}_{\widehat{\times}}$
+    \item A \emph{quantised universal enveloping algebra} is any $H \in \mathcal{HA}_{\widehat{\otimes}}$
     such that $H/hH$ is a co-Poisson Hopf algebra such isomorphic to $U(\mathfrak{g})$, for some finite dimensional
     Lie bialgebra $\mathfrak{g}$ over $k$. In this case, one writes $H = U_h(\mathfrak{g})$ and says that $H$ is a quantisation
-    of $U(\mathfrak{g})$. $\mathcal{QUEA}$ is the full subcategory of $\mathcal{HA}_{\widehat{\times}}$
+    of $U(\mathfrak{g})$. $\mathcal{QUEA}$ is the full subcategory of $\mathcal{HA}_{\widehat{\otimes}}$
     whose objects are all possible $H = U_h(\mathfrak{g})$ for all possible $\mathfrak{g}$.
     \item A \emph{quantised formal series Hopf algebra} is any $K \in \mathcal{HA}_{\tildetimes}$
     such that $K = K/hK$ is a topological Poisson Hopf algebra isomorphic to $F[[\mathfrak{g}]]$,
     for some finite dimensional Lie bialgebra $\mathfrak{g}$ over $k$. In this case one writes $K = F_h[[\mathfrak{g}]]$
     and says that $K$ is a quantisation of $F[[\mathfrak{g}]]$. $\mathcal{QFSHA}$ is the full subcategory 
-    $\mathcal{HA}_{\tildetimes}$ whose objects are all  $K = F_h[[\mathfrak{g}]]$ for each $\mathfrak{g}$.
+    $\mathcal{HA}_{\tildetimes}$ whose objects are all $K = F_h[[\mathfrak{g}]]$ for each $\mathfrak{g}$.
     \item If $H_1$ and $H_2$ are quantisations of $H \in \mathcal{QUEA}$ 
     (the definition is the same for quantisations in $\mathcal{QFSHA}$),
     the $H_1$ is equivalent to $H_2$, written as $H_1 \equiv H_2$, if there is 
@@ -1190,6 +1238,8 @@ The following is from \cite{drinfeld1986quantum}.
   \end{itemize}
 \end{definition}
 
+\subsection{Drinfield Functors and Their general properties}
+
 Let $H$ be a Hopf algebra over $k[[h]]$. For each $n \in \mathbb{N}$, define $\Delta^n : H \to H^{\otimes n}$ by 
 \begin{itemize}
   \item $\Delta^0 := \varepsilon$,
@@ -1203,7 +1253,7 @@ Let $H$ be a Hopf algebra over $k[[h]]$. For each $n \in \mathbb{N}$, define $\D
   j_E (a_1 \otimes \ldots \otimes a_k) := b_1 \otimes \ldots \otimes b_n
   \]
   such that for $1 \leq m \leq k$ $b_i := 1$ for $i \notin E$ and $b_i := a_i$ for $i \in E$.
-  Let us set:
+  We set:
   \begin{center}
     $\Delta_{\emptyset} := \Delta^0 (= \varepsilon)$,
 
@@ -1227,14 +1277,78 @@ Let $H$ be a Hopf algebra over $k[[h]]$. For each $n \in \mathbb{N}$, define $\D
   \]
   Then $H$ splits as
   \[
-  H = k[[h]] \cdot J_H \oplus J_H
+  H = k[[h]] \cdot 1_H \oplus J_H
   \]
   and $(1_H - \varepsilon)$ projects $H$ onto $J_H := \operatorname{Ker}(\varepsilon)$,
   therefore $(1_H - \varepsilon)^{\otimes n}$ projects $H^{\otimes n}$ onto $J^{\otimes n}_H$, and thus
   \[
   \forall a \in H \:\: \delta_n(a) = (1_H - \varepsilon)^{\otimes n}(\Delta^n(a)) \in J^{\otimes n}_H
   \]
-  
+
+  Let $I_H := \varepsilon^{-1}(h k [[h]])$, set
+  \[
+  H^{\times} := \sum \limits_{n \geq 0} h^{-n} I^{n}_H = \sum \limits_{n \geq 0} (h^{-1} I_H)^n = \bigcup \limits_{n \geq 0} (h^{-1} I_H)^n
+  \]
+  that is, $H^{\times}$ is the $k[[h]]$-subalgbera of ${}^F H$. Let us also define 
+  \[
+  H^{\vee} := \text{$h$-adic completion of $H^{\times}$ as the $k[[h]]$-module}
+  \]
+  Note that $I_H := J_H + h \cdot H$, so
+  \[
+  H^{\times} := \sum \limits_{n \geq 0} h^{-n} J^n_H
+  \]
+  and therefore
+  \[
+  H^{\vee} := \text{$h$-adic completion of $\sum \limits_{n \geq 0} h^{-n} J^n_H$}
+  \]
+  The main result of the section:
+  \begin{theorem}
+    Assume $\operatorname{char} k = 0$. Mappings $H \mapsto H^{\vee}$ and $H \mapsto H'$ respectively
+    define functors of monoidal categories $\mathcal{QFSHA} \to \mathcal{QUEA}$ and $\mathcal{QUEA} \to \mathcal{QFSHA}$,
+    which are also inverse to each other. That is, if $U_h[[\mathfrak{g}]] \in \mathcal{QUEA}$ and $F_h[[\mathfrak{g}]] \in \mathcal{QFSHA}$
+    one has:
+    \begin{center}
+      $U_h(\mathfrak{g})'/h U_h(\mathfrak{g})' = F[[\mathfrak{g}^*]]$
+
+      $F_h[[\mathfrak{g}]]^{\vee} / h F_h [[\mathfrak{g}]]^{\vee} = U(\mathfrak{g}^*)$
+    \end{center}
+    and therefore if $U_h(\mathfrak{g})$ is a quantisation of $U(\mathfrak{g})$,
+    then $U_h(\mathfrak{g})'$ is a quantisation of $F[[\mathfrak{g}^*]]$.
+    And if $F_h[[\mathfrak{g}]]$ is a quantisation of $F[[\mathfrak{g}]]$,
+    then $F[[\mathfrak{g}^*]]^{\vee}$ is a quantisation of $U(\mathfrak{g}^*)$.
+    Both functors also preserve equivalences: if $H_1 \equiv H_2$, then $H_1^{\vee} \equiv H^{\vee}_2$ ($H_1' \equiv H'_2$).
+  \end{theorem}
+
+\begin{lemma}
+  The assignments $H \mapsto H^* = H^{\star}$ and $H \mapsto H^{\star}$ define contravariant functors
+  $(.)^{\star} : \mathcal{T}_{\widehat{\otimes}} \to \mathcal{P}_{\tildetimes}$ and
+  $(.)^{\star} : \mathcal{P}_{\tildetimes} \to \mathcal{T}_{\widehat{\otimes}}$
+  which are inverse to each other. Their restriction gives
+  dual equivalence of monoidal categories $(.)^* : \mathcal{HA}_{\widehat{\otimes}} \to \mathcal{HA}_{\tildetimes}$
+  and $(.)^{\star} : \mathcal{HA}_{\tildetimes} \to \mathcal{HA}_{\widehat{\otimes}}$, and,
+  assuming that $\operatorname{char}(k) = 0$, $(.)^* : \mathcal{QUEA} \to \mathcal{QFSHA}$
+  and $(.)^{\star} : \mathcal{QFSHA} \to \mathcal{QUEA}$.
+\end{lemma}
+
+\begin{prop}
+  Let $H \in \mathcal{HA}_{\widehat{\otimes}}$, $K \in \mathcal{HA}_{\tildetimes}$ and let 
+  $\pi = \langle . , . \rangle : H \times K \to k[[h]]$ be a Hopf pairing, then 
+  $\pi$ induces a bilinear pairing $\langle . , . \rangle : H' \times K^{\vee} \to k[[h]]$.
+
+  If $\pi$ is also perfect, then the induced $k$-valued pairing $\pi_0 : H_0 \times K_0 \to k$
+  is still perfect, then
+  \[
+  H' = (K^{\times})^{\circ} = \{ \eta \in {}^F H \: | \: \langle \eta, K^{\times} \rangle \subseteq k[[h]] \}
+  \]
+  In particular, if $H = K^{\star}$ and $K = H^*$, then the evaluation pairing yields
+  $k[[h]]$-module isomorphisms $H^{'} \cong (K^{\vee})^*$ and $K^{\vee} \cong (H^{'})^{\star}$.
+\end{prop}
+
+\begin{proof}
+  TODO: Write down the proof.
+\end{proof}
+
+\subsection{Drinfield functors on quantum groups}
 
 \section{On Dialogue Categories and their internal language}
 \begin{definition}
